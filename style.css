@@ -71,7 +71,8 @@ button {
 }
 
 form {
-  display: grid
+  display: grid;
+  width: 60%;
 }
 
 #home{
@@ -192,4 +193,37 @@ footer div {
 }
 footer img {
   width: 30px;
+}
+
+#add-assignment, #edit-assignment {
+  justify-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+#curriculum-books {
+  /* position: absolute; */
+  display:flex;
+  height: 30%;
+}
+
+#curriculum-books h2 {
+  /* position: absolute; */
+  height: 20%;
+}
+
+#curriculum-books p {
+  /* position: absolute; */
+  height: 10%;
+}
+
+#curriculum-books img {
+  /* position: absolute; */
+  height: 40%;
+}
+
+#curriculum-books .book-info {
+  cursor: pointer;
 }
