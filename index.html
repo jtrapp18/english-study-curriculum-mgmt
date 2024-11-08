@@ -38,15 +38,23 @@
             </div>
             <div id="add-assignment">
                 <button class="hidden">Add New Assignment</button>
-                <form class="hidden">
-                    <label for="new-assignment-name">Name:</label>
-                    <input type="text" id="new-assignment-name" name="new-assignment-name">
-                    <label for="new-assignment-descr">Description:</label>
-                    <input type="text" id="new-assignment-descr" name="new-assignment-descr">
-                    <label for="new-assignment-start">Start Date:</label>
-                    <input type="date" id="new-assignment-start" name="new-assignment-start">
-                    <label for="new-assignment-due">Due Date:</label>
-                    <input type="date" id="new-assignment-due" name="new-assignment-due">
+                <form class="hidden edit-mode">
+                    <div class="form-group">
+                        <label for="new-assignment-name">Name:</label>
+                        <input type="text" id="new-assignment-name" name="new-assignment-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="new-assignment-descr">Description:</label>
+                        <input type="text" id="new-assignment-descr" name="new-assignment-descr">
+                    </div>                   
+                    <div class="form-group">
+                        <label for="new-assignment-start">Start Date:</label>
+                        <input type="date" id="new-assignment-start" name="new-assignment-start">
+                    </div>
+                    <div class="form-group">
+                        <label for="new-assignment-due">Due Date:</label>
+                        <input type="date" id="new-assignment-due" name="new-assignment-due">
+                    </div>
                     <input type="submit" id='submit-new' value="Submit New Assignment" />
                 </form>
             </div>
@@ -54,14 +62,22 @@
                 <select id="assignment-options" class="hidden">
                 </select>
                 <form class="hidden">
-                    <label for="edit-assignment-name">Name:</label>
-                    <input type="text" id="edit-assignment-name" name="edit-ssignment-name">
-                    <label for="edit-assignment-descr">Description:</label>
-                    <input type="text" id="edit-assignment-descr" name="edit-assignment-descr">
-                    <label for="edit-assignment-start">Start Date:</label>
-                    <input type="date" id="edit-assignment-start" name="edit-assignment-start">
-                    <label for="edit-assignment-due">Due Date:</label>
-                    <input type="date" id="edit-assignment-due" name="edit-assignment-due">
+                    <div class="form-group">
+                        <label for="edit-assignment-name">Name:</label>
+                        <input type="text" id="edit-assignment-name" name="edit-ssignment-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-assignment-descr">Description:</label>
+                        <input type="text" id="edit-assignment-descr" name="edit-assignment-descr">
+                    </div>  
+                    <div class="form-group">
+                        <label for="edit-assignment-start">Start Date:</label>
+                        <input type="date" id="edit-assignment-start" name="edit-assignment-start">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-assignment-due">Due Date:</label>
+                        <input type="date" id="edit-assignment-due" name="edit-assignment-due">
+                    </div>
                     <input type="submit" id='submit-edit' value="Edit Assignment" />
                 </form>
             </div>
@@ -84,10 +100,14 @@
                 <p id="proj-detail-due"></p>
             </div>
             <form id="grading-form">
-                <label for="edit-grade">Name:</label>
-                <input type="text" id="edit-grade" name="edit-grade">
-                <label for="edit-comments">Description:</label>
-                <input type="text" id="edit-comments" name="edit-comments">
+                <div class="form-group">
+                    <label for="edit-grade">Grade:</label>
+                    <input type="text" id="edit-grade" name="edit-grade">
+                </div>
+                <div class="form-group">
+                    <label for="edit-comments">Description:</label>
+                    <input type="text" id="edit-comments" name="edit-comments">
+                </div>
                 <input type="submit" id='submit-grade' value="Submit Grade" />
             </form>
         </div>

@@ -287,6 +287,13 @@ function patchInfoById(type, Id, jsonObj) {
     .catch(e => console.error(e));
 }
 
+function enableDisableForm(form, disable=true) {
+    const elements = form.elements;
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].disabled = disable; // Re-enables each form element
+    }
+}
+
 function main() {
     renderClassBooks();
     // findInfoByDbKey("books");
