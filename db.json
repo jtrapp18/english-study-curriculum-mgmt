@@ -1,91 +1,112 @@
 {
- "books": [
-  {
-   "id": 1,
-   "title": "Book",
-   "author": "Author",
-   "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
-   "description": "Author",
-   "notes": "no notes",
-   "projects": [
+  "books": [
     {
-        "id": 1,
-        "name": "first draft book report book1",
-        "description": "description",
-        "startDate": "2024-11-08",
-        "dueDate": "2024-11-08"
-    },
-    {
-        "id": 2,
-        "name": "final book report book1",
-        "description": "description",
-        "startDate": "2024-11-08",
-        "dueDate": "2024-11-08"
-    }
-]
-  },
-  {
-    "id": 2,
-    "title": "Book",
-    "author": "Author",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
-    "description": "description",
-    "notes": "no notes",
-    "projects": [
-         {
-             "id": 3,
-             "name": "first draft book report book2",
-             "description": "description",
-             "startDate": "2024-11-08",
-             "dueDate": "2024-11-08"
-         },
-         {
-             "id": 4,
-             "name": "final book report book2",
-             "description": "description",
-             "startDate": "2024-11-08",
-             "dueDate": "2024-11-08"
-         }
-    ]
-  }
- ],
- "roster": [
-    {
-     "id": 1,
-     "fullName": "Jacqueline",
-     "projects":
-      [
-        {"id": 1,
-         "grade": 8,
-         "comments": "comments"},
-         {"id": 2,
-         "grade": 6,
-         "comments": "comments"},
-         {"id": 3,
-         "grade": 8,
-         "comments": "comments"},
-         {"id": 4,
-         "grade": 6,
-         "comments": "comments"}
+      "id": 1,
+      "title": "Book",
+      "author": "Author",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
+      "description": "Author",
+      "notes": "no notes",
+      "projects": [
+        {
+          "id": 1,
+          "name": "first draft book report book1",
+          "description": "description",
+          "startDate": "2024-11-08",
+          "dueDate": "2024-11-08"
+        },
+        {
+          "id": 2,
+          "name": "final book report book1",
+          "description": "description",
+          "startDate": "2024-11-08",
+          "dueDate": "2024-11-08"
+        }
       ]
     },
     {
-     "id": 2,
-     "fullName": "Jessie",
-     "projects":
-      [
-        {"id": 1,
-         "grade": 8,
-         "comments": "comments"},
-         {"id": 2,
-         "grade": 6,
-         "comments": "comments"},
-         {"id": 3,
-         "grade": 8,
-         "comments": "comments"},
-         {"id": 4,
-         "grade": 6,
-         "comments": "comments"}
+      "id": 2,
+      "title": "Book",
+      "author": "Author",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
+      "description": "description",
+      "notes": "no notes",
+      "projects": [
+        {
+          "id": 3,
+          "name": "first draft book report book2",
+          "description": "description",
+          "startDate": "2024-11-08",
+          "dueDate": "2024-11-08"
+        },
+        {
+          "id": 4,
+          "name": "final book report book2",
+          "description": "description",
+          "startDate": "2024-11-08",
+          "dueDate": "2024-11-17"
+        },
+        {
+          "id": "add ID",
+          "name": "another book report",
+          "description": "write even more book reports!",
+          "startDate": "2024-11-08",
+          "dueDate": "2024-11-09"
+        }
+      ]
+    }
+  ],
+  "roster": [
+    {
+      "id": 1,
+      "fullName": "Jacqueline",
+      "projects": [
+        {
+          "id": 1,
+          "grade": 8,
+          "comments": "comments"
+        },
+        {
+          "id": 2,
+          "grade": 6,
+          "comments": "comments"
+        },
+        {
+          "id": 3,
+          "grade": 8,
+          "comments": "comments"
+        },
+        {
+          "id": 4,
+          "grade": 6,
+          "comments": "comments"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "fullName": "Jessie",
+      "projects": [
+        {
+          "id": 1,
+          "grade": 8,
+          "comments": "comments"
+        },
+        {
+          "id": 2,
+          "grade": 6,
+          "comments": "comments"
+        },
+        {
+          "id": 3,
+          "grade": 8,
+          "comments": "comments"
+        },
+        {
+          "id": 4,
+          "grade": 6,
+          "comments": "comments"
+        }
       ]
     }
   ]
