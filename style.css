@@ -138,6 +138,12 @@ header.minimized .tab-names {
 
 .book-info {
   position: relative;
+  padding: 10px;
+}
+
+.book-info img {
+  height: 150px;
+  width: 120px;
 }
 
 .overlay {
@@ -168,8 +174,8 @@ header.minimized .tab-names {
 .book-listing {
   margin: 10px;
   padding: 0px;
-  height: 50%;
-  max-width: 22%;
+  height: 350px;
+  width: 200px;
   background-color: white;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
@@ -199,29 +205,21 @@ footer img {
   justify-items: center;
 }
 
+#new-assignment-descr, #edit-assignment-descr, #edit-comments, #proj-detail-description {
+  height: 100px;
+  /* text-align: top-right; */
+}
+
 .hidden {
   display: none;
 }
 
 #curriculum-books {
-  /* position: absolute; */
-  display:flex;
-  height: 30%;
-}
-
-#curriculum-books h2 {
-  /* position: absolute; */
-  height: 20%;
-}
-
-#curriculum-books p {
-  /* position: absolute; */
-  height: 10%;
-}
-
-#curriculum-books img {
-  /* position: absolute; */
-  height: 40%;
+  display: flex;
+  overflow-x: auto; /* Adds a horizontal scrollbar when needed */
+  margin: 20px;
+  /* background-color: white; */
+  border: 2px solid black;
 }
 
 #curriculum-books .book-info {

@@ -54,6 +54,105 @@
           "dueDate": "2024-11-09"
         }
       ]
+    },
+    {
+      "id": 3,
+      "title": "Book",
+      "author": "Author",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
+      "description": "Author",
+      "notes": "no notes",
+      "projects": []
+    },
+    {
+      "id": 4,
+      "title": "Book",
+      "author": "Author",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
+      "description": "Author",
+      "notes": "no notes",
+      "projects": []
+    },
+    {
+      "id": 5,
+      "title": "Book",
+      "author": "Author",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
+      "description": "Author",
+      "notes": "no notes",
+      "projects": []
+    },
+    {
+      "id": 6,
+      "title": "Book",
+      "author": "Author",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
+      "description": "Author",
+      "notes": "no notes",
+      "projects": []
+    },
+    {
+      "id": 7,
+      "title": "Book",
+      "author": "Author",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
+      "description": "Author",
+      "notes": "no notes",
+      "projects": []
+    },
+    {
+      "id": 8,
+      "title": "Book",
+      "author": "Author",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
+      "description": "Author",
+      "notes": "no notes",
+      "projects": []
+    },
+    {
+      "id": 9,
+      "title": "Book",
+      "author": "Author",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
+      "description": "Author",
+      "notes": "no notes",
+      "projects": []
+    },
+    {
+      "id": 10,
+      "title": "Book",
+      "author": "Author",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
+      "description": "Author",
+      "notes": "no notes",
+      "projects": []
+    },
+    {
+      "id": 11,
+      "title": "Book",
+      "author": "Author",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
+      "description": "Author",
+      "notes": "no notes",
+      "projects": []
+    },
+    {
+      "id": 12,
+      "title": "Book",
+      "author": "Author",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
+      "description": "Author",
+      "notes": "no notes",
+      "projects": []
+    },
+    {
+      "id": 13,
+      "title": "Book",
+      "author": "Author",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
+      "description": "Author",
+      "notes": "no notes",
+      "projects": []
     }
   ],
   "roster": [

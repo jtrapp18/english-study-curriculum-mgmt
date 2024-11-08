@@ -5,8 +5,8 @@
         <title>My Curriculum</title>
         <script defer src="script.js"></script>
         <!-- <script defer src="grading.js"></script> -->
+        <script defer src="curriculum.js"></script>         
         <script defer src="booklist.js"></script>
-        <script defer src="curriculum.js"></script>
     </head>
     <body>
         <header>
@@ -30,32 +30,10 @@
                 <input type="text" id="nook-search" name="nook-search">
             </form>
             <div id="all-books">
-                <div class="book-listing">
-                    <div class="book-info">                   
-                        <h2>book title</h2>
-                        <p>author</p>
-                        <img src="./img/about-me/hiking.jpg" alt="Going for a hike">
-                        <div class="overlay">
-                            <p>add book description here</p>
-                        </div>
-                    </div>
-                    
-                    <button>add book to curriculum</button>
-                </div>
-                <div class="book-listing">
-                    <div class="book-info">                
-                        <h2>book title</h2>
-                        <p>author</p>
-                        <img src="./img/about-me/hiking.jpg" alt="Going for a hike">
-                        <div class="overlay">
-                            <p>add book description here</p>
-                        </div>
-                    </div>
-                    <button>add book to curriculum</button>
-                </div>
             </div>
         </div>
         <div id="curriculum" class="tab-content">
+            <p>Click book below to view / edit / add related assignments</p>
             <div id="curriculum-books">
             </div>
             <div id="add-assignment">
@@ -74,7 +52,6 @@
             </div>
             <div id="edit-assignment">
                 <select id="assignment-options" class="hidden">
-                    <option>add dropdown with all assignments for selected book</option>
                 </select>
                 <form class="hidden">
                     <label for="edit-assignment-name">Name:</label>
@@ -91,7 +68,6 @@
         </div>
         <div id="grading" class="tab-content">
             <select id="student-select">
-                <option>add dropdown with all students on roster</option>
             </select>
             <div id="student">
                 <h3 id="student-id"></h3>
