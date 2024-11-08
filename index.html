@@ -4,7 +4,8 @@
         <link rel="stylesheet" href="style.css" />
         <title>My Curriculum</title>
         <script defer src="script.js"></script>
-        <script defer src="grading.js"></script>
+        <!-- <script defer src="grading.js"></script> -->
+        <script defer src="curriculum.js"></script>
     </head>
     <body>
         <header>
@@ -54,32 +55,36 @@
             </div>
         </div>
         <div id="curriculum" class="tab-content">
-            <select id="book-options">
-                <option>add dropdown with all books from curriculum</option>
-            </select>            
-            <form id="add-assignment">
-                <label for="new-assignment-name">Name:</label>
-                <input type="text" id="new-assignment-name" name="new-assignment-name">
-                <label for="new-assignment-descr">Description:</label>
-                <input type="text" id="new-assignment-descr" name="new-assignment-descr">
-                <label for="new-assignment-start">Start Date:</label>
-                <input type="date" id="new-assignment-start" name="new-assignment-start">
-                <label for="new-assignment-due">Due Date:</label>
-                <input type="date" id="new-assignment-due" name="new-assignment-due">
-            </form>
-            <div id="edit-assignment-info">
-                <select id="assignment-options">
+            <div id="curriculum-books">
+            </div>
+            <div id="add-assignment">
+                <button class="hidden">Add New Assignment</button>
+                <form class="hidden">
+                    <label for="new-assignment-name">Name:</label>
+                    <input type="text" id="new-assignment-name" name="new-assignment-name">
+                    <label for="new-assignment-descr">Description:</label>
+                    <input type="text" id="new-assignment-descr" name="new-assignment-descr">
+                    <label for="new-assignment-start">Start Date:</label>
+                    <input type="date" id="new-assignment-start" name="new-assignment-start">
+                    <label for="new-assignment-due">Due Date:</label>
+                    <input type="date" id="new-assignment-due" name="new-assignment-due">
+                    <input type="submit" id='submit-new' value="Add New Assignment" />
+                </form>
+            </div>
+            <div id="edit-assignment">
+                <select id="assignment-options" class="hidden">
                     <option>add dropdown with all assignments for selected book</option>
                 </select>
-                <form id="edit-assignment">
+                <form class="hidden">
                     <label for="edit-assignment-name">Name:</label>
                     <input type="text" id="edit-assignment-name" name="edit-ssignment-name">
                     <label for="edit-assignment-descr">Description:</label>
                     <input type="text" id="edit-assignment-descr" name="edit-assignment-descr">
                     <label for="edit-assignment-start">Start Date:</label>
-                    <input type="date" id="assignment-start" name="edit-assignment-start">
+                    <input type="date" id="edit-assignment-start" name="edit-assignment-start">
                     <label for="edit-assignment-due">Due Date:</label>
                     <input type="date" id="edit-assignment-due" name="edit-assignment-due">
+                    <input type="submit" id='submit-edit' value="Edit Assignment" />
                 </form>
             </div>
         </div>
@@ -87,7 +92,27 @@
             <select id="student-select">
                 <option>add dropdown with all students on roster</option>
             </select>
-            <p>populate information for grading</p>
+            <div id="student">
+                <h3 id="student-id"></h3>
+                <p id="student-name"></p>
+            </div>
+            <div id="student-assigments">
+                <ul></ul>
+            </div>
+            <div id="assignment-detail">
+                <h2 id="proj-detail-id"></h2>
+                <p id="proj-detail-name"></p>
+                <p id="proj-detail-description"></p>
+                <p id="proj-detail-start"></p>
+                <p id="proj-detail-due"></p>
+            </div>
+            <form id="grading-form">
+                <label for="edit-grade">Name:</label>
+                <input type="text" id="edit-grade" name="edit-grade">
+                <label for="edit-comments">Description:</label>
+                <input type="text" id="edit-comments" name="edit-comments">
+                <input type="submit" id='submit-grade' value="Submit Grade" />
+            </form>
         </div>
         <footer>
             <a href="https://www.instagram.com/brooke.buster">
