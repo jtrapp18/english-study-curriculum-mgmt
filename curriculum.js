@@ -60,7 +60,7 @@ function addDropdownListener(dropdown, type) {
     .then(data => {objKey[type].obj=data});
 }
 
-function renderBook(book) {
+function renderClassBook(book) {
     const curriculumBooks = document.querySelector("#curriculum-books");
     const newBook = document.createElement("div");
     newBook.classList.add("book-info")
@@ -90,10 +90,10 @@ function renderBook(book) {
     })
 }
 
-function renderBooks() {
+function renderClassBooks() {
     getJSON("books")
     .then(books => {
-        books.forEach(renderBook);
+        books.forEach(renderClassBook);
         projToBookMap = mapProjToBook(books);
     })
     .catch(e => console.error(e));
@@ -287,8 +287,15 @@ function patchInfoById(type, Id, jsonObj) {
     .catch(e => console.error(e));
 }
 
+function enableDisableForm(form, disable=true) {
+    const elements = form.elements;
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].disabled = disable; // Re-enables each form element
+    }
+}
+
 function main() {
-    renderBooks();
+    renderClassBooks();
     // findInfoByDbKey("books");
     addSubmitListener();
     findInfoByDbKey("roster");

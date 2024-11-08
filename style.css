@@ -138,6 +138,12 @@ header.minimized .tab-names {
 
 .book-info {
   position: relative;
+  padding: 10px;
+}
+
+.book-info img {
+  height: 150px;
+  width: 120px;
 }
 
 .overlay {
@@ -168,8 +174,8 @@ header.minimized .tab-names {
 .book-listing {
   margin: 10px;
   padding: 0px;
-  height: 50%;
-  max-width: 22%;
+  height: 350px;
+  width: 200px;
   background-color: white;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
@@ -197,6 +203,12 @@ footer img {
 
 #add-assignment, #edit-assignment {
   justify-items: center;
+  background-color: rgb(250, 250, 250);
+}
+
+#new-assignment-descr, #edit-assignment-descr, #edit-comments, #proj-detail-description {
+  height: 100px;
+  /* text-align: top-right; */
 }
 
 .hidden {
@@ -204,26 +216,53 @@ footer img {
 }
 
 #curriculum-books {
-  /* position: absolute; */
-  display:flex;
-  height: 30%;
-}
-
-#curriculum-books h2 {
-  /* position: absolute; */
-  height: 20%;
-}
-
-#curriculum-books p {
-  /* position: absolute; */
-  height: 10%;
-}
-
-#curriculum-books img {
-  /* position: absolute; */
-  height: 40%;
+  display: flex;
+  overflow-x: auto; /* Adds a horizontal scrollbar when needed */
+  margin: 20px;
+  /* background-color: white; */
+  border: 2px solid black;
 }
 
 #curriculum-books .book-info {
   cursor: pointer;
+}
+
+label {
+  width: 120px; /* Set a fixed width for the label */
+  margin-right: 10px; /* Space between label and input */
+  font-weight: bold;
+  text-align: right; /* Aligns text to the right within label */
+}
+
+input[type="text"],
+input[type="date"] {
+  width: 100%; /* Makes input fields take up the remaining space */
+  padding: 5px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.edit-mode input[type="text"],
+.edit-mode input[type="date"] {
+  width: 100%; /* Makes input fields take up the remaining space */
+  padding: 5px;
+  border: 2px solid #007bff;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  width: auto;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }

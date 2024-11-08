@@ -5,8 +5,8 @@
         <title>My Curriculum</title>
         <script defer src="script.js"></script>
         <!-- <script defer src="grading.js"></script> -->
+        <script defer src="curriculum.js"></script>         
         <script defer src="booklist.js"></script>
-        <script defer src="curriculum.js"></script>
     </head>
     <body>
         <header>
@@ -30,68 +30,60 @@
                 <input type="text" id="nook-search" name="nook-search">
             </form>
             <div id="all-books">
-                <div class="book-listing">
-                    <div class="book-info">                   
-                        <h2>book title</h2>
-                        <p>author</p>
-                        <img src="./img/about-me/hiking.jpg" alt="Going for a hike">
-                        <div class="overlay">
-                            <p>add book description here</p>
-                        </div>
-                    </div>
-                    
-                    <button>add book to curriculum</button>
-                </div>
-                <div class="book-listing">
-                    <div class="book-info">                
-                        <h2>book title</h2>
-                        <p>author</p>
-                        <img src="./img/about-me/hiking.jpg" alt="Going for a hike">
-                        <div class="overlay">
-                            <p>add book description here</p>
-                        </div>
-                    </div>
-                    <button>add book to curriculum</button>
-                </div>
             </div>
         </div>
         <div id="curriculum" class="tab-content">
+            <p>Click book below to view / edit / add related assignments</p>
             <div id="curriculum-books">
             </div>
             <div id="add-assignment">
                 <button class="hidden">Add New Assignment</button>
-                <form class="hidden">
-                    <label for="new-assignment-name">Name:</label>
-                    <input type="text" id="new-assignment-name" name="new-assignment-name">
-                    <label for="new-assignment-descr">Description:</label>
-                    <input type="text" id="new-assignment-descr" name="new-assignment-descr">
-                    <label for="new-assignment-start">Start Date:</label>
-                    <input type="date" id="new-assignment-start" name="new-assignment-start">
-                    <label for="new-assignment-due">Due Date:</label>
-                    <input type="date" id="new-assignment-due" name="new-assignment-due">
+                <form class="hidden edit-mode">
+                    <div class="form-group">
+                        <label for="new-assignment-name">Name:</label>
+                        <input type="text" id="new-assignment-name" name="new-assignment-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="new-assignment-descr">Description:</label>
+                        <input type="text" id="new-assignment-descr" name="new-assignment-descr">
+                    </div>                   
+                    <div class="form-group">
+                        <label for="new-assignment-start">Start Date:</label>
+                        <input type="date" id="new-assignment-start" name="new-assignment-start">
+                    </div>
+                    <div class="form-group">
+                        <label for="new-assignment-due">Due Date:</label>
+                        <input type="date" id="new-assignment-due" name="new-assignment-due">
+                    </div>
                     <input type="submit" id='submit-new' value="Submit New Assignment" />
                 </form>
             </div>
             <div id="edit-assignment">
                 <select id="assignment-options" class="hidden">
-                    <option>add dropdown with all assignments for selected book</option>
                 </select>
                 <form class="hidden">
-                    <label for="edit-assignment-name">Name:</label>
-                    <input type="text" id="edit-assignment-name" name="edit-ssignment-name">
-                    <label for="edit-assignment-descr">Description:</label>
-                    <input type="text" id="edit-assignment-descr" name="edit-assignment-descr">
-                    <label for="edit-assignment-start">Start Date:</label>
-                    <input type="date" id="edit-assignment-start" name="edit-assignment-start">
-                    <label for="edit-assignment-due">Due Date:</label>
-                    <input type="date" id="edit-assignment-due" name="edit-assignment-due">
+                    <div class="form-group">
+                        <label for="edit-assignment-name">Name:</label>
+                        <input type="text" id="edit-assignment-name" name="edit-ssignment-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-assignment-descr">Description:</label>
+                        <input type="text" id="edit-assignment-descr" name="edit-assignment-descr">
+                    </div>  
+                    <div class="form-group">
+                        <label for="edit-assignment-start">Start Date:</label>
+                        <input type="date" id="edit-assignment-start" name="edit-assignment-start">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-assignment-due">Due Date:</label>
+                        <input type="date" id="edit-assignment-due" name="edit-assignment-due">
+                    </div>
                     <input type="submit" id='submit-edit' value="Edit Assignment" />
                 </form>
             </div>
         </div>
         <div id="grading" class="tab-content">
             <select id="student-select">
-                <option>add dropdown with all students on roster</option>
             </select>
             <div id="student">
                 <h3 id="student-id"></h3>
@@ -108,10 +100,14 @@
                 <p id="proj-detail-due"></p>
             </div>
             <form id="grading-form">
-                <label for="edit-grade">Name:</label>
-                <input type="text" id="edit-grade" name="edit-grade">
-                <label for="edit-comments">Description:</label>
-                <input type="text" id="edit-comments" name="edit-comments">
+                <div class="form-group">
+                    <label for="edit-grade">Grade:</label>
+                    <input type="text" id="edit-grade" name="edit-grade">
+                </div>
+                <div class="form-group">
+                    <label for="edit-comments">Description:</label>
+                    <input type="text" id="edit-comments" name="edit-comments">
+                </div>
                 <input type="submit" id='submit-grade' value="Submit Grade" />
             </form>
         </div>
