@@ -1,8 +1,9 @@
-const objKey = {books: {obj: {}, dropdownName: "book-options", dropdownContent: "title"},
-                roster: {obj: {}, dropdownName: "student-select", dropdownContent: "fullName"},
-                studentBook: {obj: {}},
-                studentProj: {obj: {}, dropdownName: "assignment-options", dropdownContent: "name"}
+const objKey = {books: {},
+                students: {},
+                studentBook: {},
+                studentProj: {}
             };
+
 let projToBookMap;
 
 function populateDropdown(dropdown, options) {
@@ -75,17 +76,30 @@ function getEmbeddedJSON(base, embedded) {
       })
 }
 
-function findInfoByDbKey(type) {
-    getJSON(type)
-    .then(data => {
-        const dropdown = document.querySelector(`#${objKey[type].dropdownName}`);
-        const dropdownContent = objKey[type].dropdownContent
-        const options = data.map(item => `${item[dropdownContent]} [ID: ${item.id}]`);
+function renderStudents() {
+    getEmbeddedJSON("students", "grades")
+    .then(students => {
+        const dropdown = document.querySelector(`#student-select`);
+        // const dropdownContent = objKey[type].dropdownContent
+        // const options = data.map(item => `${item[dropdownContent]} [ID: ${item.id}]`);
+        const studentNames = students.map(student => student.fullName)
 
-        populateDropdown(dropdown, options);
+        console.log(studentNames)
+        populateDropdown(dropdown, studentNames);
 
         dropdown.addEventListener("change", ()=> {
-            addDropdownListener(dropdown, type);
+
+            console.log(dropdown.value);
+
+            const student = students.find(student => student.fullName === dropdown.value)
+
+            renderPerson(student);
+
+            document.querySelector("#student-assignments").classList.remove("hidden")
+            student.grades.forEach(renderStudentTblRow);
+
+
+
         })
     })
     .catch(e => console.error(e));
@@ -97,7 +111,7 @@ function addDropdownListener(dropdown, type) {
 
     const Id = selected.match(/\[ID: (\d+)\]/)[1];
     fetchInfoById(type, Id)
-    .then(data => {objKey[type].obj=data});
+    .then(data => {objKey[type]=data});
 }
 
 function renderClassBook(book) {
@@ -125,7 +139,7 @@ function renderClassBook(book) {
     curriculumBooks.append(newBook);
 
     newBook.addEventListener("click", () => {
-        objKey.books.obj = book;
+        objKey.books = book;
         selectedBook = document.querySelector("#selected-book");
         selectedBook.classList.remove("hidden");
         selectedBook.innerHTML = newBook.innerHTML;
@@ -181,7 +195,7 @@ function renderEditAssignment(assignment) {
 
         // if form is in edit mode, submit changes
         if (submitBtn.value === "SUBMIT CHANGES") {
-            submitProjEdits(assignment.id)
+            submitProjEdits(assignment.id, objKey.books.id)
         }
 
         // if button reads 'EDIT FORM', need to enable form for editing
@@ -189,24 +203,44 @@ function renderEditAssignment(assignment) {
     })
 }
 
-function submitProjEdits(projID) {
+function submitProjEdits(projId, bookId) {
     
     const editProjForm = document.querySelector("#edit-assignment form")
     
     const updatedProj = {
-        id: projID,
+        id: projId,
         name: editProjForm["edit-assignment-name"].value,
         description: editProjForm["edit-assignment-descr"].value,
         startDate: editProjForm["edit-assignment-start"].value,
         dueDate: editProjForm["edit-assignment-due"].value,
-        bookId: objKey.books.obj.id
+        bookId: bookId
         }
 
-    const projects = objKey.books.obj.projects
-    const projIndex = projects.findIndex(project => project.id == projID); // returns 1
-    objKey.books.obj.projects[projIndex] = updatedProj
+    const projects = objKey.books.projects
+    const projIndex = projects.findIndex(project => project.id == projId); // returns 1
+    objKey.books.projects[projIndex] = updatedProj
 
-    patchInfoById("projects", projID, updatedProj)
+    patchInfoById("projects", projId, updatedProj)
+}
+
+function submitGradeEdits(gradeId, studentId, projectId) {
+    // JET note: this is not complete
+    const gradingForm = document.querySelector("#edit-grading form")
+    
+    const updatedGrade = {
+        id: gradeId,
+        points: gradingForm["edit-grade"].value,
+        comments: gradingForm["edit-comments"].value,
+        studentId: studentId,
+        projectId: projectId
+        }
+    console.log(updatedGrade)
+
+    // const projects = objKey.books.projects
+    // const projIndex = projects.findIndex(project => project.id == projID); // returns 1
+    // objKey.books.projects[projIndex] = updatedGrade
+
+    patchInfoById("grades", gradeId, updatedGrade)
 }
 
 function renderPerson(student) {
@@ -234,51 +268,61 @@ function renderAssignmentInfo(assignment) {
     projEnd.textContent = assignment.dueDate
 }
 
-function renderStudentGrade(assignment) {
+function renderStudentGrade(grade) {
 
-    const gradingForm = document.querySelector("#grading-form");
+    const gradingForm = document.querySelector("#edit-grading form");
 
     const assignmentGrade = gradingForm["edit-grade"];
-    assignmentGrade.value = assignment.grade;
+    assignmentGrade.value = grade.points;
 
     const assignmentComments = gradingForm["edit-comments"];
-    assignmentComments.value = assignment.comments;
-}
+    assignmentComments.value = grade.comments;
 
-function listAssignmentsByStudent(student) {
-    const assignments = student.projects;
-    const studentAssignments = document.querySelector("#student-assigments ul");
+    enableDisableForm(gradingForm, true);
 
-    studentAssignments.innerHTML = "";
+    gradingForm.addEventListener("submit", (e) => {
 
-    assignments.forEach(assignment => {
-        const addAssignment = document.createElement("li");
-        addAssignment.textContent = `Assignment ID: ${assignment.id}, Grade: ${assignment.grade}`;
+        e.preventDefault();
+        
+        const submitBtn = document.querySelector("#submit-grade");
 
-        studentAssignments.append(addAssignment);
+        // if form is in edit mode, submit changes
+        if (submitBtn.value === "SUBMIT CHANGES") {
+            submitGradeEdits(grade.id, objKey.students.id, objKey.studentProj.id)
+        }
 
-        addAssignment.addEventListener("click", () => {
-            const bookId = assignment.bookId; //find id of book based on mapping
+        // if button reads 'EDIT FORM', need to enable form for editing
+        enableDisableForm(gradingForm, submitBtn.value !== "EDIT FORM");
 
-            fetchInfoById("books", bookId)
-            .then(book => {
-                objKey.studentBook.obj=book
-                const bookProjects = objKey.studentBook.obj.projects; //find list of projects for active book
-                const projCurr = bookProjects[assignment.id]; //find details for selected project        
-                renderAssignmentInfo(projCurr);        
-            });
-
-            renderStudentGrade(assignment);
-        })
     })
 }
 
-document.querySelector("#student-select").addEventListener("change", ()=> {
-    const student = objKey.roster.obj;
+function renderStudentTblRow(grade) {
 
-    renderPerson(student);
-    listAssignmentsByStudent(student);
-})
+    const table = document.querySelector("#student-assignments table");
+    const row = document.createElement("tr");
+
+    const projId = document.createElement("td");
+    projId.textContent = grade.projectId;
+
+    const projPoints = document.createElement("td");
+    projPoints.textContent = grade.points;
+
+    const projComments = document.createElement("td");
+    projComments.textContent = grade.comments;
+
+    const editGrade = document.createElement("td");
+    editGrade.textContent = "edit";
+    editGrade.classList.add("edit-column")
+
+    row.append(projId, projPoints, projComments, editGrade);
+    table.append(row);
+
+    editGrade.addEventListener("click", () => {
+        document.querySelector("#edit-grading").classList.remove("hidden");
+        renderStudentGrade(grade);
+    })
+}
 
 function addSubmitListener() {
 
@@ -292,11 +336,11 @@ function addSubmitListener() {
             description: newProjForm["new-assignment-descr"].value,
             startDate: newProjForm["new-assignment-start"].value,
             dueDate: newProjForm["new-assignment-due"].value,
-            bookId: objKey.books.obj.id
+            bookId: objKey.books.id
             }
         
         // JET note to review below push -- may need to remove
-        objKey.books.obj.projects.push(newProj);
+        objKey.books.projects.push(newProj);
 
         postNewRecord("projects", newProj)
         renderProjTblRow(newProj);
@@ -365,7 +409,9 @@ function main() {
     renderClassBooks();
     // findInfoByDbKey("books");
     addSubmitListener();
-    findInfoByDbKey("roster");
+    renderStudents();
+    findInfoByDbKey("students");
+
 }
 
 main();

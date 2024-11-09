@@ -1,4 +1,20 @@
 {
+  "grades": [
+    {
+      "id": 1,
+      "points": 8,
+      "comments": "great work",
+      "studentId": 1,
+      "projectId": 1
+    },
+    {
+      "id": 2,
+      "points": "7",
+      "comments": "good work!",
+      "studentId": 2,
+      "projectId": 1
+    }
+  ],
   "projects": [
     {
       "id": 1,
@@ -42,8 +58,7 @@
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
       "description": "Author",
-      "notes": "no notes",
-      "projects": []
+      "notes": "no notes"
     },
     {
       "id": 2,
@@ -51,8 +66,7 @@
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
       "description": "description",
-      "notes": "no notes",
-      "projects": []
+      "notes": "no notes"
     },
     {
       "id": 3,
@@ -60,8 +74,7 @@
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
       "description": "Author",
-      "notes": "no notes",
-      "projects": []
+      "notes": "no notes"
     },
     {
       "id": 4,
@@ -69,8 +82,7 @@
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
       "description": "Author",
-      "notes": "no notes",
-      "projects": []
+      "notes": "no notes"
     },
     {
       "id": 5,
@@ -78,8 +90,7 @@
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
       "description": "Author",
-      "notes": "no notes",
-      "projects": []
+      "notes": "no notes"
     },
     {
       "id": 6,
@@ -87,8 +98,7 @@
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
       "description": "Author",
-      "notes": "no notes",
-      "projects": []
+      "notes": "no notes"
     },
     {
       "id": 7,
@@ -96,8 +106,7 @@
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
       "description": "Author",
-      "notes": "no notes",
-      "projects": []
+      "notes": "no notes"
     },
     {
       "id": 8,
@@ -105,8 +114,7 @@
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
       "description": "Author",
-      "notes": "no notes",
-      "projects": []
+      "notes": "no notes"
     },
     {
       "id": 9,
@@ -114,8 +122,7 @@
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
       "description": "Author",
-      "notes": "no notes",
-      "projects": []
+      "notes": "no notes"
     },
     {
       "id": 10,
@@ -123,8 +130,7 @@
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
       "description": "Author",
-      "notes": "no notes",
-      "projects": []
+      "notes": "no notes"
     },
     {
       "id": 11,
@@ -132,8 +138,7 @@
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
       "description": "Author",
-      "notes": "no notes",
-      "projects": []
+      "notes": "no notes"
     },
     {
       "id": 12,
@@ -141,8 +146,7 @@
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
       "description": "Author",
-      "notes": "no notes",
-      "projects": []
+      "notes": "no notes"
     },
     {
       "id": 13,
@@ -150,11 +154,10 @@
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
       "description": "Author",
-      "notes": "no notes",
-      "projects": []
+      "notes": "no notes"
     }
   ],
-  "roster": [
+  "students": [
     {
       "id": 1,
       "fullName": "Jacqueline",
@@ -162,21 +165,6 @@
         {
           "id": 1,
           "grade": 8,
-          "comments": "comments"
-        },
-        {
-          "id": 2,
-          "grade": 6,
-          "comments": "comments"
-        },
-        {
-          "id": 3,
-          "grade": 8,
-          "comments": "comments"
-        },
-        {
-          "id": 4,
-          "grade": 6,
           "comments": "comments"
         }
       ]
@@ -188,21 +176,6 @@
         {
           "id": 1,
           "grade": 8,
-          "comments": "comments"
-        },
-        {
-          "id": 2,
-          "grade": 6,
-          "comments": "comments"
-        },
-        {
-          "id": 3,
-          "grade": 8,
-          "comments": "comments"
-        },
-        {
-          "id": 4,
-          "grade": 6,
           "comments": "comments"
         }
       ]

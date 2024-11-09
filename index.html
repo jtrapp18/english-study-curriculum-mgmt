@@ -103,11 +103,20 @@
             <select id="student-select">
             </select>
             <div id="student">
-                <h3 id="student-id"></h3>
-                <p id="student-name"></p>
+                <p id="student-id"></p>
+                <h2 id="student-name"></h2>
             </div>
-            <div id="student-assigments">
+            <div id="student-assignments" class="hidden">
                 <ul></ul>
+                <h2>Student Assignments</h2>
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Assignment</th>
+                        <th>Grade</th>
+                        <th>Edit</th>
+                      </tr>
+                </table>
             </div>
             <div id="assignment-detail">
                 <h2 id="proj-detail-id"></h2>
@@ -116,17 +125,19 @@
                 <p id="proj-detail-start"></p>
                 <p id="proj-detail-due"></p>
             </div>
-            <form id="grading-form">
-                <div class="form-group">
-                    <label for="edit-grade">Grade:</label>
-                    <input type="text" id="edit-grade" name="edit-grade">
-                </div>
-                <div class="form-group">
-                    <label for="edit-comments">Description:</label>
-                    <input type="text" id="edit-comments" name="edit-comments">
-                </div>
-                <input type="submit" id='submit-grade' value="Submit Grade" />
-            </form>
+            <div id="edit-grading" class="hidden">
+                <form>
+                    <div class="form-group">
+                        <label for="edit-grade">Grade:</label>
+                        <input type="text" id="edit-grade" name="edit-grade">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-comments">Comments:</label>
+                        <input type="text" id="edit-comments" name="edit-comments">
+                    </div>
+                    <input type="submit" id='submit-grade' value="EDIT FORM" />
+                </form>
+            </div>
         </div>
         <footer>
             <a href="https://www.instagram.com/brooke.buster">
