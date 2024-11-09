@@ -15,6 +15,36 @@ function populateDropdown(dropdown, options) {
     })
 }
 
+function renderProjTblRow(assignment) {
+
+    const table = document.querySelector("#selected-book-assignments table");
+    const row = document.createElement("tr");
+
+    const projId = document.createElement("td");
+    projId.textContent = assignment.id;
+
+    const projName = document.createElement("td");
+    projName.textContent = assignment.name;
+
+    const projStart = document.createElement("td");
+    projStart.textContent = assignment.startDate;
+
+    const projDue = document.createElement("td");
+    projDue.textContent = assignment.dueDate;
+
+    const projEdit = document.createElement("td");
+    projEdit.textContent = "edit";
+    projEdit.classList.add("edit-column")
+
+    row.append(projId, projName, projStart, projDue, projEdit);
+    table.append(row);
+
+    projEdit.addEventListener("click", () => {
+        document.querySelector("#add-assignment").classList.add("hidden");
+        renderEditAssignment(assignment);
+    })
+}
+
 function fetchInfoById(type, Id) {
     return fetch(`http://localhost:3000/${type}/${Id}`)
     .then(res => {
@@ -63,12 +93,12 @@ function addDropdownListener(dropdown, type) {
 function renderClassBook(book) {
     const curriculumBooks = document.querySelector("#curriculum-books");
     const newBook = document.createElement("div");
-    newBook.classList.add("book-info")
+    newBook.classList.add("book-info");
     
     const bookTitle = document.createElement("h2");
     bookTitle.textContent = book.title
 
-    const bookAuthor = document.createElement("p")
+    const bookAuthor = document.createElement("p");
     bookAuthor.textContent = book.author;
 
     const bookImg = document.createElement("img");
@@ -86,6 +116,10 @@ function renderClassBook(book) {
 
     newBook.addEventListener("click", () => {
         objKey.books.obj = book;
+        selectedBook = document.querySelector("#selected-book");
+        selectedBook.classList.remove("hidden");
+        selectedBook.innerHTML = newBook.innerHTML;
+
         findAssignmentsByBook(book);
     })
 }
@@ -100,48 +134,49 @@ function renderClassBooks() {
 }
 
 function findAssignmentsByBook(book) {
+    document.querySelector("#selected-book-assignments").classList.remove("hidden");
 
-    const options = book.projects.map(project => `${project.name} [ID: ${project.id}]`);
-    const dropdown = document.querySelector("#assignment-options");
-    dropdown.classList.remove("hidden");
+    book.projects.forEach(renderProjTblRow);
 
-    populateDropdown(dropdown, options);
-    
-    dropdown.addEventListener("change", ()=> {
+    const newProjBtn = document.querySelector("#selected-book-assignments button");
 
-        const selected = dropdown.value;
-        const Id = selected.match(/\[ID: (\d+)\]/)[1];
-        const assignment = book.projects.find(project => project.id == Id); //find relevent project from book list based on selection
-
-        renderEditAssignment(assignment);
-    })
-
-    const newProjBtn = document.querySelector("#add-assignment button")
-    newProjBtn.classList.remove("hidden")
     newProjBtn.addEventListener("click", ()=> {
-        document.querySelector("#add-assignment form").classList.remove("hidden")
+        document.querySelector("#add-assignment").classList.remove("hidden");
+        document.querySelector("#edit-assignment").classList.add("hidden");
     })
 }
 
 function renderEditAssignment(assignment) {
-    const editProjForm = document.querySelector("#edit-assignment form")
-    editProjForm.classList.remove("hidden")
+    document.querySelector("#edit-assignment").classList.remove("hidden");
+    const editProjForm = document.querySelector("#edit-assignment form");
 
-    const assignmentName = editProjForm["edit-assignment-name"]
-    assignmentName.value = assignment.name
+    const assignmentName = editProjForm["edit-assignment-name"];
+    assignmentName.value = assignment.name;
 
-    const assignmentDescr = editProjForm["edit-assignment-descr"]
-    assignmentDescr.value = assignment.description
+    const assignmentDescr = editProjForm["edit-assignment-descr"];
+    assignmentDescr.value = assignment.description;
 
-    const assignmentStart = editProjForm["edit-assignment-start"]
-    assignmentStart.value = assignment.startDate
+    const assignmentStart = editProjForm["edit-assignment-start"];
+    assignmentStart.value = assignment.startDate;
 
-    const assignmentDue = editProjForm["edit-assignment-due"]
-    assignmentDue.value = assignment.dueDate
+    const assignmentDue = editProjForm["edit-assignment-due"];
+    assignmentDue.value = assignment.dueDate;
+
+    // disable form for editing
+    enableDisableForm(editProjForm, true);
 
     editProjForm.addEventListener("submit", (e)=> {
-        e.preventDefault()
-        submitProjEdits(assignment.id)
+        e.preventDefault();
+        
+        const submitBtn = document.querySelector("#submit-edit");
+
+        // if form is in edit mode, submit changes
+        if (submitBtn.value === "SUBMIT CHANGES") {
+            submitProjEdits(assignment.id)
+        }
+
+        // if button reads 'EDIT FORM', need to enable form for editing
+        enableDisableForm(editProjForm, submitBtn.value !== "EDIT FORM");
     })
 }
 
@@ -248,10 +283,10 @@ document.querySelector("#student-select").addEventListener("change", ()=> {
 
 function addSubmitListener() {
 
-    const newProjForm = document.querySelector("#add-assignment form")
+    const newProjForm = document.querySelector("#add-assignment form");
 
     newProjForm.addEventListener("submit", (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
         const newProj = {
             id: "add ID",
@@ -261,9 +296,11 @@ function addSubmitListener() {
             dueDate: newProjForm["new-assignment-due"].value
             }
         
-        objKey.books.obj.projects.push(newProj)
+        objKey.books.obj.projects.push(newProj);
 
-        patchInfoById("books", objKey.books.obj.id, objKey.books.obj)
+        patchInfoById("books", objKey.books.obj.id, objKey.books.obj);
+        renderProjTblRow(newProj);
+        document.querySelector("#add-assignment").classList.add("hidden");
     })
 }
 
@@ -287,11 +324,21 @@ function patchInfoById(type, Id, jsonObj) {
     .catch(e => console.error(e));
 }
 
-function enableDisableForm(form, disable=true) {
-    const elements = form.elements;
-    for (let i = 0; i < elements.length; i++) {
-      elements[i].disabled = disable; // Re-enables each form element
+function enableDisableForm(form, disable = true) {
+    const inputs = form.querySelectorAll('input:not([type="submit"])')
+    inputs.forEach(input => input.disabled = disable);
+
+    const submitBtn = form.querySelector('input[type="submit"]');
+
+    if (disable) {
+        submitBtn.value = "EDIT FORM"
+        form.classList.remove("edit-mode")
     }
+    else {
+        submitBtn.value = "SUBMIT CHANGES"
+        form.classList.add("edit-mode")
+    }
+
 }
 
 function main() {

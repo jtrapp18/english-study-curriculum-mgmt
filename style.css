@@ -68,6 +68,7 @@ p {
 
 button {
   cursor: pointer;
+  position: relative;
 }
 
 form {
@@ -122,6 +123,7 @@ header.minimized .tab-names {
 .tab-names h2:hover {
   text-decoration: underline;
   color: rgb(188, 71, 71);
+  zoom: 110%;
 }
 
 .tab-content {
@@ -163,6 +165,10 @@ header.minimized .tab-names {
 
 .book-info:hover .overlay {
   opacity: 1; /* Show the overlay on hover */
+}
+
+.book-info:hover {
+  zoom: 120%;
 }
 
 #all-books {
@@ -265,4 +271,35 @@ input[type="submit"] {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+}
+
+#featured-book {
+  display: flex;
+  justify-content: center;
+  border: 2px solid black;
+  background-color: white;
+}
+
+table, th, td {
+  border: .5px solid black;
+  color: black;
+  position: relative;
+}
+
+#selected-book-assignments {
+  margin-left: 5%;
+}
+
+#featured-book, #edit-assignment, #add-assignment {
+  padding: 15px;
+  border: 2px solid black;
+  margin: 20px;
+}
+
+.edit-column {
+  cursor: pointer;
+}
+
+.edit-column:hover {
+  color: green;
 }
