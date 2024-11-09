@@ -65,6 +65,16 @@ function getJSON(type) {
       })
 }
 
+function getEmbeddedJSON(base, embedded) {
+    return fetch(`http://localhost:3000/${base}?_embed=${embedded}`)
+    .then(res => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! Status: ${res.status}`);
+        }
+        return res.json();
+      })
+}
+
 function findInfoByDbKey(type) {
     getJSON(type)
     .then(data => {
@@ -125,10 +135,9 @@ function renderClassBook(book) {
 }
 
 function renderClassBooks() {
-    getJSON("books")
+    getEmbeddedJSON("books", "projects")
     .then(books => {
         books.forEach(renderClassBook);
-        projToBookMap = mapProjToBook(books);
     })
     .catch(e => console.error(e));
 }
@@ -189,14 +198,15 @@ function submitProjEdits(projID) {
         name: editProjForm["edit-assignment-name"].value,
         description: editProjForm["edit-assignment-descr"].value,
         startDate: editProjForm["edit-assignment-start"].value,
-        dueDate: editProjForm["edit-assignment-due"].value
+        dueDate: editProjForm["edit-assignment-due"].value,
+        bookId: objKey.books.obj.id
         }
 
     const projects = objKey.books.obj.projects
     const projIndex = projects.findIndex(project => project.id == projID); // returns 1
     objKey.books.obj.projects[projIndex] = updatedProj
 
-    patchInfoById("books", objKey.books.obj.id, objKey.books.obj)
+    patchInfoById("projects", projID, updatedProj)
 }
 
 function renderPerson(student) {
@@ -248,7 +258,7 @@ function listAssignmentsByStudent(student) {
         studentAssignments.append(addAssignment);
 
         addAssignment.addEventListener("click", () => {
-            const bookId = projToBookMap[assignment.id]; //find id of book based on mapping
+            const bookId = assignment.bookId; //find id of book based on mapping
 
             fetchInfoById("books", bookId)
             .then(book => {
@@ -261,17 +271,6 @@ function listAssignmentsByStudent(student) {
             renderStudentGrade(assignment);
         })
     })
-}
-
-function mapProjToBook(books) {
-    return books.reduce((bookAccum, book) => {
-        const projAccum = book.projects.reduce((projAccum, project) => {
-            const newEntry = { [project.id]: book.id };
-            return { ...projAccum, ...newEntry };
-        }, {});
-
-        return { ...bookAccum, ...projAccum };
-    }, {});
 }
 
 document.querySelector("#student-select").addEventListener("change", ()=> {
@@ -289,19 +288,40 @@ function addSubmitListener() {
         e.preventDefault();
 
         const newProj = {
-            id: "add ID",
             name: newProjForm["new-assignment-name"].value,
             description: newProjForm["new-assignment-descr"].value,
             startDate: newProjForm["new-assignment-start"].value,
-            dueDate: newProjForm["new-assignment-due"].value
+            dueDate: newProjForm["new-assignment-due"].value,
+            bookId: objKey.books.obj.id
             }
         
+        // JET note to review below push -- may need to remove
         objKey.books.obj.projects.push(newProj);
 
-        patchInfoById("books", objKey.books.obj.id, objKey.books.obj);
+        postNewRecord("projects", newProj)
         renderProjTblRow(newProj);
         document.querySelector("#add-assignment").classList.add("hidden");
     })
+}
+
+function postNewRecord(type, jsonObj) {
+
+    // update data in the backend
+    fetch(`http://localhost:3000/${type}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(jsonObj)
+        })
+        .then(res => {
+            if (!res.ok) {
+            throw new Error(`HTTP error! Status: ${res.status}`);
+            }
+            return res.json();
+        })
+        .then(data => console.log("ADDED", data))
+        .catch(e => console.error(e));
 }
 
 function patchInfoById(type, Id, jsonObj) {
