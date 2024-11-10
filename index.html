@@ -36,9 +36,27 @@
             <p>Click book below to view / edit / add related assignments</p>
             <div id="curriculum-books">
             </div>
-            <div id="add-assignment">
-                <button class="hidden">Add New Assignment</button>
-                <form class="hidden edit-mode">
+            <div id="featured-book">
+                <div id="selected-book" class="hidden">
+                </div>
+                <div id="selected-book-assignments" class="hidden">
+                    <h2>Assignments for Selected Books</h2>
+                    <table>
+                        <tr>
+                          <th>ID</th>
+                          <th>Assignment</th>
+                          <th>Start Date</th>
+                          <th>Due Date</th>
+                          <th>Edit</th>
+                        </tr>
+                      </table>
+                      <button>+ New Assignment</button>
+                </div>
+            </div>
+            <div id="add-assignment" class="hidden">
+                <h2>Add details for new assignment</h2>
+                <form class="edit-mode">
+
                     <div class="form-group">
                         <label for="new-assignment-name">Name:</label>
                         <input type="text" id="new-assignment-name" name="new-assignment-name">
@@ -58,10 +76,9 @@
                     <input type="submit" id='submit-new' value="Submit New Assignment" />
                 </form>
             </div>
-            <div id="edit-assignment">
-                <select id="assignment-options" class="hidden">
-                </select>
-                <form class="hidden">
+            <div id="edit-assignment" class="hidden">
+                <form>
+                    <h2>Assignment Details</h2>
                     <div class="form-group">
                         <label for="edit-assignment-name">Name:</label>
                         <input type="text" id="edit-assignment-name" name="edit-ssignment-name">
@@ -78,7 +95,7 @@
                         <label for="edit-assignment-due">Due Date:</label>
                         <input type="date" id="edit-assignment-due" name="edit-assignment-due">
                     </div>
-                    <input type="submit" id='submit-edit' value="Edit Assignment" />
+                    <input type="submit" id='submit-edit' value="EDIT FORM" />
                 </form>
             </div>
         </div>
@@ -86,11 +103,20 @@
             <select id="student-select">
             </select>
             <div id="student">
-                <h3 id="student-id"></h3>
-                <p id="student-name"></p>
+                <p id="student-id"></p>
+                <h2 id="student-name"></h2>
             </div>
-            <div id="student-assigments">
+            <div id="student-assignments" class="hidden">
                 <ul></ul>
+                <h2>Student Assignments</h2>
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Assignment</th>
+                        <th>Grade</th>
+                        <th>Edit</th>
+                      </tr>
+                </table>
             </div>
             <div id="assignment-detail">
                 <h2 id="proj-detail-id"></h2>
@@ -99,17 +125,19 @@
                 <p id="proj-detail-start"></p>
                 <p id="proj-detail-due"></p>
             </div>
-            <form id="grading-form">
-                <div class="form-group">
-                    <label for="edit-grade">Grade:</label>
-                    <input type="text" id="edit-grade" name="edit-grade">
-                </div>
-                <div class="form-group">
-                    <label for="edit-comments">Description:</label>
-                    <input type="text" id="edit-comments" name="edit-comments">
-                </div>
-                <input type="submit" id='submit-grade' value="Submit Grade" />
-            </form>
+            <div id="edit-grading" class="hidden">
+                <form>
+                    <div class="form-group">
+                        <label for="edit-grade">Grade:</label>
+                        <input type="text" id="edit-grade" name="edit-grade">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-comments">Comments:</label>
+                        <input type="text" id="edit-comments" name="edit-comments">
+                    </div>
+                    <input type="submit" id='submit-grade' value="EDIT FORM" />
+                </form>
+            </div>
         </div>
         <footer>
             <a href="https://www.instagram.com/brooke.buster">
