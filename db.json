@@ -157,22 +157,31 @@
       "notes": "no notes"
     },
     {
-      "id": "bc00",
+      "id": "053e",
       "title": "The Mystery of the Blue Train",
       "author": "Agatha Christie",
       "image": "https://archive.org/download/bwb_KR-538-919/page/cover_w500_h500.jpg",
-      "description": "",
+      "description": "Crimes against",
       "notes": "",
       "apiId": "14575533"
     },
     {
-      "id": "4572",
-      "title": "JavaScript and jQuery",
-      "author": "Jon Duckett",
-      "image": "http://ecx.images-amazon.com/images/I/41oa41LdNdL._SX400_BO1,204,203,200_.jpg",
-      "description": "",
+      "id": "e284",
+      "title": "Python For Data Analysis",
+      "author": "Wes McKinney",
+      "image": "https://archive.org/download/bookcovers/better-world-bookcovers.zip/better-world-bookcovers/9781449319793.jpg",
+      "description": "Programming languages (Electronic computers)",
       "notes": "",
-      "apiId": "7419725"
+      "apiId": "7548132"
+    },
+    {
+      "id": "ae24",
+      "title": "Think Python",
+      "author": "Allen B. Downey",
+      "image": "",
+      "description": "Computer programming",
+      "notes": "",
+      "apiId": "7363360"
     }
   ],
   "students": [
