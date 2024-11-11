@@ -3,6 +3,7 @@
 //////////////////////////////////////////////////////
 
 const bookMenu = document.querySelector("div#all-books")
+const searchForm = document.querySelector("form#search")
 const baseUrl = "https://openlibrary.org" //search.json?q=javascript&fields=*,availability&limit=1
 const coverImgUrl = "https://covers.openlibrary.org"
 
@@ -31,7 +32,6 @@ const renderBook = (book) => {
     const bookListing = document.createElement("div")
     const bookInfo = document.createElement("div")
     const curriculumBtn = document.createElement("button")
-    
     const bookTitle = document.createElement("h2")
     const bookAuthor = document.createElement("p")
     const bookImg = document.createElement("img")
@@ -39,6 +39,7 @@ const renderBook = (book) => {
     const bookSubject = document.createElement("p")
     
     curriculumBtn.innerText = "add book to curriculum"
+    curriculumBtn.dataset.id = book.cover_i
     bookListing.classList.add("book-listing")
     bookInfo.classList.add("book-info")
     bookOverlay.classList.add("overlay")
@@ -65,20 +66,43 @@ const renderBook = (book) => {
     bookListing.append(bookInfo)
     bookListing.append(curriculumBtn)
     bookMenu.append(bookListing)
+
+    curriculumBtn.addEventListener('click',handleCurriculumBtn)
 }
 
 const renderBookList = (searchString) => {
     let query = "mystery"
     if(searchString){
         query = encodeURI(searchString)
-        bookMenu.innerText = ""
+        bookMenu.innerHTML = `
+        <div class="book-listing">
+            <div class="book-info">                   
+                <h2>Books Loading</h2>
+                <p>please wait...</p>
+            </div>
+        </div>`
+        console.log("Loading")
     }
     getJSON(`${baseUrl}/search.json?q=${query}&fields=*,availability&limit=20`)
     .then((data) => {
+        bookMenu.innerText = ""
         for(const book of data.docs){
             renderBook(book)
         }
     })
 }
+
+const handleSearch = (e) => {
+    const searchString = e.target['nook-search'].value
+    e.preventDefault()
+    renderBookList(searchString)
+}
+
+const handleCurriculumBtn = (e) => {
+    const bookId = e.target.dataset.id
+    console.log(bookId)
+}
+
+searchForm.addEventListener('submit',handleSearch)
 
 renderBookList()
