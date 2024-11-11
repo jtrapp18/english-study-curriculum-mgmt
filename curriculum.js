@@ -57,11 +57,14 @@ function renderAssignmentRow(assignment) {
     const assignmentDue = document.createElement("td");
     assignmentDue.textContent = assignment.dueDate;
 
+    const assignmentMaxPoints = document.createElement("td");
+    assignmentMaxPoints.textContent = assignment.maxPoints;
+
     const assignmentEdit = document.createElement("td");
     assignmentEdit.textContent = "edit";
     assignmentEdit.classList.add("edit-column")
 
-    row.append(assignmentId, assignmentName, assignmentStart, assignmentDue, assignmentEdit);
+    row.append(assignmentId, assignmentName, assignmentStart, assignmentDue, assignmentMaxPoints, assignmentEdit);
     table.append(row);
 }
 
@@ -99,6 +102,9 @@ function renderAssignment(assignment) {
     const assignmentDue = form["edit-assignment-due"];
     assignmentDue.value = assignment.dueDate;
 
+    const assignmentMaxPoints = form["edit-assignment-max-points"];
+    assignmentMaxPoints.value = assignment.maxPoints;
+
     disableForm(form); // lock assignment details form by default
 }
 
@@ -115,6 +121,7 @@ function submitAssignmentEdits(assignmentId, bookId) {
         description: form["edit-assignment-descr"].value,
         startDate: form["edit-assignment-start"].value,
         dueDate: form["edit-assignment-due"].value,
+        maxPoints: form["edit-assignment-max-points"].value,
         bookId: bookId
         }
 
@@ -143,6 +150,7 @@ function submitNewAssignment() {
         description: form["new-assignment-descr"].value,
         startDate: form["new-assignment-start"].value,
         dueDate: form["new-assignment-due"].value,
+        maxPoints: form["new-assignment-max-points"].value,
         bookId: bookId
         }
     

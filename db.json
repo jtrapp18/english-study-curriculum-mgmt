@@ -22,10 +22,10 @@
       "id": 3
     },
     {
-      "points": 0,
+      "points": "0",
       "comments": "",
-      "studentId": 2,
-      "assignmentId": 3,
+      "studentId": "2",
+      "assignmentId": "3",
       "id": 4
     },
     {
@@ -103,46 +103,6 @@
       "startDate": "2024-11-08",
       "dueDate": "2024-11-08",
       "bookId": 2
-    },
-    {
-      "name": "",
-      "description": "",
-      "startDate": "",
-      "dueDate": "",
-      "bookId": "1",
-      "id": 3
-    },
-    {
-      "name": "",
-      "description": "",
-      "startDate": "",
-      "dueDate": "",
-      "bookId": "1",
-      "id": 4
-    },
-    {
-      "name": "",
-      "description": "",
-      "startDate": "",
-      "dueDate": "",
-      "bookId": "1",
-      "id": 5
-    },
-    {
-      "name": "",
-      "description": "",
-      "startDate": "",
-      "dueDate": "",
-      "bookId": "1",
-      "id": 6
-    },
-    {
-      "name": "name",
-      "description": "description",
-      "startDate": "2024-11-12",
-      "dueDate": "2024-11-13",
-      "bookId": "1",
-      "id": 7
     }
   ],
   "books": [

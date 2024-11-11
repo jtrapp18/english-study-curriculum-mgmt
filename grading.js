@@ -37,39 +37,61 @@ function renderGradeRow(grade) {
     row.dataset.id = grade.id;
     row.dataset.assignmentId = grade.assignmentId;
 
-    const assignmentId = document.createElement("td");
-    assignmentId.textContent = grade.assignmentId;
+    getJSONById("assignments", grade.assignmentId)
+    .then(assignment => {
 
-    const projPoints = document.createElement("td");
-    projPoints.textContent = grade.points;
+        // show details for individual assignment
 
-    const projComments = document.createElement("td");
-    projComments.textContent = grade.comments;
+        const assignmentId = document.createElement("td");
+        assignmentId.textContent = grade.assignmentId;
 
-    const editGrade = document.createElement("td");
-    editGrade.textContent = "edit";
-    editGrade.classList.add("edit-column")
+        const assignmentName = document.createElement("td");
+        assignmentName.textContent = assignment.name;
 
-    row.append(assignmentId, projPoints, projComments, editGrade);
-    table.append(row);
+        const assignmentStart = document.createElement("td");
+        assignmentStart.textContent = assignment.startDate;
+
+        const assignmentDue = document.createElement("td");
+        assignmentDue.textContent = assignment.dueDate;
+
+        const assignmentMaxPoints = document.createElement("td");
+        assignmentMaxPoints.textContent = assignment.maxPoints;
+
+        // show details for assignment grade
+    
+        const gradePoints = document.createElement("td");
+        gradePoints.textContent = grade.points;
+
+        const percentage = document.createElement("td");
+        percentage.textContent = grade.points/assignment.maxPoints;
+    
+        const editGrade = document.createElement("td");
+        editGrade.textContent = "edit";
+        editGrade.classList.add("edit-column")
+    
+        row.append(assignmentId, assignmentName, assignmentStart, assignmentDue, assignmentMaxPoints, gradePoints, percentage, editGrade);
+        table.append(row);
+    })
+    .catch(e => console.error(e));
 }
 
 function renderAssignmentInfo(assignment) {
+    console.log(assignment)
 
-    const assignmentId = document.querySelector("#proj-detail-id");
+    const assignmentId = document.querySelector("#assignment-detail-id");
     assignmentId.textContent = assignment.id;
 
-    const projName = document.querySelector("#proj-detail-name");
-    projName.textContent = assignment.name;
+    const assignmentName = document.querySelector("#assignment-detail-name");
+    assignmentName.textContent = assignment.name;
 
-    const projDescr = document.querySelector("#proj-detail-description");
-    projDescr.textContent = assignment.description;
+    const assignmentDescr = document.querySelector("#assignment-detail-description");
+    assignmentDescr.textContent = assignment.description;
 
-    const projStart = document.querySelector("#proj-detail-start");
-    projStart.textContent = assignment.startDate;
+    const assignmentStart = document.querySelector("#assignment-detail-start");
+    assignmentStart.textContent = assignment.startDate;
 
-    const projEnd = document.querySelector("#proj-detail-due");
-    projEnd.textContent = assignment.dueDate;
+    const assignmentEnd = document.querySelector("#assignment-detail-due");
+    assignmentEnd.textContent = assignment.dueDate;
 }
 
 function renderStudentGrade(grade) {
@@ -139,15 +161,20 @@ function gradeSelectListener() {
             const gradeId = row.dataset.id;
             table.dataset.id = gradeId;
 
-            const assignmentId = row.dataset.id;
-            table.dataset.assignmentId = row.dataset.assignmentId;
+            const assignmentId = row.dataset.assignmentId;
+            table.dataset.assignmentId = assignmentId;
 
             getJSONById("grades", gradeId)
             .then(grade => {
                 document.querySelector("#edit-grading").classList.remove("hidden");
 
-                // renderAssignmentInfo(assignment);
                 renderStudentGrade(grade);
+
+                getJSONById("assignments", assignmentId)
+                .then(assignment => {
+                    renderAssignmentInfo(assignment);
+                })
+                .catch(e => console.error(e));
             })
             .catch(e => console.error(e));
         }
