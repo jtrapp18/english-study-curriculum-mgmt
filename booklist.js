@@ -10,13 +10,10 @@ class Book {
         this.notes = notes
         this.apiId = apiId
     }
-    updateImage(url){
-        this.image = url
-    }
 }
 
 ///////////////////////////////////////////////////////
-// booklist functions
+// global variables
 //////////////////////////////////////////////////////
 
 const bookMenu = document.querySelector("div#all-books")
@@ -26,20 +23,20 @@ const baseUrl = "https://openlibrary.org" //search.json?q=javascript&fields=*,av
 const coverImgUrl = "https://covers.openlibrary.org"
 const localUrl = "http://localhost:3000/books"
 
+///////////////////////////////////////////////////////
+// endpoint functions
+//////////////////////////////////////////////////////
+
 function getJSON(url){
     return fetch(url)
     .then((response) => {
-        //console.log(response)
         if(response.ok){
             return response.json()
         } else {
             throw new Error("Request failed")
         }
     })
-    .catch((error) => {
-        //debugger;
-        console.log(error)
-    })    
+    .catch((error) => console.log(error)) 
 }
 
 function buildRequestObj(method, payloadObj){
@@ -47,7 +44,6 @@ function buildRequestObj(method, payloadObj){
       method: ""+method+"",
       headers: {
         "Content-type": "application/json; charset=UTF-8",
-        //"Accept"
       },
       body: JSON.stringify(payloadObj),
     }
@@ -60,21 +56,36 @@ function postJSON(payloadObj){
     .catch((error) => console.error(error))
 }
 
-
-
 ///////////////////////////////////////////////////////
-// rendering book functions
+// handler functions 
 //////////////////////////////////////////////////////
-function dragstartHandler(ev){
-    ev.dataTransfer.effectAllowed = "move"; //copy, move, link
+
+const handleBookSearch = (e) => {
+    const searchString = e.target['book-search'].value
+    e.preventDefault()
+    renderBookList(searchString)
+}
+
+const handleBtnAddCurriculum = (e) => {
+    const bookDiv = e.currentTarget.parentNode
+    const bookObj = new Book(bookDiv.getAttribute("data-title"), bookDiv.getAttribute("data-author"), bookDiv.getAttribute("data-image"), bookDiv.getAttribute("data-subject"), "", bookDiv.getAttribute("data-api-id"))
+    console.log(bookObj)
+    console.log(`${bookObj.title} saved to curriculum`)
+    postJSON(bookObj)
+}
+
+const dragstartHandler = (ev) => {
+    ev.dataTransfer.effectAllowed = "move";
     const bookObj = new Book(ev.target.dataset.title, ev.target.dataset.author, ev.target.dataset.image, ev.target.dataset.subject, "", ev.target.dataset.apiId)
     ev.dataTransfer.setData("text", JSON.stringify(bookObj))
 }
-function dragoverHandler(ev){
+
+const dragoverHandler = (ev) => {
     ev.preventDefault()
-    ev.dataTransfer.dropEffect = "move"; //copy,move,link
+    ev.dataTransfer.dropEffect = "move";
 }
-function dropHandler(ev){
+
+const dropHandler = (ev) => {
     ev.preventDefault()
     const bookString = ev.dataTransfer.getData("text")
     const bookObj = JSON.parse(bookString)
@@ -84,46 +95,44 @@ function dropHandler(ev){
     addDropZone.innerText = saveResponse
 }
 
-
+///////////////////////////////////////////////////////
+// render book functions
+//////////////////////////////////////////////////////
 
 const renderBook = (book) => {
-    //console.log(book)
+    //create book object
+    const bookObj = new Book(book.title, book.author_name[0], "", Array.isArray(book.subject) ? book.subject[0] : book.subject, "", book.cover_i)
+    
+    //create required elements
     const bookListing = document.createElement("div")
     const bookInfo = document.createElement("div")
-    const curriculumBtn = document.createElement("button")
     const bookTitle = document.createElement("h2")
     const bookAuthor = document.createElement("p")
     const bookImg = document.createElement("img")
     const bookOverlay = document.createElement("div")
     const bookSubject = document.createElement("p")
-
-    const bookObj = new Book(
-        book.title, book.author_name[0], 
-        "",
-        Array.isArray(book.subject) ? book.subject[0] : book.subject,
-        "",
-        book.cover_i
-    )
-    //console.log(bookObj)
+    const btnAddCurriculum = document.createElement("button")
     
-    bookListing.draggable = true //allow draggable feature
-    bookListing.addEventListener("dragstart",dragstartHandler) //allow draggable feature
+    //enable draggable feature
+    bookListing.draggable = true 
+    bookListing.addEventListener("dragstart", dragstartHandler)
     
-    curriculumBtn.dataset.apiId = bookObj.apiId
-    curriculumBtn.innerText = "add book to curriculum"
-
+    //add dataset to book div
+    bookListing.dataset.title = bookObj.title
+    bookListing.dataset.author = bookObj.author
+    bookListing.dataset.subject = bookObj.description
+    bookListing.dataset.apiId = bookObj.apiId
+    
+    //set required data
     bookListing.classList.add("book-listing")
     bookInfo.classList.add("book-info")
     bookOverlay.classList.add("overlay")
     bookTitle.innerText = bookObj.title
     bookAuthor.innerText = bookObj.author
     bookSubject.innerText = bookObj.description 
-    
-    bookListing.dataset.title = bookObj.title
-    bookListing.dataset.author = bookObj.author
-    bookListing.dataset.subject = bookObj.description
-    bookListing.dataset.apiId = bookObj.apiId
-    
+    btnAddCurriculum.innerText = "add book to curriculum"
+
+    //initialize book cover image
     bookImg.alt = `${bookObj.title} cover image`
     bookImg.id = bookObj.apiId
     bookImg.style.height = "150px" //TODO: move to CSS
@@ -132,11 +141,12 @@ const renderBook = (book) => {
     getJSON(`${coverImgUrl}/b/id/${bookObj.apiId}.json`)
     .then((data) => {
         const updatedUrl = data.source_url
-        bookImg.src = updatedUrl
-        bookObj.image = updatedUrl
-        bookListing.dataset.image = updatedUrl
+        bookImg.src = updatedUrl //update image url
+        bookObj.image = updatedUrl //update bookObject
+        bookListing.dataset.image = updatedUrl //update book div dataset
     })
     
+    //append elements
     bookInfo.append(bookTitle)
     bookInfo.append(bookAuthor)
     bookInfo.append(bookImg)
@@ -145,8 +155,9 @@ const renderBook = (book) => {
     bookListing.append(bookInfo)
     bookListing.append(curriculumBtn)
     bookMenu.append(bookListing)
-
-    curriculumBtn.addEventListener('click',handleCurriculumBtn)
+    
+    //add event listener to button
+    btnAddCurriculum.addEventListener('click', handleBtnAddCurriculum)
 }
 
 const renderBookList = (searchString) => {
@@ -171,64 +182,13 @@ const renderBookList = (searchString) => {
     })
 }
 
-
-///////////////////////////////////////////////////////
-// handler functions 
-//////////////////////////////////////////////////////
-
-const handleSearch = (e) => {
-    const searchString = e.target['book-search'].value
-    e.preventDefault()
-    renderBookList(searchString)
-}
-
-const handleCurriculumBtn = (e) => {
-    const bookDiv = e.currentTarget.parentNode
-    const bookObj = new Book(
-        bookDiv.getAttribute("data-title"), 
-        bookDiv.getAttribute("data-author"),
-        bookDiv.getAttribute("data-image"),
-        bookDiv.getAttribute("data-subject"),
-        "",
-        bookDiv.getAttribute("data-api-id")
-    )
-    console.log(bookObj)
-    console.log(`${bookObj.title} saved to curriculum`)
-    postJSON(bookObj)
-    
-    /*
-    const bookId = e.target.dataset.apiId
-    
-    //const bookNodeList = document.querySelectorAll("div+"+'[data-id="'+bookId+'"]'); //first book not being found
-    const bookNodeList = document.querySelectorAll('[data-id="'+bookId+'"]');
-    const bookNode = bookNodeList[0]
-    if(bookNode){
-        const bookDiv = bookNode.childNodes[0]
-        const title = bookDiv.childNodes[0].innerText
-        const author = bookDiv.childNodes[1].innerText
-        const image = bookDiv.childNodes[2].src
-        const description = ""
-        const notes = ""
-        const newBook = new Book(title, author, image, description, notes, bookId)
-        console.log("=> newBook")
-        console.log(newBook)
-        console.log("=> post response")
-        const save = postJSON(newBook)
-    } else {
-        console.error("book node not found")
-    }
-    */
-}
-
-
-
 ///////////////////////////////////////////////////////
 // global declarations
 //////////////////////////////////////////////////////
 
-addDropZone.addEventListener('drop',dropHandler)
-addDropZone.addEventListener('dragover',dragoverHandler)
+addDropZone.addEventListener('drop', dropHandler)
+addDropZone.addEventListener('dragover', dragoverHandler)
 
-searchForm.addEventListener('submit',handleSearch)
+searchForm.addEventListener('submit', handleBookSearch)
 
 renderBookList()

@@ -182,6 +182,33 @@
       "description": "Computer programming",
       "notes": "",
       "apiId": "7363360"
+    },
+    {
+      "id": "ba8e",
+      "title": "Evil Under the Sun",
+      "author": "Agatha Christie",
+      "image": "https://archive.org/download/evilundersun0000agat/page/cover_w500_h500.jpg",
+      "description": "Hercule Poirot (Fictitious character)",
+      "notes": "",
+      "apiId": "13671433"
+    },
+    {
+      "id": "babf",
+      "title": "Sleeping Murder",
+      "author": "Agatha Christie",
+      "image": "https://archive.org/download/sleepingmurder00chri/page/cover_w500_h500.jpg",
+      "description": "Fiction",
+      "notes": "",
+      "apiId": "10247294"
+    },
+    {
+      "id": "5d09",
+      "title": "A Caribbean Mystery",
+      "author": "Agatha Christie",
+      "image": "https://archive.org/download/caribbeanmystery0000agat/page/cover_w500_h500.jpg",
+      "description": "Agatha Christie",
+      "notes": "",
+      "apiId": "14578132"
     }
   ],
   "students": [
