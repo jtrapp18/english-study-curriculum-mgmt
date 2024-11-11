@@ -102,11 +102,11 @@ function renderAssignment(assignment) {
 }
 
 //****************************************************************************************************
-// SUBMIT information from forms to db.json
+// UPDATE db.json based on user interaction
 
 function submitAssignmentEdits(assignmentId, bookId) { 
     
-    const form = document.querySelector("#edit-assignment form")
+    const form = document.querySelector("#edit-assignment form");
     
     const updatedAssignment = {
         id: assignmentId,
@@ -133,9 +133,40 @@ function submitNewAssignment() {
         bookId: bookId
         }
 
-    postJSONToDb("assignments", newAssignment);
-    renderProjTblRow(newAssignment);
-    document.querySelector("#add-assignment").classList.add("hidden");
+    postJSONToDb("assignments", newAssignment)
+    .then(assignment => {
+        console.log("ADDED", assignment)
+
+        createGradeObjects(assignment.id); // create grade object for each student for new project
+        
+        newAssignment.id = assignment.id;
+        renderAssignmentRow(newAssignment);
+
+        document.querySelector("#add-assignment").classList.add("hidden");
+    })
+    .catch(e => console.error(e));
+}
+
+function createGradeObjects(assignmentId) {
+
+    getJSONByKey("students")
+    .then(students => {
+        console.log(students)
+        students.forEach(student => {
+
+        const newGrade = {
+            "points": 0,
+            "comments": "",
+            "studentId": student.id,
+            "assignmentId": assignmentId
+          }
+
+        postJSONToDb("grades", newGrade)
+        .then(data => console.log("ADDED", data))
+        .catch(e => console.error(e));
+
+    })})
+    .catch(e => console.error(e));
 }
 
 //****************************************************************************************************

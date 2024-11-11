@@ -13,6 +13,68 @@
       "comments": "good work!!",
       "studentId": "2",
       "assignmentId": "1"
+    },
+    {
+      "studentId": 1,
+      "assignmentId": 4,
+      "id": 3
+    },
+    {
+      "studentId": 2,
+      "assignmentId": 4,
+      "id": 4
+    },
+    {
+      "studentId": 1,
+      "assignmentId": 5,
+      "id": 5
+    },
+    {
+      "studentId": 2,
+      "assignmentId": 5,
+      "id": 6
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": 1,
+      "assignmentId": 6,
+      "id": 7
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": 2,
+      "assignmentId": 6,
+      "id": 8
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": 1,
+      "assignmentId": 7,
+      "id": 9
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": 2,
+      "assignmentId": 7,
+      "id": 10
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": 1,
+      "assignmentId": 8,
+      "id": 11
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": 2,
+      "assignmentId": 8,
+      "id": 12
     }
   ],
   "assignments": [
@@ -35,28 +97,52 @@
       "bookId": 2
     },
     {
-      "id": "add ID",
-      "name": "another book report",
-      "description": "write even more book reports!",
-      "startDate": "2024-11-22",
-      "dueDate": "2024-12-06",
-      "bookId": 1
-    },
-    {
-      "name": "yet another report!",
-      "description": "This report was created to test the process of embedding :)",
-      "startDate": "2024-11-16",
-      "dueDate": "2024-11-24",
+      "name": "New assignment for book 1",
+      "description": "this is new",
+      "startDate": "2024-11-12",
+      "dueDate": "2024-11-13",
       "bookId": "1",
       "id": 3
     },
     {
-      "name": "This is new!",
+      "name": "this is new",
       "description": "",
-      "startDate": "2024-11-11",
-      "dueDate": "2024-11-13",
+      "startDate": "",
+      "dueDate": "",
       "bookId": "1",
       "id": 4
+    },
+    {
+      "name": "this is even more new",
+      "description": "",
+      "startDate": "",
+      "dueDate": "",
+      "bookId": "1",
+      "id": 5
+    },
+    {
+      "name": "the most new",
+      "description": "",
+      "startDate": "",
+      "dueDate": "",
+      "bookId": "1",
+      "id": 6
+    },
+    {
+      "name": "so new",
+      "description": "",
+      "startDate": "",
+      "dueDate": "",
+      "bookId": "1",
+      "id": 7
+    },
+    {
+      "name": "anotha one",
+      "description": "",
+      "startDate": "",
+      "dueDate": "",
+      "bookId": "1",
+      "id": 8
     }
   ],
   "books": [
@@ -168,11 +254,11 @@
   "students": [
     {
       "id": 1,
-      "fullName": "Jacqueline"
+      "fullName": "Jacqueline Trapp"
     },
     {
       "id": 2,
-      "fullName": "Jessie"
+      "fullName": "Jessie Trapp"
     }
   ]
 }

@@ -123,6 +123,7 @@ function studentSelectListener() {
             document.querySelector("#student-assignments").classList.remove("hidden");
             student.grades.forEach(renderGradeRow);
         })
+        .catch(e => console.error(e));
     })
 }
 
@@ -148,6 +149,7 @@ function gradeSelectListener() {
                 // renderAssignmentInfo(assignment);
                 renderStudentGrade(grade);
             })
+            .catch(e => console.error(e));
         }
     });
 }
