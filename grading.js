@@ -29,57 +29,70 @@ function renderStudents() {
     .catch(e => console.error(e));
 }
 
-function renderGradeRow(grade) {
+function createGradeRow() {
 
     const table = document.querySelector("#student-assignments table");
-
     const row = document.createElement("tr");
+
+    // add rows for individual assignment
+
+    const assignmentId = document.createElement("td");
+    const assignmentName = document.createElement("td");
+    const assignmentStart = document.createElement("td");
+    const assignmentDue = document.createElement("td");
+    const assignmentMaxPoints = document.createElement("td");
+
+    // add rows for assignment grade
+
+    const gradePoints = document.createElement("td");
+    const percentage = document.createElement("td");
+    const editGrade = document.createElement("td");
+    editGrade.textContent = "edit";
+    editGrade.classList.add("edit-column");
+
+    row.append(assignmentId, assignmentName, assignmentStart, assignmentDue, assignmentMaxPoints, gradePoints, percentage, editGrade);
+    table.append(row);
+
+    return row;
+}
+
+function populateGradeRow(row, grade) {
+
     row.dataset.id = grade.id;
     row.dataset.assignmentId = grade.assignmentId;
 
     getJSONById("assignments", grade.assignmentId)
     .then(assignment => {
 
-        // show details for individual assignment
+        // add details for individual assignment
 
-        const assignmentId = document.createElement("td");
-        assignmentId.textContent = grade.assignmentId;
+        row.children[0].textContent = grade.assignmentId;
+        row.children[1].textContent = assignment.name;
+        row.children[2].textContent = assignment.startDate;
+        row.children[3].textContent = assignment.dueDate;
+        row.children[4].textContent = assignment.maxPoints;
 
-        const assignmentName = document.createElement("td");
-        assignmentName.textContent = assignment.name;
+        // add details for assignment grade
 
-        const assignmentStart = document.createElement("td");
-        assignmentStart.textContent = assignment.startDate;
-
-        const assignmentDue = document.createElement("td");
-        assignmentDue.textContent = assignment.dueDate;
-
-        const assignmentMaxPoints = document.createElement("td");
-        assignmentMaxPoints.textContent = assignment.maxPoints;
-
-        // show details for assignment grade
-    
-        const gradePoints = document.createElement("td");
-        gradePoints.textContent = grade.points;
-
-        const percentage = document.createElement("td");
-        percentage.textContent = grade.points/assignment.maxPoints;
-    
-        const editGrade = document.createElement("td");
-        editGrade.textContent = "edit";
-        editGrade.classList.add("edit-column")
-    
-        row.append(assignmentId, assignmentName, assignmentStart, assignmentDue, assignmentMaxPoints, gradePoints, percentage, editGrade);
-        table.append(row);
+        row.children[5].textContent = grade.points;
+        row.children[6].textContent = grade.points/assignment.maxPoints;
+        row.children[7].textContent = "edit";
+        row.children[7].classList.add("edit-column")
     })
     .catch(e => console.error(e));
 }
 
-function renderAssignmentInfo(assignment) {
-    console.log(assignment)
+function renderGradeRow(grade, gradeId=0) {
 
-    const assignmentId = document.querySelector("#assignment-detail-id");
-    assignmentId.textContent = assignment.id;
+    const table = document.querySelector("#student-assignments table");
+    const row = (gradeId === 0) ? createGradeRow() : table.querySelector(`tr[data-id="${id}"]`);
+
+    populateGradeRow(row, grade);
+}
+
+function renderAssignmentInfo(assignment) {
+
+    document.querySelector("#assignment-detail").dataset.id = assignment.id;
 
     const assignmentName = document.querySelector("#assignment-detail-name");
     assignmentName.textContent = assignment.name;
@@ -90,13 +103,17 @@ function renderAssignmentInfo(assignment) {
     const assignmentStart = document.querySelector("#assignment-detail-start");
     assignmentStart.textContent = assignment.startDate;
 
-    const assignmentEnd = document.querySelector("#assignment-detail-due");
-    assignmentEnd.textContent = assignment.dueDate;
+    const assignmentDue = document.querySelector("#assignment-detail-due");
+    assignmentDue.textContent = assignment.dueDate;
+
+    const assignmentMaxPoints = document.querySelector("#assignment-max-points");
+    assignmentMaxPoints.textContent = assignment.maxPoints;
 }
 
 function renderStudentGrade(grade) {
 
     const form = document.querySelector("#edit-grading form");
+    form.dataset.id = grade.id;
 
     const assignmentGrade = form["edit-grade"];
     assignmentGrade.value = grade.points;
@@ -143,7 +160,10 @@ function studentSelectListener() {
             renderStudent(student);
 
             document.querySelector("#student-assignments").classList.remove("hidden");
+            document.querySelector("#student-assignments table").innerHTML = "";
             student.grades.forEach(renderGradeRow);
+
+            document.querySelector("#edit-grading").classList.add("hidden");
         })
         .catch(e => console.error(e));
     })

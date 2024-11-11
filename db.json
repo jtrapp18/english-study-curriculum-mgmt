@@ -1,88 +1,32 @@
 {
   "grades": [
     {
-      "id": 1,
+      "id": "1",
       "points": 8,
-      "comments": "great work",
-      "studentId": 1,
-      "assignmentId": 1
+      "comments": "great work, Jacqueline",
+      "studentId": "1",
+      "assignmentId": "1"
     },
     {
-      "id": 2,
+      "id": "2",
       "points": "8",
-      "comments": "good work!!",
+      "comments": "good work, Jacqueline!!",
+      "studentId": "1",
+      "assignmentId": "2"
+    },
+    {
+      "id": "1",
+      "points": 10,
+      "comments": "great work, Jessie",
       "studentId": "2",
       "assignmentId": "1"
     },
     {
-      "points": 0,
-      "comments": "",
-      "studentId": 1,
-      "assignmentId": 3,
-      "id": 3
-    },
-    {
-      "points": "0",
-      "comments": "",
+      "id": "2",
+      "points": "7",
+      "comments": "good work, Jessie!!",
       "studentId": "2",
-      "assignmentId": "3",
-      "id": 4
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": 1,
-      "assignmentId": 4,
-      "id": 5
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": 2,
-      "assignmentId": 4,
-      "id": 6
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": 1,
-      "assignmentId": 5,
-      "id": 7
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": 2,
-      "assignmentId": 5,
-      "id": 8
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": 1,
-      "assignmentId": 6,
-      "id": 9
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": 2,
-      "assignmentId": 6,
-      "id": 10
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": 1,
-      "assignmentId": 7,
-      "id": 11
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": 2,
-      "assignmentId": 7,
-      "id": 12
+      "assignmentId": "2"
     }
   ],
   "assignments": [
@@ -90,10 +34,10 @@
       "id": 1,
       "name": "final book report book1",
       "description": "description - edited!",
-      "maxPoints": 10,
+      "maxPoints": "15",
       "startDate": "2024-11-08",
       "dueDate": "2024-11-08",
-      "bookId": 1
+      "bookId": "1"
     },
     {
       "id": 2,
@@ -102,12 +46,12 @@
       "maxPoints": 10,
       "startDate": "2024-11-08",
       "dueDate": "2024-11-08",
-      "bookId": 2
+      "bookId": "2"
     }
   ],
   "books": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Book",
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -115,7 +59,7 @@
       "notes": "no notes"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Book",
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -123,7 +67,7 @@
       "notes": "no notes"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Book",
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -131,7 +75,7 @@
       "notes": "no notes"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Book",
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -139,7 +83,7 @@
       "notes": "no notes"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Book",
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -213,11 +157,11 @@
   ],
   "students": [
     {
-      "id": 1,
+      "id": "1",
       "fullName": "Jacqueline Trapp"
     },
     {
-      "id": 2,
+      "id": "2",
       "fullName": "Jessie Trapp"
     }
   ]

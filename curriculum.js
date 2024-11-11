@@ -38,34 +38,45 @@ function renderCurriculumBooks() {
     .catch(e => console.error(e));
 }
 
-function renderAssignmentRow(assignment) {
+function createAssignmentRow() {
 
     const table = document.querySelector("#selected-book-assignments table");
-
     const row = document.createElement("tr");
-    row.dataset.id = assignment.id;
 
     const assignmentId = document.createElement("td");
-    assignmentId.textContent = assignment.id;
-
     const assignmentName = document.createElement("td");
-    assignmentName.textContent = assignment.name;
-
     const assignmentStart = document.createElement("td");
-    assignmentStart.textContent = assignment.startDate;
-
     const assignmentDue = document.createElement("td");
-    assignmentDue.textContent = assignment.dueDate;
-
     const assignmentMaxPoints = document.createElement("td");
-    assignmentMaxPoints.textContent = assignment.maxPoints;
-
     const assignmentEdit = document.createElement("td");
     assignmentEdit.textContent = "edit";
-    assignmentEdit.classList.add("edit-column")
 
     row.append(assignmentId, assignmentName, assignmentStart, assignmentDue, assignmentMaxPoints, assignmentEdit);
     table.append(row);
+
+    return row;
+}
+
+function populateAssignmentRow(row, assignment) {
+
+    row.dataset.id = assignment.id;
+
+    row.children[0].textContent = assignment.id;
+    row.children[1].textContent = assignment.name;
+    row.children[2].textContent = assignment.startDate;
+    row.children[3].textContent = assignment.dueDate;
+    row.children[4].textContent = assignment.maxPoints;
+    row.children[5].textContent = "edit";
+    row.children[5].classList.add("edit-column")
+
+}
+
+function renderAssignmentRow(assignment, assignmentId=0) {
+
+    const table = document.querySelector("#selected-book-assignments table");
+    const row = (assignmentId === 0) ? createAssignmentRow() : table.querySelector(`tr[data-id="${assignmentId}"]`);
+
+    populateAssignmentRow(row, assignment);
 }
 
 function renderAssignmentTable(book) {
@@ -126,6 +137,7 @@ function submitAssignmentEdits(assignmentId, bookId) {
         }
 
     patchJSONToDb("assignments", assignmentId, updatedAssignment);
+    renderAssignmentRow(updatedAssignment, assignmentId);
 }
 
 function validateForm(newAssignment) {
