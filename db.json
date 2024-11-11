@@ -1,14 +1,14 @@
 {
   "grades": [
     {
-      "id": 1,
+      "id": "1",
       "points": 8,
       "comments": "great work",
       "studentId": 1,
       "projectId": 1
     },
     {
-      "id": 2,
+      "id": "2",
       "points": "7",
       "comments": "good work!",
       "studentId": 2,
@@ -17,7 +17,7 @@
   ],
   "projects": [
     {
-      "id": 1,
+      "id": "1",
       "name": "final book report book1",
       "description": "description - edited",
       "maxPoints": 10,
@@ -26,7 +26,7 @@
       "bookId": 1
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "final book report book2",
       "description": "description",
       "maxPoints": 10,
@@ -48,12 +48,12 @@
       "startDate": "2024-11-16",
       "dueDate": "2024-11-23",
       "bookId": 1,
-      "id": 3
+      "id": "3"
     }
   ],
   "books": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Book",
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -61,7 +61,7 @@
       "notes": "no notes"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Book",
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -69,7 +69,7 @@
       "notes": "no notes"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Book",
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -77,7 +77,7 @@
       "notes": "no notes"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Book",
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -85,7 +85,7 @@
       "notes": "no notes"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Book",
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -93,7 +93,7 @@
       "notes": "no notes"
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "Book",
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -101,7 +101,7 @@
       "notes": "no notes"
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "Book",
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -109,7 +109,7 @@
       "notes": "no notes"
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "Book",
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -117,7 +117,7 @@
       "notes": "no notes"
     },
     {
-      "id": 9,
+      "id": "9",
       "title": "Book",
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -125,7 +125,7 @@
       "notes": "no notes"
     },
     {
-      "id": 10,
+      "id": "10",
       "title": "Book",
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -133,7 +133,7 @@
       "notes": "no notes"
     },
     {
-      "id": 11,
+      "id": "11",
       "title": "Book",
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -141,7 +141,7 @@
       "notes": "no notes"
     },
     {
-      "id": 12,
+      "id": "12",
       "title": "Book",
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -149,17 +149,35 @@
       "notes": "no notes"
     },
     {
-      "id": 13,
+      "id": "13",
       "title": "Book",
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
       "description": "Author",
       "notes": "no notes"
+    },
+    {
+      "id": "bc00",
+      "title": "The Mystery of the Blue Train",
+      "author": "Agatha Christie",
+      "image": "https://archive.org/download/bwb_KR-538-919/page/cover_w500_h500.jpg",
+      "description": "",
+      "notes": "",
+      "apiId": "14575533"
+    },
+    {
+      "id": "4572",
+      "title": "JavaScript and jQuery",
+      "author": "Jon Duckett",
+      "image": "http://ecx.images-amazon.com/images/I/41oa41LdNdL._SX400_BO1,204,203,200_.jpg",
+      "description": "",
+      "notes": "",
+      "apiId": "7419725"
     }
   ],
   "students": [
     {
-      "id": 1,
+      "id": "1",
       "fullName": "Jacqueline",
       "projects": [
         {
@@ -170,7 +188,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "fullName": "Jessie",
       "projects": [
         {

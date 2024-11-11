@@ -1,4 +1,18 @@
 ///////////////////////////////////////////////////////
+// initialize book class
+///////////////////////////////////////////////////////
+class Book {
+    constructor(title, author, image, description, notes, apiId){
+        this.title = title
+        this.author = author
+        this.image = image
+        this.description = description
+        this.notes = notes
+        this.apiId = apiId
+    }
+}
+
+///////////////////////////////////////////////////////
 // booklist functions
 //////////////////////////////////////////////////////
 
@@ -6,13 +20,10 @@ const bookMenu = document.querySelector("div#all-books")
 const searchForm = document.querySelector("form#search")
 const baseUrl = "https://openlibrary.org" //search.json?q=javascript&fields=*,availability&limit=1
 const coverImgUrl = "https://covers.openlibrary.org"
+const localUrl = "http://localhost:3000/books"
 
 function getJSON(url){
-    const requestObj = {
-        method: 'GET',
-        //redirect: 'follow'
-    }
-    return fetch(url,requestObj)
+    return fetch(url)
     .then((response) => {
         //console.log(response)
         if(response.ok){
@@ -27,6 +38,30 @@ function getJSON(url){
     })    
 }
 
+function buildRequestObj(method, payloadObj){
+    return {
+      method: ""+method+"",
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+        //"Accept"
+      },
+      body: JSON.stringify(payloadObj),
+    }
+}
+
+function postJSON(payloadObj){ 
+    fetch(localUrl, buildRequestObj("POST",payloadObj))
+    .then((response) => response.json())
+    .then((data) => console.log("Book saved to curriculum"))
+    .catch((error) => console.error(error))
+}
+
+
+
+///////////////////////////////////////////////////////
+// rendering book functions
+//////////////////////////////////////////////////////
+
 const renderBook = (book) => {
     //console.log(book)
     const bookListing = document.createElement("div")
@@ -38,8 +73,10 @@ const renderBook = (book) => {
     const bookOverlay = document.createElement("div")
     const bookSubject = document.createElement("p")
     
-    curriculumBtn.innerText = "add book to curriculum"
     curriculumBtn.dataset.id = book.cover_i
+    bookListing.dataset.id = book.cover_i
+    
+    curriculumBtn.innerText = "add book to curriculum"
     bookListing.classList.add("book-listing")
     bookInfo.classList.add("book-info")
     bookOverlay.classList.add("overlay")
@@ -92,6 +129,11 @@ const renderBookList = (searchString) => {
     })
 }
 
+
+///////////////////////////////////////////////////////
+// handler functions 
+//////////////////////////////////////////////////////
+
 const handleSearch = (e) => {
     const searchString = e.target['nook-search'].value
     e.preventDefault()
@@ -101,7 +143,31 @@ const handleSearch = (e) => {
 const handleCurriculumBtn = (e) => {
     const bookId = e.target.dataset.id
     console.log(bookId)
+    
+    const bookNodeList = document.querySelectorAll("div+"+'[data-id="'+bookId+'"]');
+    const bookNode = bookNodeList[0]
+    if(bookNode){
+        const bookDiv = bookNode.childNodes[0]
+        const title = bookDiv.childNodes[0].innerText
+        const author = bookDiv.childNodes[1].innerText
+        const image = bookDiv.childNodes[2].src
+        const description = ""
+        const notes = ""
+        const newBook = new Book(title, author, image, description, notes, bookId)
+        console.log("=> newBook")
+        console.log(newBook)
+        console.log("=> post response")
+        const save = postJSON(newBook)
+    } else {
+        console.error("book node not found")
+    }
 }
+
+
+
+///////////////////////////////////////////////////////
+// global declarations
+//////////////////////////////////////////////////////
 
 searchForm.addEventListener('submit',handleSearch)
 
