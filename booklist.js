@@ -105,17 +105,29 @@ const renderBook = (book) => {
     
     //create required elements
     const bookListing = document.createElement("div")
-    const bookInfo = document.createElement("div")
-    const bookTitle = document.createElement("h2")
-    const bookAuthor = document.createElement("p")
-    const bookImg = document.createElement("img")
-    const bookOverlay = document.createElement("div")
-    const bookSubject = document.createElement("p")
-    const btnAddCurriculum = document.createElement("button")
-    
-    //enable draggable feature
+    bookListing.classList.add("book-listing")
     bookListing.draggable = true 
     bookListing.addEventListener("dragstart", dragstartHandler)
+    
+    const bookInfo = document.createElement("div")
+    bookInfo.classList.add("book-info")
+    
+    const bookTitle = document.createElement("h2")
+    bookTitle.innerText = bookObj.title
+    
+    const bookAuthor = document.createElement("p")
+    bookAuthor.innerText = bookObj.author
+    
+    const bookImg = document.createElement("img")
+    const bookOverlay = document.createElement("div")
+    bookOverlay.classList.add("overlay")
+    
+    const bookSubject = document.createElement("p")
+    bookSubject.innerText = bookObj.description 
+    
+    const btnAddCurriculum = document.createElement("button")
+    btnAddCurriculum.innerText = "add book to curriculum"
+    btnAddCurriculum.addEventListener('click', handleBtnAddCurriculum)
     
     //add dataset to book div
     bookListing.dataset.title = bookObj.title
@@ -123,15 +135,6 @@ const renderBook = (book) => {
     bookListing.dataset.subject = bookObj.description
     bookListing.dataset.apiId = bookObj.apiId
     
-    //set required data
-    bookListing.classList.add("book-listing")
-    bookInfo.classList.add("book-info")
-    bookOverlay.classList.add("overlay")
-    bookTitle.innerText = bookObj.title
-    bookAuthor.innerText = bookObj.author
-    bookSubject.innerText = bookObj.description 
-    btnAddCurriculum.innerText = "add book to curriculum"
-
     //initialize book cover image
     bookImg.alt = `${bookObj.title} cover image`
     bookImg.id = bookObj.apiId
@@ -148,16 +151,9 @@ const renderBook = (book) => {
     
     //append elements
     bookMenu.append(bookListing)
-    bookListing.append(bookInfo)
-    bookListing.append(btnAddCurriculum)
-    bookInfo.append(bookTitle)
-    bookInfo.append(bookAuthor)
-    bookInfo.append(bookImg)
-    bookInfo.append(bookOverlay)
-    bookOverlay.append(bookSubject)
-    
-    //add event listener to button
-    btnAddCurriculum.addEventListener('click', handleBtnAddCurriculum)
+    bookListing.append(bookInfo, btnAddCurriculum)
+    bookInfo.append(bookTitle, bookAuthor, bookImg, bookOverlay)
+    bookOverlay.append(bookSubject)    
 }
 
 const renderBookList = (searchString) => {
