@@ -68,6 +68,7 @@ function renderAssignmentRow(assignment) {
 function renderAssignmentTable(book) {
 
     document.querySelector("#selected-book-assignments").classList.remove("hidden");
+    console.log(book.assignments)
 
     book.assignments.forEach(renderAssignmentRow);
 
@@ -120,6 +121,18 @@ function submitAssignmentEdits(assignmentId, bookId) {
     patchJSONToDb("assignments", assignmentId, updatedAssignment);
 }
 
+function validateForm(newAssignment) {
+
+    for (let key in newAssignment) {
+
+        if (!newAssignment[key]) {
+            alert(`Need to enter ${key}`)
+            return false
+        }
+    }
+    return true
+}
+
 function submitNewAssignment() {
 
     const form = document.querySelector("#add-assignment form");
@@ -132,19 +145,22 @@ function submitNewAssignment() {
         dueDate: form["new-assignment-due"].value,
         bookId: bookId
         }
+    
+    if (validateForm(newAssignment)) {
 
-    postJSONToDb("assignments", newAssignment)
-    .then(assignment => {
-        console.log("ADDED", assignment)
+        postJSONToDb("assignments", newAssignment)
+        .then(assignment => {
+            console.log("ADDED", assignment)
 
-        createGradeObjects(assignment.id); // create grade object for each student for new project
-        
-        newAssignment.id = assignment.id;
-        renderAssignmentRow(newAssignment);
+            createGradeObjects(assignment.id); // create grade object for each student for new project
+            
+            newAssignment.id = assignment.id;
+            renderAssignmentRow(newAssignment);
 
-        document.querySelector("#add-assignment").classList.add("hidden");
-    })
-    .catch(e => console.error(e));
+            document.querySelector("#add-assignment").classList.add("hidden");
+        })
+        .catch(e => console.error(e));
+    }
 }
 
 function createGradeObjects(assignmentId) {

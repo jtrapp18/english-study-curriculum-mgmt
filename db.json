@@ -15,65 +15,73 @@
       "assignmentId": "1"
     },
     {
+      "points": 0,
+      "comments": "",
       "studentId": 1,
-      "assignmentId": 4,
+      "assignmentId": 3,
       "id": 3
     },
     {
+      "points": 0,
+      "comments": "",
       "studentId": 2,
-      "assignmentId": 4,
+      "assignmentId": 3,
       "id": 4
     },
     {
+      "points": 0,
+      "comments": "",
       "studentId": 1,
-      "assignmentId": 5,
+      "assignmentId": 4,
       "id": 5
     },
     {
+      "points": 0,
+      "comments": "",
       "studentId": 2,
-      "assignmentId": 5,
+      "assignmentId": 4,
       "id": 6
     },
     {
       "points": 0,
       "comments": "",
       "studentId": 1,
-      "assignmentId": 6,
+      "assignmentId": 5,
       "id": 7
     },
     {
       "points": 0,
       "comments": "",
       "studentId": 2,
-      "assignmentId": 6,
+      "assignmentId": 5,
       "id": 8
     },
     {
       "points": 0,
       "comments": "",
       "studentId": 1,
-      "assignmentId": 7,
+      "assignmentId": 6,
       "id": 9
     },
     {
       "points": 0,
       "comments": "",
       "studentId": 2,
-      "assignmentId": 7,
+      "assignmentId": 6,
       "id": 10
     },
     {
       "points": 0,
       "comments": "",
       "studentId": 1,
-      "assignmentId": 8,
+      "assignmentId": 7,
       "id": 11
     },
     {
       "points": 0,
       "comments": "",
       "studentId": 2,
-      "assignmentId": 8,
+      "assignmentId": 7,
       "id": 12
     }
   ],
@@ -81,7 +89,7 @@
     {
       "id": 1,
       "name": "final book report book1",
-      "description": "description - edited",
+      "description": "description - edited!",
       "maxPoints": 10,
       "startDate": "2024-11-08",
       "dueDate": "2024-11-08",
@@ -97,15 +105,15 @@
       "bookId": 2
     },
     {
-      "name": "New assignment for book 1",
-      "description": "this is new",
-      "startDate": "2024-11-12",
-      "dueDate": "2024-11-13",
+      "name": "",
+      "description": "",
+      "startDate": "",
+      "dueDate": "",
       "bookId": "1",
       "id": 3
     },
     {
-      "name": "this is new",
+      "name": "",
       "description": "",
       "startDate": "",
       "dueDate": "",
@@ -113,7 +121,7 @@
       "id": 4
     },
     {
-      "name": "this is even more new",
+      "name": "",
       "description": "",
       "startDate": "",
       "dueDate": "",
@@ -121,7 +129,7 @@
       "id": 5
     },
     {
-      "name": "the most new",
+      "name": "",
       "description": "",
       "startDate": "",
       "dueDate": "",
@@ -129,20 +137,12 @@
       "id": 6
     },
     {
-      "name": "so new",
-      "description": "",
-      "startDate": "",
-      "dueDate": "",
+      "name": "name",
+      "description": "description",
+      "startDate": "2024-11-12",
+      "dueDate": "2024-11-13",
       "bookId": "1",
       "id": 7
-    },
-    {
-      "name": "anotha one",
-      "description": "",
-      "startDate": "",
-      "dueDate": "",
-      "bookId": "1",
-      "id": 8
     }
   ],
   "books": [
