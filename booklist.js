@@ -147,14 +147,14 @@ const renderBook = (book) => {
     })
     
     //append elements
+    bookMenu.append(bookListing)
+    bookListing.append(bookInfo)
+    bookListing.append(btnAddCurriculum)
     bookInfo.append(bookTitle)
     bookInfo.append(bookAuthor)
     bookInfo.append(bookImg)
     bookInfo.append(bookOverlay)
     bookOverlay.append(bookSubject)
-    bookListing.append(bookInfo)
-    bookListing.append(curriculumBtn)
-    bookMenu.append(bookListing)
     
     //add event listener to button
     btnAddCurriculum.addEventListener('click', handleBtnAddCurriculum)

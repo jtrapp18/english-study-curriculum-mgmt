@@ -155,60 +155,6 @@
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
       "description": "Author",
       "notes": "no notes"
-    },
-    {
-      "id": "053e",
-      "title": "The Mystery of the Blue Train",
-      "author": "Agatha Christie",
-      "image": "https://archive.org/download/bwb_KR-538-919/page/cover_w500_h500.jpg",
-      "description": "Crimes against",
-      "notes": "",
-      "apiId": "14575533"
-    },
-    {
-      "id": "e284",
-      "title": "Python For Data Analysis",
-      "author": "Wes McKinney",
-      "image": "https://archive.org/download/bookcovers/better-world-bookcovers.zip/better-world-bookcovers/9781449319793.jpg",
-      "description": "Programming languages (Electronic computers)",
-      "notes": "",
-      "apiId": "7548132"
-    },
-    {
-      "id": "ae24",
-      "title": "Think Python",
-      "author": "Allen B. Downey",
-      "image": "",
-      "description": "Computer programming",
-      "notes": "",
-      "apiId": "7363360"
-    },
-    {
-      "id": "ba8e",
-      "title": "Evil Under the Sun",
-      "author": "Agatha Christie",
-      "image": "https://archive.org/download/evilundersun0000agat/page/cover_w500_h500.jpg",
-      "description": "Hercule Poirot (Fictitious character)",
-      "notes": "",
-      "apiId": "13671433"
-    },
-    {
-      "id": "babf",
-      "title": "Sleeping Murder",
-      "author": "Agatha Christie",
-      "image": "https://archive.org/download/sleepingmurder00chri/page/cover_w500_h500.jpg",
-      "description": "Fiction",
-      "notes": "",
-      "apiId": "10247294"
-    },
-    {
-      "id": "5d09",
-      "title": "A Caribbean Mystery",
-      "author": "Agatha Christie",
-      "image": "https://archive.org/download/caribbeanmystery0000agat/page/cover_w500_h500.jpg",
-      "description": "Agatha Christie",
-      "notes": "",
-      "apiId": "14578132"
     }
   ],
   "students": [
