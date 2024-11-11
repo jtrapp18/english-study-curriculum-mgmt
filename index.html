@@ -26,11 +26,16 @@
             <img id="cats" src="./img/home/cats_under_table.jpg" alt="My cats">
         </div>
         <div id="bookfinder" class="tab-content">
-            <form id="search">
-                <label for="book-search">Search:</label>
-                <input type="text" id="nook-search" name="nook-search">
-                <input type="submit">Search</input>
-            </form>
+            <div id="bookfindernav" class="bookfinder-nav">
+                <form id="search" class="bookfinder-form">
+                    <label for="book-search">Type search query to find books</label>
+                    <input type="text" id="book-search" name="book-search">
+                    <input type="submit" value="Search"/>
+                </form>
+                <p id="add-dropzone" class="bookfinder-dropzone">
+                    Drop book here to add to curriculum
+                </p>    
+            </div>
             <div id="all-books">
             </div>
         </div>
