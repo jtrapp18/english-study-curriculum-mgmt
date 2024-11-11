@@ -5,17 +5,17 @@
       "points": 8,
       "comments": "great work",
       "studentId": 1,
-      "projectId": 1
+      "assignmentId": 1
     },
     {
-      "id": "2",
-      "points": "7",
-      "comments": "good work!",
-      "studentId": 2,
-      "projectId": 1
+      "id": 2,
+      "points": "8",
+      "comments": "good work!!",
+      "studentId": "2",
+      "assignmentId": "1"
     }
   ],
-  "projects": [
+  "assignments": [
     {
       "id": "1",
       "name": "final book report book1",
@@ -46,9 +46,17 @@
       "name": "yet another report!",
       "description": "This report was created to test the process of embedding :)",
       "startDate": "2024-11-16",
-      "dueDate": "2024-11-23",
-      "bookId": 1,
-      "id": "3"
+      "dueDate": "2024-11-24",
+      "bookId": "1",
+      "id": 3
+    },
+    {
+      "name": "This is new!",
+      "description": "",
+      "startDate": "2024-11-11",
+      "dueDate": "2024-11-13",
+      "bookId": "1",
+      "id": 4
     }
   ],
   "books": [
@@ -159,26 +167,12 @@
   ],
   "students": [
     {
-      "id": "1",
-      "fullName": "Jacqueline",
-      "projects": [
-        {
-          "id": 1,
-          "grade": 8,
-          "comments": "comments"
-        }
-      ]
+      "id": 1,
+      "fullName": "Jacqueline"
     },
     {
-      "id": "2",
-      "fullName": "Jessie",
-      "projects": [
-        {
-          "id": 1,
-          "grade": 8,
-          "comments": "comments"
-        }
-      ]
+      "id": 2,
+      "fullName": "Jessie"
     }
   ]
 }
