@@ -59,8 +59,23 @@ function validateAndSave(bookObj){
 //////////////////////////////////////////////////////
 
 const handleBookSearch = (e) => {
-    const searchString = e.target['book-search'].value
     e.preventDefault()
+    let searchString = ""
+    
+    const searchQuery = e.target['book-search-query'].value
+    const searchTitle = e.target['book-search-title'].value
+    const searchAuthor = e.target['book-search-author'].value
+    
+    if(searchQuery){
+        searchString += `q=${searchQuery}&fields=*,availability`
+    }
+    if(searchTitle){
+        searchString += `&title=${searchTitle}`
+    }
+    if(searchAuthor){
+        searchString += `&author=${searchAuthor}`
+    }
+
     renderBookList(searchString)
 }
 
@@ -99,7 +114,7 @@ const dropHandler = (ev) => {
 
 const renderBook = (book) => {
     //create book object
-    const bookObj = new Book(book.title, book.author_name[0], "", Array.isArray(book.subject) ? book.subject[0] : book.subject, "", book.cover_i)
+    const bookObj = new Book(book.title, Array.isArray(book.author_name) ? book.author_name[0] : book.author_name, "", Array.isArray(book.subject) ? book.subject[0] : book.subject, "", book.cover_i)
     
     //create required elements
     const bookListing = document.createElement("div")
@@ -156,23 +171,33 @@ const renderBook = (book) => {
 }
 
 const renderBookList = (searchString) => {
-    let query = "mystery"
+    let query = "q=mystery&fields=*,availability"
+    renderMessage("Books Loading", "please wait...")
+    console.log("Loading")
+
     if(searchString){
         query = encodeURI(searchString)
-        bookMenu.innerHTML = `
+    }
+    getJSON(`${baseUrl}/search.json?${query}&limit=20`)
+    .then((data) => {
+        if(data.numFound < 1){
+            renderMessage("No Books Found", "please try another search")
+        } else {
+            bookMenu.innerText = ""
+            data.docs.forEach((book) => renderBook(book))
+        }
+    })
+}
+
+const renderMessage = (mainMessage, subMessage) => {
+    bookMenu.innerText = ''
+    bookMenu.innerHTML = `
         <div class="book-listing">
             <div class="book-info">
-                <h2>Books Loading</h2>
-                <p>please wait...</p>
+                <h2>${mainMessage}</h2>
+                <p>${subMessage}</p>
             </div>
         </div>`
-        console.log("Loading")
-    }
-    getJSON(`${baseUrl}/search.json?q=${query}&fields=*,availability&limit=20`)
-    .then((data) => {
-        bookMenu.innerText = ""
-        data.docs.forEach((book) => renderBook(book))
-    })
 }
 
 ///////////////////////////////////////////////////////

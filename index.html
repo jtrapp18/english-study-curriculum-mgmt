@@ -29,7 +29,13 @@
             <div id="bookfindernav" class="bookfinder-nav">
                 <form id="search" class="bookfinder-form">
                     <label for="book-search">Type search query to find books</label>
-                    <input type="text" id="book-search" name="book-search">
+                    <div class="bookfinder-search">
+                        <input type="text" id="book-search-query" name="book-search-query" placeholder="Search Query">
+                    </div>
+                    <div class="bookfinder-search">
+                        <input type="text" id="book-search-title" name="book-search-title" placeholder="Title">
+                        <input type="text" id="book-search-author" name="book-search-author" placeholder="Author">
+                    </div>
                     <input type="submit" value="Search"/>
                 </form>
                 <p id="add-dropzone" class="bookfinder-dropzone">
