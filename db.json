@@ -31,7 +31,7 @@
   ],
   "assignments": [
     {
-      "id": 1,
+      "id": "1",
       "name": "final book report book1",
       "description": "description - edited!",
       "maxPoints": "15",
@@ -40,7 +40,7 @@
       "bookId": "1"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "final book report book2",
       "description": "description",
       "maxPoints": 10,
@@ -91,7 +91,7 @@
       "notes": "no notes"
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "Book",
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -99,7 +99,7 @@
       "notes": "no notes"
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "Book",
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -107,7 +107,7 @@
       "notes": "no notes"
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "Book",
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -115,7 +115,7 @@
       "notes": "no notes"
     },
     {
-      "id": 9,
+      "id": "9",
       "title": "Book",
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -123,7 +123,7 @@
       "notes": "no notes"
     },
     {
-      "id": 10,
+      "id": "10",
       "title": "Book",
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -131,7 +131,7 @@
       "notes": "no notes"
     },
     {
-      "id": 11,
+      "id": "11",
       "title": "Book",
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -139,7 +139,7 @@
       "notes": "no notes"
     },
     {
-      "id": 12,
+      "id": "12",
       "title": "Book",
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -147,7 +147,7 @@
       "notes": "no notes"
     },
     {
-      "id": 13,
+      "id": "13",
       "title": "Book",
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
