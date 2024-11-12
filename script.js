@@ -77,4 +77,3 @@ function addScrollEvents() {
 //changeActiveTab();
 createTabMenuListener()
 addScrollEvents();
-logoZoom();
