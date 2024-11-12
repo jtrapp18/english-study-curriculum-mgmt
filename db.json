@@ -128,11 +128,11 @@
   "students": [
     {
       "id": "1",
-      "fullName": "Jacqueline Trapp"
+      "fullName": "Person 1"
     },
     {
       "id": "2",
-      "fullName": "Elchonon Klafter"
+      "fullName": "Person 2"
     }
   ]
 }
