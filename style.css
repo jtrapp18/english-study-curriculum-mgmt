@@ -66,6 +66,10 @@ p {
   color: white;
 }
 
+span {
+  text-align: left;
+}
+
 button {
   cursor: pointer;
   position: relative;
@@ -222,10 +226,11 @@ footer img {
 }
 
 #curriculum-books {
+  position: relative;
+  z-index: 10;
   display: flex;
   overflow-x: auto; /* Adds a horizontal scrollbar when needed */
   margin: 20px;
-  /* background-color: white; */
   border: 2px solid black;
 }
 
@@ -241,12 +246,17 @@ label {
 }
 
 input[type="text"],
-input[type="date"] {
+input[type="date"], 
+span {
   width: 100%; /* Makes input fields take up the remaining space */
   padding: 5px;
+  box-sizing: border-box;
+}
+
+input[type="text"],
+input[type="date"] {
   border: 1px solid gray;
   border-radius: 4px;
-  box-sizing: border-box;
 }
 
 .edit-mode input[type="text"],
@@ -314,9 +324,6 @@ table, th, td {
   justify-items: center;
 }
 
-
-
-
 #bookfinder p {
   /* override default p color of white */
   color: black;
@@ -343,4 +350,15 @@ table, th, td {
   margin: 10px;
   padding: 10px;
   display: inline-grid;
+}
+
+#assignment-detail {
+  display: grid;
+  width: 60%;
+  border: none;
+}
+
+.active-row td{
+  font-weight: bold;
+  background-color: rgb(222, 215, 206);
 }

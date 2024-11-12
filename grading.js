@@ -3,8 +3,6 @@
 
 function renderStudent(student) {
 
-    document.querySelector("#student-select").dataset.id = student.id;
-
     const studentId = document.querySelector("#student-id");
     studentId.textContent = student.id;
 
@@ -75,7 +73,7 @@ function populateGradeRow(row, grade) {
         // add details for assignment grade
 
         row.children[5].textContent = grade.points;
-        row.children[6].textContent = grade.points/assignment.maxPoints;
+        row.children[6].textContent = ((grade.points / assignment.maxPoints) * 100).toFixed(2) + '%';
         row.children[7].textContent = "edit";
         row.children[7].classList.add("edit-column")
     })
@@ -85,7 +83,7 @@ function populateGradeRow(row, grade) {
 function renderGradeRow(grade, gradeId=0) {
 
     const table = document.querySelector("#student-assignments table");
-    const row = (gradeId === 0) ? createGradeRow() : table.querySelector(`tr[data-id="${id}"]`);
+    const row = (gradeId === 0) ? createGradeRow() : table.querySelector(`tr[data-id="${gradeId}"]`);
 
     populateGradeRow(row, grade);
 }
@@ -99,15 +97,6 @@ function renderAssignmentInfo(assignment) {
 
     const assignmentDescr = document.querySelector("#assignment-detail-description");
     assignmentDescr.textContent = assignment.description;
-
-    const assignmentStart = document.querySelector("#assignment-detail-start");
-    assignmentStart.textContent = assignment.startDate;
-
-    const assignmentDue = document.querySelector("#assignment-detail-due");
-    assignmentDue.textContent = assignment.dueDate;
-
-    const assignmentMaxPoints = document.querySelector("#assignment-max-points");
-    assignmentMaxPoints.textContent = assignment.maxPoints;
 }
 
 function renderStudentGrade(grade) {
@@ -161,8 +150,11 @@ function studentSelectListener() {
             renderStudent(student);
 
             document.querySelector("#student-assignments").classList.remove("hidden");
-            document.querySelector("#student-assignments table").innerHTML = "";
-            student.grades.forEach(renderGradeRow);
+
+            const table = document.querySelector("#student-assignments table")
+            table.querySelectorAll("td").forEach(r => r.remove());
+
+            student.grades.forEach(grade => renderGradeRow(grade));
 
             document.querySelector("#edit-grading").classList.add("hidden");
         })
@@ -178,6 +170,8 @@ function gradeSelectListener() {
         if (e.target.classList.contains("edit-column")) {
 
             const row = e.target.closest("tr");
+            table.querySelectorAll("tr").forEach(r => r.classList.remove("active-row"));
+            row.classList.add("active-row")
 
             const studentId = document.querySelector(`#student-select`).dataset.id;
 
@@ -205,7 +199,7 @@ function gradeSelectListener() {
     });
 }
 
-function editGradeListener(){
+function editGradeListener() {
 
     const form = document.querySelector("#edit-grading form");
 
