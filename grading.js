@@ -140,6 +140,7 @@ function submitGradeEdits(gradeId, studentId, assignmentId) {
         }
 
     patchJSONToDb("grades", gradeId, updatedGrade);
+    renderGradeRow(updatedGrade, gradeId);
 }
 
 //****************************************************************************************************
@@ -178,16 +179,19 @@ function gradeSelectListener() {
 
             const row = e.target.closest("tr");
 
+            const studentId = document.querySelector(`#student-select`).dataset.id;
+
             const gradeId = row.dataset.id;
             table.dataset.id = gradeId;
 
             const assignmentId = row.dataset.assignmentId;
             table.dataset.assignmentId = assignmentId;
 
-            getJSONById("grades", gradeId)
-            .then(grade => {
+            getEmbeddedJSONById("students", studentId, "grades")
+            .then(student => {
                 document.querySelector("#edit-grading").classList.remove("hidden");
 
+                const grade = student.grades.find(grade => grade.id === gradeId);
                 renderStudentGrade(grade);
 
                 getJSONById("assignments", assignmentId)
