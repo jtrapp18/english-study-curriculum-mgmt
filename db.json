@@ -2,28 +2,42 @@
   "grades": [
     {
       "id": "1",
-      "points": 8,
-      "comments": "great work",
-      "studentId": 1,
-      "assignmentId": 1
+      "points": "9",
+      "comments": "good work!",
+      "studentId": "1",
+      "assignmentId": "1"
     },
     {
-      "id": 2,
-      "points": "8",
-      "comments": "good work!!",
+      "id": "2",
+      "points": "10",
+      "comments": "great work!",
+      "studentId": "1",
+      "assignmentId": "2"
+    },
+    {
+      "id": "3",
+      "points": "10",
+      "comments": "great work!",
       "studentId": "2",
       "assignmentId": "1"
+    },
+    {
+      "id": "4",
+      "points": "10",
+      "comments": "good work.",
+      "studentId": "2",
+      "assignmentId": "2"
     }
   ],
   "assignments": [
     {
       "id": "1",
-      "name": "final book report book1",
-      "description": "description - edited",
-      "maxPoints": 10,
+      "name": "final book report for book 1",
+      "description": "description - edited!",
+      "maxPoints": "15",
       "startDate": "2024-11-08",
       "dueDate": "2024-11-08",
-      "bookId": 1
+      "bookId": "1"
     },
     {
       "id": "2",
@@ -32,31 +46,7 @@
       "maxPoints": 10,
       "startDate": "2024-11-08",
       "dueDate": "2024-11-08",
-      "bookId": 2
-    },
-    {
-      "id": "add ID",
-      "name": "another book report",
-      "description": "write even more book reports!",
-      "startDate": "2024-11-22",
-      "dueDate": "2024-12-06",
-      "bookId": 1
-    },
-    {
-      "name": "yet another report!",
-      "description": "This report was created to test the process of embedding :)",
-      "startDate": "2024-11-16",
-      "dueDate": "2024-11-24",
-      "bookId": "1",
-      "id": 3
-    },
-    {
-      "name": "This is new!",
-      "description": "",
-      "startDate": "2024-11-11",
-      "dueDate": "2024-11-13",
-      "bookId": "1",
-      "id": 4
+      "bookId": "1"
     }
   ],
   "books": [
@@ -117,62 +107,32 @@
       "notes": "no notes"
     },
     {
-      "id": "8",
-      "title": "Book",
-      "author": "Author",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
-      "description": "Author",
-      "notes": "no notes"
+      "title": "Death on the Nile",
+      "author": "Agatha Christie",
+      "image": "https://archive.org/download/deathonnile0000agat_q7b1/page/cover_w500_h500.jpg",
+      "description": "Belgians",
+      "notes": "",
+      "apiId": "14066646",
+      "id": "vioKBAw"
     },
     {
-      "id": "9",
-      "title": "Book",
-      "author": "Author",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
-      "description": "Author",
-      "notes": "no notes"
-    },
-    {
-      "id": "10",
-      "title": "Book",
-      "author": "Author",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
-      "description": "Author",
-      "notes": "no notes"
-    },
-    {
-      "id": "11",
-      "title": "Book",
-      "author": "Author",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
-      "description": "Author",
-      "notes": "no notes"
-    },
-    {
-      "id": "12",
-      "title": "Book",
-      "author": "Author",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
-      "description": "Author",
-      "notes": "no notes"
-    },
-    {
-      "id": "13",
-      "title": "Book",
-      "author": "Author",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
-      "description": "Author",
-      "notes": "no notes"
+      "title": "Harry Potter and the Half-Blood Prince",
+      "author": "J. K. Rowling",
+      "image": "",
+      "description": "orphans",
+      "notes": "",
+      "apiId": "10716273",
+      "id": "z5kj0_O"
     }
   ],
   "students": [
     {
-      "id": 1,
-      "fullName": "Jacqueline"
+      "id": "1",
+      "fullName": "Jacqueline Trapp"
     },
     {
-      "id": 2,
-      "fullName": "Jessie"
+      "id": "2",
+      "fullName": "Elchonon Klafter"
     }
   ]
 }
