@@ -73,7 +73,7 @@ function populateGradeRow(row, grade) {
         row.children[2].textContent = grade.points;
         row.children[3].textContent = maxPoints;
         row.children[4].textContent = ((grade.points / maxPoints) * 100).toFixed(2) + '%';
-        row.children[5].textContent = "edit";
+        row.children[5].textContent = "\u{1F589}";
         row.children[5].classList.add("edit-column")
     })
     .catch(e => console.error(e));

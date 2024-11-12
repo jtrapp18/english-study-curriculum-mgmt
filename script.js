@@ -48,34 +48,18 @@ function switchToTab(tabName){
     selectedTabContent.classList.add('active-tab')    
 }
 
-function logoZoom() {
-    const logos = document.querySelectorAll('footer img');
-
-    // Loop through each <h2> element and attach an event listener
-    logos.forEach(logo => {
-        
-        logo.addEventListener("mouseover", function() {
-            logo.style.width = "40px";
-        });
-
-        logo.addEventListener("mouseout", function() {
-            logo.style.width = "30px";
-        });
-    });
-}
-
-// window.onload = function () {
-//     let images = ['cats_under_table', 'cats_on_porch', 'cats_on_couch'];
-//     let index = 0;
+window.onload = function () {
+    const images = ['classroom', 'library', 'books_stacked', 'desk'];
+    let index = 0;
     
-//     function change() {
-//         const imgElement = document.querySelector('#cats');
-//         imgElement.src = `./img/home/${images[index]}.jpg`;
-//         index > 1 ? index = 0 : index++;
-//     }
+    function change() {
+        const imgElement = document.querySelector('#home img');
+        imgElement.src = `./img/home/${images[index]}.jpg`;
+        index > 2 ? index = 0 : index++;
+    }
 
-//     setInterval(change, 5000);
-// };
+    setInterval(change, 5000);
+};
 
 function addScrollEvents() {
     document.addEventListener('scroll', function() {
