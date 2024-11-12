@@ -230,7 +230,7 @@ function bookSelectListener() {
                 selectedBook = document.querySelector("#selected-book");
 
                 selectedBook.classList.remove("hidden");
-                selectedBook.outerHTML = clickedBook.outerHTML;
+                selectedBook.innerHTML = clickedBook.outerHTML;
             
                 renderAssignmentTable(book);
             })

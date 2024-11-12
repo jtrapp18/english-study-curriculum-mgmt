@@ -112,6 +112,15 @@
       "description": "Agatha Christie",
       "notes": "",
       "apiId": "14578132"
+    },
+    {
+      "id": "4028",
+      "title": "They Do It with Mirrors",
+      "author": "Agatha Christie",
+      "image": "https://archive.org/download/theydoitwithmirr00agat/page/cover_w500_h500.jpg",
+      "description": "Fiction",
+      "notes": "",
+      "apiId": "10249524"
     }
   ],
   "students": [

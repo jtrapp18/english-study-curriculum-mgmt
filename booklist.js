@@ -93,7 +93,12 @@ const dragstartHandler = (ev) => {
     ev.dataTransfer.setData("text", JSON.stringify(bookObj))
 }
 
+const dragendHandler = (ev) => {
+    addDropZone.style.backgroundColor = ""
+}
+
 const dragoverHandler = (ev) => {
+    addDropZone.style.backgroundColor = "grey"
     ev.preventDefault()
     ev.dataTransfer.dropEffect = "move";
 }
@@ -121,6 +126,7 @@ const renderBook = (book) => {
     bookListing.classList.add("book-listing")
     bookListing.draggable = true 
     bookListing.addEventListener("dragstart", dragstartHandler)
+    bookListing.addEventListener("dragend", dragendHandler)
     
     const bookInfo = document.createElement("div")
     bookInfo.classList.add("book-info")
