@@ -4,8 +4,8 @@
 
 body {
     text-align: center;
-    background-color: rgb(31, 49, 31);
-    padding-top: 200px;
+    /* background-color: #ccf2ff; */
+    padding-top: 170px;
     padding-bottom: 0px;
     margin: 0px;
     margin-bottom: 60px;
@@ -16,21 +16,32 @@ body {
 
 header {
   position: fixed;
-  background-color: white;
+  /* background-color: rgba(); */
+  background-image: url('img/book_cover.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
   color: rgb(31, 49, 31);
   width: 100%;
   top: 0;
   left: 0;
   padding: 0;
   z-index: 1000;
-  height: 200px;
+  height: 170px;
   box-sizing: border-box;
   border-bottom: 2px solid black;
   /* transition: height 0.3s ease; Smooth transition */
 }
 
+header h1 {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  color: rgb(173, 37, 37);
+  text-shadow: 2px 2px 5px white;
+}
+
 header.minimized {
-  height: 50px;
+  height: 100px;
   padding: 0;
 }
 
@@ -73,6 +84,10 @@ span {
 button {
   cursor: pointer;
   position: relative;
+  background-color: grey;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: 'Segoe UI';
 }
 
 form {
@@ -108,6 +123,8 @@ header.minimized .tab-names {
 .tab-names {
   display: flex;
   justify-content: center;
+  background-color: rgba(61, 155, 183, .7);
+  /* opacity: 70%; */
 }
 
 .tab-names h2 {
@@ -117,16 +134,17 @@ header.minimized .tab-names {
   margin-bottom: 0px;
   cursor: pointer;
   text-decoration: none;
+  color: white;
 }
 
 .tab-names h2.active-tab {
   text-decoration: underline;
-  color: rgb(31, 49, 31);
+  /* color: rgb(31, 49, 31); */
 }
 
 .tab-names h2:hover {
   text-decoration: underline;
-  color: rgb(188, 71, 71);
+  color: rgb(228, 170, 170);
   zoom: 110%;
 }
 
@@ -145,11 +163,13 @@ header.minimized .tab-names {
 .book-info {
   position: relative;
   padding: 10px;
+  margin-top: auto;
 }
 
 .book-info img {
   height: 150px;
   width: 120px;
+  bottom: 0px;
 }
 
 .overlay {
@@ -231,7 +251,7 @@ footer img {
   display: flex;
   overflow-x: auto; /* Adds a horizontal scrollbar when needed */
   margin: 20px;
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 
 #curriculum-books .book-info {
@@ -286,24 +306,29 @@ input[type="submit"] {
 #featured-book {
   display: flex;
   justify-content: center;
-  border: 2px solid black;
   background-color: white;
 }
 
 table, th, td {
   border: .5px solid black;
   color: black;
+  background-color: white;
   position: relative;
+}
+
+table {
+  border-collapse: collapse;
 }
 
 #selected-book-assignments {
   margin-left: 5%;
 }
 
-#featured-book, #edit-assignment, #add-assignment {
+#featured-book, #edit-assignment, #add-assignment, #curriculum-books{
   padding: 15px;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   margin: 20px;
+  border-radius: 10px;
 }
 
 .edit-column {
@@ -315,6 +340,7 @@ table, th, td {
 }
 
 #assignment-grades, #edit-grading {
+  border-radius: 25px;
   /* width: 100%; */
   padding: 15px;
   margin: 20px;
@@ -322,6 +348,7 @@ table, th, td {
   background-color: white;
   justify-content: center;
   justify-items: center;
+
 }
 
 #bookfinder p {
@@ -361,4 +388,12 @@ table, th, td {
 .active-row td{
   font-weight: bold;
   background-color: rgb(222, 215, 206);
+}
+
+#curriculum-books {
+  background-color: rgb(173, 37, 37);
+}
+
+#featured-book {
+  background-color: rgb(122, 190, 202);
 }
