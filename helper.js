@@ -1,7 +1,7 @@
 //****************************************************************************************************
 // JSON-server CRUD functionality
 
-function getJSON(dbKey) {
+function getJSONByKey(dbKey) {
 
     return fetch(`http://localhost:3000/${dbKey}`)
     .then(res => {
@@ -47,7 +47,7 @@ function getEmbeddedJSONById(baseKey, baseId, embeddedKey) {
 
 function postJSONToDb(dbKey, jsonObj) {
 
-    fetch(`http://localhost:3000/${dbKey}`, {
+    return fetch(`http://localhost:3000/${dbKey}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -60,8 +60,8 @@ function postJSONToDb(dbKey, jsonObj) {
             }
             return res.json();
         })
-        .then(data => console.log("ADDED", data))
-        .catch(e => console.error(e));
+        // .then(data => console.log("ADDED", data))
+        // .catch(e => console.error(e));
 }
 
 function patchJSONToDb(dbKey, Id, jsonObj) {
@@ -81,6 +81,24 @@ function patchJSONToDb(dbKey, Id, jsonObj) {
     })
     .then(data => console.log("EDITED", data))
     .catch(e => console.error(e));
+}
+
+function deleteJSONFromDb(dbKey, Id) {
+
+  fetch(`http://localhost:3000/${dbKey}/${Id}`, {
+  method: 'DELETE',
+  headers: {
+      'Content-Type': 'application/json'
+  }
+  })
+  .then(res => {
+    if (!res.ok) {
+      throw new Error(`HTTP error! Status: ${res.status}`);
+    }
+    return res.json();
+  })
+  .then(data => console.log("DELETED", data))
+  .catch(e => console.error(e));
 }
 
 //****************************************************************************************************

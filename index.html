@@ -54,6 +54,7 @@
                           <th>Assignment</th>
                           <th>Start Date</th>
                           <th>Due Date</th>
+                          <th>Max Points</th>
                           <th>Edit</th>
                         </tr>
                       </table>
@@ -80,6 +81,10 @@
                         <label for="new-assignment-due">Due Date:</label>
                         <input type="date" id="new-assignment-due" name="new-assignment-due">
                     </div>
+                    <div class="form-group">
+                        <label for="new-assignment-max-points">Max Points:</label>
+                        <input type="text" id="new-assignment-max-points" name="new-assignment-max-points">
+                    </div>
                     <input type="submit" id='submit-new' value="Submit New Assignment" />
                 </form>
             </div>
@@ -102,6 +107,10 @@
                         <label for="edit-assignment-due">Due Date:</label>
                         <input type="date" id="edit-assignment-due" name="edit-assignment-due">
                     </div>
+                    <div class="form-group">
+                        <label for="edit-assignment-max-points">Max Points:</label>
+                        <input type="text" id="edit-assignment-max-points" name="edit-assignment-max-points">
+                    </div>
                     <input type="submit" id='submit-edit' value="EDIT FORM" />
                 </form>
             </div>
@@ -120,30 +129,36 @@
                     <tr>
                         <th>ID</th>
                         <th>Assignment</th>
-                        <th>Grade</th>
+                        <th>Start Date</th>
+                        <th>Due Date</th>
+                        <th>Max Points</th>
+                        <th>Points</th>
+                        <th>Score</th>                          
                         <th>Edit</th>
                       </tr>
                 </table>
             </div>
-            <div id="assignment-detail">
-                <h2 id="proj-detail-id"></h2>
-                <p id="proj-detail-name"></p>
-                <p id="proj-detail-description"></p>
-                <p id="proj-detail-start"></p>
-                <p id="proj-detail-due"></p>
-            </div>
             <div id="edit-grading" class="hidden">
-                <form>
-                    <div class="form-group">
-                        <label for="edit-grade">Grade:</label>
-                        <input type="text" id="edit-grade" name="edit-grade">
-                    </div>
-                    <div class="form-group">
-                        <label for="edit-comments">Comments:</label>
-                        <input type="text" id="edit-comments" name="edit-comments">
-                    </div>
-                    <input type="submit" id='submit-grade' value="EDIT FORM" />
-                </form>
+                <div id="assignment-detail">
+                    <p id="assignment-detail-name"></p>
+                    <p id="assignment-detail-description"></p>
+                    <p id="assignment-detail-start"></p>
+                    <p id="assignment-detail-due"></p>
+                    <p id="assignment-max-points"></p>
+                </div>
+                <div>
+                    <form>
+                        <div class="form-group">
+                            <label for="edit-grade">Score:</label>
+                            <input type="text" id="edit-grade" name="edit-grade">
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-comments">Comments:</label>
+                            <input type="text" id="edit-comments" name="edit-comments">
+                        </div>
+                        <input type="submit" id='submit-grade' value="EDIT FORM" />
+                    </form>
+                </div>
             </div>
         </div>
         <footer>

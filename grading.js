@@ -29,52 +29,91 @@ function renderStudents() {
     .catch(e => console.error(e));
 }
 
-function renderGradeRow(grade) {
+function createGradeRow() {
 
     const table = document.querySelector("#student-assignments table");
-
     const row = document.createElement("tr");
+
+    // add rows for individual assignment
+
+    const assignmentId = document.createElement("td");
+    const assignmentName = document.createElement("td");
+    const assignmentStart = document.createElement("td");
+    const assignmentDue = document.createElement("td");
+    const assignmentMaxPoints = document.createElement("td");
+
+    // add rows for assignment grade
+
+    const gradePoints = document.createElement("td");
+    const percentage = document.createElement("td");
+    const editGrade = document.createElement("td");
+    editGrade.textContent = "edit";
+    editGrade.classList.add("edit-column");
+
+    row.append(assignmentId, assignmentName, assignmentStart, assignmentDue, assignmentMaxPoints, gradePoints, percentage, editGrade);
+    table.append(row);
+
+    return row;
+}
+
+function populateGradeRow(row, grade) {
+
     row.dataset.id = grade.id;
     row.dataset.assignmentId = grade.assignmentId;
 
-    const assignmentId = document.createElement("td");
-    assignmentId.textContent = grade.assignmentId;
+    getJSONById("assignments", grade.assignmentId)
+    .then(assignment => {
 
-    const projPoints = document.createElement("td");
-    projPoints.textContent = grade.points;
+        // add details for individual assignment
 
-    const projComments = document.createElement("td");
-    projComments.textContent = grade.comments;
+        row.children[0].textContent = grade.assignmentId;
+        row.children[1].textContent = assignment.name;
+        row.children[2].textContent = assignment.startDate;
+        row.children[3].textContent = assignment.dueDate;
+        row.children[4].textContent = assignment.maxPoints;
 
-    const editGrade = document.createElement("td");
-    editGrade.textContent = "edit";
-    editGrade.classList.add("edit-column")
+        // add details for assignment grade
 
-    row.append(assignmentId, projPoints, projComments, editGrade);
-    table.append(row);
+        row.children[5].textContent = grade.points;
+        row.children[6].textContent = grade.points/assignment.maxPoints;
+        row.children[7].textContent = "edit";
+        row.children[7].classList.add("edit-column")
+    })
+    .catch(e => console.error(e));
+}
+
+function renderGradeRow(grade, gradeId=0) {
+
+    const table = document.querySelector("#student-assignments table");
+    const row = (gradeId === 0) ? createGradeRow() : table.querySelector(`tr[data-id="${id}"]`);
+
+    populateGradeRow(row, grade);
 }
 
 function renderAssignmentInfo(assignment) {
 
-    const assignmentId = document.querySelector("#proj-detail-id");
-    assignmentId.textContent = assignment.id;
+    document.querySelector("#assignment-detail").dataset.id = assignment.id;
 
-    const projName = document.querySelector("#proj-detail-name");
-    projName.textContent = assignment.name;
+    const assignmentName = document.querySelector("#assignment-detail-name");
+    assignmentName.textContent = assignment.name;
 
-    const projDescr = document.querySelector("#proj-detail-description");
-    projDescr.textContent = assignment.description;
+    const assignmentDescr = document.querySelector("#assignment-detail-description");
+    assignmentDescr.textContent = assignment.description;
 
-    const projStart = document.querySelector("#proj-detail-start");
-    projStart.textContent = assignment.startDate;
+    const assignmentStart = document.querySelector("#assignment-detail-start");
+    assignmentStart.textContent = assignment.startDate;
 
-    const projEnd = document.querySelector("#proj-detail-due");
-    projEnd.textContent = assignment.dueDate;
+    const assignmentDue = document.querySelector("#assignment-detail-due");
+    assignmentDue.textContent = assignment.dueDate;
+
+    const assignmentMaxPoints = document.querySelector("#assignment-max-points");
+    assignmentMaxPoints.textContent = assignment.maxPoints;
 }
 
 function renderStudentGrade(grade) {
 
     const form = document.querySelector("#edit-grading form");
+    form.dataset.id = grade.id;
 
     const assignmentGrade = form["edit-grade"];
     assignmentGrade.value = grade.points;
@@ -101,6 +140,7 @@ function submitGradeEdits(gradeId, studentId, assignmentId) {
         }
 
     patchJSONToDb("grades", gradeId, updatedGrade);
+    renderGradeRow(updatedGrade, gradeId);
 }
 
 //****************************************************************************************************
@@ -121,8 +161,12 @@ function studentSelectListener() {
             renderStudent(student);
 
             document.querySelector("#student-assignments").classList.remove("hidden");
+            document.querySelector("#student-assignments table").innerHTML = "";
             student.grades.forEach(renderGradeRow);
+
+            document.querySelector("#edit-grading").classList.add("hidden");
         })
+        .catch(e => console.error(e));
     })
 }
 
@@ -135,19 +179,28 @@ function gradeSelectListener() {
 
             const row = e.target.closest("tr");
 
+            const studentId = document.querySelector(`#student-select`).dataset.id;
+
             const gradeId = row.dataset.id;
             table.dataset.id = gradeId;
 
-            const assignmentId = row.dataset.id;
-            table.dataset.assignmentId = row.dataset.assignmentId;
+            const assignmentId = row.dataset.assignmentId;
+            table.dataset.assignmentId = assignmentId;
 
-            getJSONById("grades", gradeId)
-            .then(grade => {
+            getEmbeddedJSONById("students", studentId, "grades")
+            .then(student => {
                 document.querySelector("#edit-grading").classList.remove("hidden");
 
-                // renderAssignmentInfo(assignment);
+                const grade = student.grades.find(grade => grade.id === gradeId);
                 renderStudentGrade(grade);
+
+                getJSONById("assignments", assignmentId)
+                .then(assignment => {
+                    renderAssignmentInfo(assignment);
+                })
+                .catch(e => console.error(e));
             })
+            .catch(e => console.error(e));
         }
     });
 }

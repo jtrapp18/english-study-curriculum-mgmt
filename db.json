@@ -2,28 +2,42 @@
   "grades": [
     {
       "id": "1",
-      "points": 8,
-      "comments": "great work",
-      "studentId": 1,
-      "assignmentId": 1
-    },
-    {
-      "id": 2,
       "points": "8",
-      "comments": "good work!!",
+      "comments": "good work, Jessie!!",
       "studentId": "2",
       "assignmentId": "1"
+    },
+    {
+      "id": "2",
+      "points": "7",
+      "comments": "good work, Jacqueline!!",
+      "studentId": "1",
+      "assignmentId": "2"
+    },
+    {
+      "id": "1",
+      "points": 10,
+      "comments": "great work, Jessie",
+      "studentId": "2",
+      "assignmentId": "1"
+    },
+    {
+      "id": "2",
+      "points": "7",
+      "comments": "good work, Jessie!!",
+      "studentId": "2",
+      "assignmentId": "2"
     }
   ],
   "assignments": [
     {
       "id": "1",
       "name": "final book report book1",
-      "description": "description - edited",
-      "maxPoints": 10,
+      "description": "description - edited!",
+      "maxPoints": "15",
       "startDate": "2024-11-08",
       "dueDate": "2024-11-08",
-      "bookId": 1
+      "bookId": "1"
     },
     {
       "id": "2",
@@ -32,31 +46,7 @@
       "maxPoints": 10,
       "startDate": "2024-11-08",
       "dueDate": "2024-11-08",
-      "bookId": 2
-    },
-    {
-      "id": "add ID",
-      "name": "another book report",
-      "description": "write even more book reports!",
-      "startDate": "2024-11-22",
-      "dueDate": "2024-12-06",
-      "bookId": 1
-    },
-    {
-      "name": "yet another report!",
-      "description": "This report was created to test the process of embedding :)",
-      "startDate": "2024-11-16",
-      "dueDate": "2024-11-24",
-      "bookId": "1",
-      "id": 3
-    },
-    {
-      "name": "This is new!",
-      "description": "",
-      "startDate": "2024-11-11",
-      "dueDate": "2024-11-13",
-      "bookId": "1",
-      "id": 4
+      "bookId": "2"
     }
   ],
   "books": [
@@ -167,12 +157,12 @@
   ],
   "students": [
     {
-      "id": 1,
-      "fullName": "Jacqueline"
+      "id": "1",
+      "fullName": "Jacqueline Trapp"
     },
     {
-      "id": 2,
-      "fullName": "Jessie"
+      "id": "2",
+      "fullName": "Jessie Trapp"
     }
   ]
 }

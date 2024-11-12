@@ -38,36 +38,51 @@ function renderCurriculumBooks() {
     .catch(e => console.error(e));
 }
 
-function renderAssignmentRow(assignment) {
+function createAssignmentRow() {
 
     const table = document.querySelector("#selected-book-assignments table");
-
     const row = document.createElement("tr");
-    row.dataset.id = assignment.id;
 
     const assignmentId = document.createElement("td");
-    assignmentId.textContent = assignment.id;
-
     const assignmentName = document.createElement("td");
-    assignmentName.textContent = assignment.name;
-
     const assignmentStart = document.createElement("td");
-    assignmentStart.textContent = assignment.startDate;
-
     const assignmentDue = document.createElement("td");
-    assignmentDue.textContent = assignment.dueDate;
-
+    const assignmentMaxPoints = document.createElement("td");
     const assignmentEdit = document.createElement("td");
     assignmentEdit.textContent = "edit";
-    assignmentEdit.classList.add("edit-column")
 
-    row.append(assignmentId, assignmentName, assignmentStart, assignmentDue, assignmentEdit);
+    row.append(assignmentId, assignmentName, assignmentStart, assignmentDue, assignmentMaxPoints, assignmentEdit);
     table.append(row);
+
+    return row;
+}
+
+function populateAssignmentRow(row, assignment) {
+
+    row.dataset.id = assignment.id;
+
+    row.children[0].textContent = assignment.id;
+    row.children[1].textContent = assignment.name;
+    row.children[2].textContent = assignment.startDate;
+    row.children[3].textContent = assignment.dueDate;
+    row.children[4].textContent = assignment.maxPoints;
+    row.children[5].textContent = "edit";
+    row.children[5].classList.add("edit-column")
+
+}
+
+function renderAssignmentRow(assignment, assignmentId=0) {
+
+    const table = document.querySelector("#selected-book-assignments table");
+    const row = (assignmentId === 0) ? createAssignmentRow() : table.querySelector(`tr[data-id="${assignmentId}"]`);
+
+    populateAssignmentRow(row, assignment);
 }
 
 function renderAssignmentTable(book) {
 
     document.querySelector("#selected-book-assignments").classList.remove("hidden");
+    console.log(book.assignments)
 
     book.assignments.forEach(renderAssignmentRow);
 
@@ -98,15 +113,18 @@ function renderAssignment(assignment) {
     const assignmentDue = form["edit-assignment-due"];
     assignmentDue.value = assignment.dueDate;
 
+    const assignmentMaxPoints = form["edit-assignment-max-points"];
+    assignmentMaxPoints.value = assignment.maxPoints;
+
     disableForm(form); // lock assignment details form by default
 }
 
 //****************************************************************************************************
-// SUBMIT information from forms to db.json
+// UPDATE db.json based on user interaction
 
 function submitAssignmentEdits(assignmentId, bookId) { 
     
-    const form = document.querySelector("#edit-assignment form")
+    const form = document.querySelector("#edit-assignment form");
     
     const updatedAssignment = {
         id: assignmentId,
@@ -114,10 +132,24 @@ function submitAssignmentEdits(assignmentId, bookId) {
         description: form["edit-assignment-descr"].value,
         startDate: form["edit-assignment-start"].value,
         dueDate: form["edit-assignment-due"].value,
+        maxPoints: form["edit-assignment-max-points"].value,
         bookId: bookId
         }
 
     patchJSONToDb("assignments", assignmentId, updatedAssignment);
+    renderAssignmentRow(updatedAssignment, assignmentId);
+}
+
+function validateForm(newAssignment) {
+
+    for (let key in newAssignment) {
+
+        if (!newAssignment[key]) {
+            alert(`Need to enter ${key}`)
+            return false
+        }
+    }
+    return true
 }
 
 function submitNewAssignment() {
@@ -130,12 +162,47 @@ function submitNewAssignment() {
         description: form["new-assignment-descr"].value,
         startDate: form["new-assignment-start"].value,
         dueDate: form["new-assignment-due"].value,
+        maxPoints: form["new-assignment-max-points"].value,
         bookId: bookId
         }
+    
+    if (validateForm(newAssignment)) {
 
-    postJSONToDb("assignments", newAssignment);
-    renderProjTblRow(newAssignment);
-    document.querySelector("#add-assignment").classList.add("hidden");
+        postJSONToDb("assignments", newAssignment)
+        .then(assignment => {
+            console.log("ADDED", assignment)
+
+            createGradeObjects(assignment.id); // create grade object for each student for new project
+            
+            newAssignment.id = assignment.id;
+            renderAssignmentRow(newAssignment);
+
+            document.querySelector("#add-assignment").classList.add("hidden");
+        })
+        .catch(e => console.error(e));
+    }
+}
+
+function createGradeObjects(assignmentId) {
+
+    getJSONByKey("students")
+    .then(students => {
+        console.log(students)
+        students.forEach(student => {
+
+        const newGrade = {
+            "points": 0,
+            "comments": "",
+            "studentId": student.id,
+            "assignmentId": assignmentId
+          }
+
+        postJSONToDb("grades", newGrade)
+        .then(data => console.log("ADDED", data))
+        .catch(e => console.error(e));
+
+    })})
+    .catch(e => console.error(e));
 }
 
 //****************************************************************************************************
