@@ -31,7 +31,10 @@ function createTabMenuListener(){
 }
 
 function handleTabSelectionEvent(e){
-    switchToTab(e.target.innerText)
+    //only listen to clicks within an h2 element
+    if(e.target.tagName == "H2"){
+        switchToTab(e.target.innerText)
+    }    
 }
 
 function switchToTab(tabName){
