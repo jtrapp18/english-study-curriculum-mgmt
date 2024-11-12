@@ -4,29 +4,31 @@
 function renderCurriculumBook(book) {
 
     const curriculumBooks = document.querySelector("#curriculum-books");
-    
-    const newBook = document.createElement("div");
-    newBook.classList.add("book-info");
-    newBook.dataset.id = book.id;
-    
+
+    //create required elements
+    const bookListing = document.createElement("div")
+    const bookInfo = document.createElement("div")
     const bookTitle = document.createElement("h2");
-    bookTitle.textContent = book.title
-
     const bookAuthor = document.createElement("p");
-    bookAuthor.textContent = book.author;
-
     const bookImg = document.createElement("img");
-    bookImg.src = book.image;
-
     const overlay = document.createElement("div");
-    overlay.className = "overlay";
-
     const bookDescr = document.createElement("p");
+
+    //set required data
+    bookListing.classList.add("book-listing");
+    bookInfo.classList.add("book-info");
+    bookInfo.dataset.id = book.id;
+    bookTitle.textContent = book.title
+    bookAuthor.textContent = book.author;
+    bookImg.src = book.image;
+    overlay.className = "overlay";
     bookDescr.textContent = book.description;
 
+    //append elements
     overlay.append(bookDescr);
-    newBook.append(bookTitle, bookAuthor, bookImg, overlay);
-    curriculumBooks.append(newBook);
+    bookInfo.append(bookTitle, bookAuthor, bookImg, overlay);
+    bookListing.append(bookInfo);
+    curriculumBooks.append(bookListing);
 }
 
 function renderCurriculumBooks() {
