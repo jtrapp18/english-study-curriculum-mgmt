@@ -63,8 +63,7 @@ h2 {
 }
 
 h3 {
-  font-size: 25px;
-  color: rgb(188, 71, 71);
+  font-size: 20px;
 }
 
 a {
@@ -170,19 +169,19 @@ header.minimized .tab-names {
 }
 
 .book-info {
-  flex-grow: 1;
   position: relative;
-  /* padding: 10px; */
-  /* margin-top: auto; */
+  height: 90%;
+  cursor: pointer;
   background-color: white;
   overflow: hidden;
 }
 
 .book-info img {
-  /* height: 150px;
-  width: 120px; */
-  width: 90%;
-  height: auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 150px;
+  width: 120px;
   margin-top: auto;
   object-fit: cover;
   bottom: 0px;
@@ -205,6 +204,7 @@ header.minimized .tab-names {
 
 .book-info:hover .overlay {
   opacity: 1; /* Show the overlay on hover */
+  /* zoom: 120%; */
 }
 
 .book-listing:hover {
@@ -219,13 +219,18 @@ header.minimized .tab-names {
 }
 
 .book-listing {
+  flex: 0 0 200px;
   margin: 10px;
   padding: 0px;
-  height: 350px;
+  height: 300px;
   width: 200px;
   background-color: white;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
   justify-content: space-between;
+}
+
+.book-info h2 {
+  font-size: 18px;
 }
 
 footer {
@@ -274,14 +279,9 @@ footer img {
 #curriculum-books {
   position: relative;
   z-index: 10;
-  display: flex;
+  display: inline-flex;
+  width: 100%;
   overflow-x: auto; /* Adds a horizontal scrollbar when needed */
-  /* margin: 20px; */
-  /* border: 2px solid black; */
-}
-
-#curriculum-books .book-info {
-  cursor: pointer;
 }
 
 label {
@@ -449,11 +449,14 @@ table {
 
 #add-dropzone {
   border: 2px dashed rgb(189, 186, 186);
-  /* align-items: center; */
 }
 
 #add-dropzone span{
   color: rgb(189, 186, 186);
   font-size: 30px;
   text-align: center;
+}
+
+#add-dropzone:hover {
+  background-color: grey;
 }
