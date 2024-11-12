@@ -116,8 +116,61 @@
             </div>
         </div>
         <div id="grading" class="tab-content">
-            <select id="student-select">
-            </select>
+            <div>
+                <label for="assignment-select">Student:</label>
+                <select id="assignment-select">
+                    <option value="" disabled selected>Select Assignment</option>
+                </select>
+            </div>
+            <div id="student">
+                <p id="student-id"></p>
+                <h2 id="student-name"></h2>
+            </div>
+            <div id="assignment-grades" class="hidden">
+                <ul></ul>
+                <h2>Assignment Grades</h2>
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Points</th>
+                        <th>Max Points</th>
+                        <th>Score</th>                          
+                        <th>Edit</th>
+                      </tr>
+                </table>
+            </div>
+            <div id="edit-grading" class="hidden">
+                <div id="assignment-detail">
+                    <div class="form-group">
+                        <label for="assignment-detail-name">Assignment:</label>
+                        <span id="assignment-detail-name"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="assignment-detail-description">Description:</label>
+                        <span id="assignment-detail-description"></span>
+                    </div>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label for="edit-grade">Score:</label>
+                        <input type="text" id="edit-grade" name="edit-grade">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-comments">Comments:</label>
+                        <input type="text" id="edit-comments" name="edit-comments">
+                    </div>
+                    <input type="submit" id='submit-grade' value="EDIT FORM" />
+                </form>
+            </div>
+        </div>
+        <div id="performance" class="tab-content">
+            <div>
+                <label for="student-select">Student:</label>
+                <select id="student-select">
+                    <option value="" disabled selected>Select Student</option>
+                </select>
+            </div>
             <div id="student">
                 <p id="student-id"></p>
                 <h2 id="student-name"></h2>
@@ -137,28 +190,6 @@
                         <th>Edit</th>
                       </tr>
                 </table>
-            </div>
-            <div id="edit-grading" class="hidden">
-                <div id="assignment-detail">
-                    <p id="assignment-detail-name"></p>
-                    <p id="assignment-detail-description"></p>
-                    <p id="assignment-detail-start"></p>
-                    <p id="assignment-detail-due"></p>
-                    <p id="assignment-max-points"></p>
-                </div>
-                <div>
-                    <form>
-                        <div class="form-group">
-                            <label for="edit-grade">Score:</label>
-                            <input type="text" id="edit-grade" name="edit-grade">
-                        </div>
-                        <div class="form-group">
-                            <label for="edit-comments">Comments:</label>
-                            <input type="text" id="edit-comments" name="edit-comments">
-                        </div>
-                        <input type="submit" id='submit-grade' value="EDIT FORM" />
-                    </form>
-                </div>
             </div>
         </div>
         <footer>

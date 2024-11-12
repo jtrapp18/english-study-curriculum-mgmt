@@ -82,15 +82,19 @@ function renderAssignmentRow(assignment, assignmentId=0) {
 function renderAssignmentTable(book) {
 
     document.querySelector("#selected-book-assignments").classList.remove("hidden");
-    console.log(book.assignments)
 
-    book.assignments.forEach(renderAssignmentRow);
+    const table = document.querySelector("#selected-book-assignments table")
+    table.querySelectorAll("td").forEach(r => r.remove());
+
+    book.assignments.forEach(assignment => renderAssignmentRow(assignment));
 
     const newProjBtn = document.querySelector("#selected-book-assignments button");
 
     newProjBtn.addEventListener("click", ()=> {
         document.querySelector("#add-assignment").classList.remove("hidden");
         document.querySelector("#edit-assignment").classList.add("hidden");
+
+        table.querySelectorAll("tr").forEach(r => r.classList.remove("active-row"));
     })
 }
 
@@ -243,6 +247,9 @@ function assignmentSelectListener() {
         if (e.target.classList.contains("edit-column")) {
 
             const row = e.target.closest("tr");
+            table.querySelectorAll("tr").forEach(r => r.classList.remove("active-row"));
+            row.classList.add("active-row");
+
             const assignmentId = row.dataset.id;
             
             getJSONById("assignments", assignmentId)
