@@ -21,7 +21,6 @@ const searchForm = document.querySelector("form#search")
 const addDropZone = document.querySelector("p#add-dropzone")
 const baseUrl = "https://openlibrary.org" //search.json?q=javascript&fields=*,availability&limit=1
 const coverImgUrl = "https://covers.openlibrary.org"
-const localUrl = "http://localhost:3000/books"
 
 ///////////////////////////////////////////////////////
 // endpoint functions
@@ -39,21 +38,20 @@ function getJSON(url){
     .catch((error) => console.log(error)) 
 }
 
-function buildRequestObj(method, payloadObj){
-    return {
-      method: ""+method+"",
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-      body: JSON.stringify(payloadObj),
-    }
-}
-
-function postJSON(payloadObj){ 
-    fetch(localUrl, buildRequestObj("POST",payloadObj))
-    .then((response) => response.json())
-    .then((data) => console.log("Book saved to curriculum"))
-    .catch((error) => console.error(error))
+function validateAndSave(bookObj){
+    getJSONbySearch("books", "apiId", bookObj.apiId)
+    .then((data) => {
+        if(data.length == 0){
+            //console.log("insert")
+            alert(`${bookObj.title} saved to curriculum`)
+            postJSONToDb("books", bookObj)
+            renderCurriculumBook(bookObj)
+            switchToTab("curriculum")
+        } else {
+            //console.log("book already in cur")
+            alert(`${bookObj.title} already in the curriculum`)
+        }
+    })
 }
 
 ///////////////////////////////////////////////////////
@@ -69,9 +67,9 @@ const handleBookSearch = (e) => {
 const handleBtnAddCurriculum = (e) => {
     const bookDiv = e.currentTarget.parentNode
     const bookObj = new Book(bookDiv.getAttribute("data-title"), bookDiv.getAttribute("data-author"), bookDiv.getAttribute("data-image"), bookDiv.getAttribute("data-subject"), "", bookDiv.getAttribute("data-api-id"))
-    console.log(bookObj)
-    console.log(`${bookObj.title} saved to curriculum`)
-    postJSON(bookObj)
+    //console.log(bookObj)
+    //console.log(`${bookObj.title} saved to curriculum`)
+    validateAndSave(bookObj)
 }
 
 const dragstartHandler = (ev) => {
@@ -89,7 +87,7 @@ const dropHandler = (ev) => {
     ev.preventDefault()
     const bookString = ev.dataTransfer.getData("text")
     const bookObj = JSON.parse(bookString)
-    postJSON(bookObj)
+    validateAndSave(bookObj)
     
     const saveResponse = `${bookObj.title} added to curriculum`
     addDropZone.innerText = saveResponse
@@ -119,6 +117,7 @@ const renderBook = (book) => {
     bookAuthor.innerText = bookObj.author
     
     const bookImg = document.createElement("img")
+
     const bookOverlay = document.createElement("div")
     bookOverlay.classList.add("overlay")
     
@@ -172,9 +171,7 @@ const renderBookList = (searchString) => {
     getJSON(`${baseUrl}/search.json?q=${query}&fields=*,availability&limit=20`)
     .then((data) => {
         bookMenu.innerText = ""
-        for(const book of data.docs){
-            renderBook(book)
-        }
+        data.docs.forEach((book) => renderBook(book))
     })
 }
 
