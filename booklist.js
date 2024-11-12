@@ -21,7 +21,6 @@ const searchForm = document.querySelector("form#search")
 const addDropZone = document.querySelector("p#add-dropzone")
 const baseUrl = "https://openlibrary.org" //search.json?q=javascript&fields=*,availability&limit=1
 const coverImgUrl = "https://covers.openlibrary.org"
-const localUrl = "http://localhost:3000/books"
 
 ///////////////////////////////////////////////////////
 // endpoint functions
@@ -39,21 +38,20 @@ function getJSON(url){
     .catch((error) => console.log(error)) 
 }
 
-function buildRequestObj(method, payloadObj){
-    return {
-      method: ""+method+"",
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-      body: JSON.stringify(payloadObj),
-    }
-}
-
-function postJSON(payloadObj){ 
-    fetch(localUrl, buildRequestObj("POST",payloadObj))
-    .then((response) => response.json())
-    .then((data) => console.log("Book saved to curriculum"))
-    .catch((error) => console.error(error))
+function validateAndSave(bookObj){
+    getJSONbySearch("books", "apiId", bookObj.apiId)
+    .then((data) => {
+        if(data.length == 0){
+            //console.log("insert")
+            alert(`${bookObj.title} saved to curriculum`)
+            postJSONToDb("books", bookObj)
+            renderCurriculumBook(bookObj)
+            switchToTab("curriculum")
+        } else {
+            //console.log("book already in cur")
+            alert(`${bookObj.title} already in the curriculum`)
+        }
+    })
 }
 
 ///////////////////////////////////////////////////////
@@ -61,17 +59,32 @@ function postJSON(payloadObj){
 //////////////////////////////////////////////////////
 
 const handleBookSearch = (e) => {
-    const searchString = e.target['book-search'].value
     e.preventDefault()
+    let searchString = ""
+    
+    const searchQuery = e.target['book-search-query'].value
+    const searchTitle = e.target['book-search-title'].value
+    const searchAuthor = e.target['book-search-author'].value
+    
+    if(searchQuery){
+        searchString += `q=${searchQuery}&fields=*,availability`
+    }
+    if(searchTitle){
+        searchString += `&title=${searchTitle}`
+    }
+    if(searchAuthor){
+        searchString += `&author=${searchAuthor}`
+    }
+
     renderBookList(searchString)
 }
 
 const handleBtnAddCurriculum = (e) => {
     const bookDiv = e.currentTarget.parentNode
     const bookObj = new Book(bookDiv.getAttribute("data-title"), bookDiv.getAttribute("data-author"), bookDiv.getAttribute("data-image"), bookDiv.getAttribute("data-subject"), "", bookDiv.getAttribute("data-api-id"))
-    console.log(bookObj)
-    console.log(`${bookObj.title} saved to curriculum`)
-    postJSON(bookObj)
+    //console.log(bookObj)
+    //console.log(`${bookObj.title} saved to curriculum`)
+    validateAndSave(bookObj)
 }
 
 const dragstartHandler = (ev) => {
@@ -89,7 +102,7 @@ const dropHandler = (ev) => {
     ev.preventDefault()
     const bookString = ev.dataTransfer.getData("text")
     const bookObj = JSON.parse(bookString)
-    postJSON(bookObj)
+    validateAndSave(bookObj)
     
     const saveResponse = `${bookObj.title} added to curriculum`
     addDropZone.innerText = saveResponse
@@ -101,21 +114,34 @@ const dropHandler = (ev) => {
 
 const renderBook = (book) => {
     //create book object
-    const bookObj = new Book(book.title, book.author_name[0], "", Array.isArray(book.subject) ? book.subject[0] : book.subject, "", book.cover_i)
+    const bookObj = new Book(book.title, Array.isArray(book.author_name) ? book.author_name[0] : book.author_name, "", Array.isArray(book.subject) ? book.subject[0] : book.subject, "", book.cover_i)
     
     //create required elements
     const bookListing = document.createElement("div")
-    const bookInfo = document.createElement("div")
-    const bookTitle = document.createElement("h2")
-    const bookAuthor = document.createElement("p")
-    const bookImg = document.createElement("img")
-    const bookOverlay = document.createElement("div")
-    const bookSubject = document.createElement("p")
-    const btnAddCurriculum = document.createElement("button")
-    
-    //enable draggable feature
+    bookListing.classList.add("book-listing")
     bookListing.draggable = true 
     bookListing.addEventListener("dragstart", dragstartHandler)
+    
+    const bookInfo = document.createElement("div")
+    bookInfo.classList.add("book-info")
+    
+    const bookTitle = document.createElement("h2")
+    bookTitle.innerText = bookObj.title
+    
+    const bookAuthor = document.createElement("p")
+    bookAuthor.innerText = bookObj.author
+    
+    const bookImg = document.createElement("img")
+
+    const bookOverlay = document.createElement("div")
+    bookOverlay.classList.add("overlay")
+    
+    const bookSubject = document.createElement("p")
+    bookSubject.innerText = bookObj.description 
+    
+    const btnAddCurriculum = document.createElement("button")
+    btnAddCurriculum.innerText = "add book to curriculum"
+    btnAddCurriculum.addEventListener('click', handleBtnAddCurriculum)
     
     //add dataset to book div
     bookListing.dataset.title = bookObj.title
@@ -123,15 +149,6 @@ const renderBook = (book) => {
     bookListing.dataset.subject = bookObj.description
     bookListing.dataset.apiId = bookObj.apiId
     
-    //set required data
-    bookListing.classList.add("book-listing")
-    bookInfo.classList.add("book-info")
-    bookOverlay.classList.add("overlay")
-    bookTitle.innerText = bookObj.title
-    bookAuthor.innerText = bookObj.author
-    bookSubject.innerText = bookObj.description 
-    btnAddCurriculum.innerText = "add book to curriculum"
-
     //initialize book cover image
     bookImg.alt = `${bookObj.title} cover image`
     bookImg.id = bookObj.apiId
@@ -148,38 +165,39 @@ const renderBook = (book) => {
     
     //append elements
     bookMenu.append(bookListing)
-    bookListing.append(bookInfo)
-    bookListing.append(btnAddCurriculum)
-    bookInfo.append(bookTitle)
-    bookInfo.append(bookAuthor)
-    bookInfo.append(bookImg)
-    bookInfo.append(bookOverlay)
-    bookOverlay.append(bookSubject)
-    
-    //add event listener to button
-    btnAddCurriculum.addEventListener('click', handleBtnAddCurriculum)
+    bookListing.append(bookInfo, btnAddCurriculum)
+    bookInfo.append(bookTitle, bookAuthor, bookImg, bookOverlay)
+    bookOverlay.append(bookSubject)    
 }
 
 const renderBookList = (searchString) => {
-    let query = "mystery"
+    let query = "q=mystery&fields=*,availability"
+    renderMessage("Books Loading", "please wait...")
+    console.log("Loading")
+
     if(searchString){
         query = encodeURI(searchString)
-        bookMenu.innerHTML = `
-        <div class="book-listing">
-            <div class="book-info">
-                <h2>Books Loading</h2>
-                <p>please wait...</p>
-            </div>
-        </div>`
-        console.log("Loading")
     }
-    getJSON(`${baseUrl}/search.json?q=${query}&fields=*,availability&limit=20`)
+    getJSON(`${baseUrl}/search.json?${query}&limit=20`)
     .then((data) => {
-        bookMenu.innerText = ""
-        for(const book of data.docs){
-            renderBook(book)
+        if(data.numFound < 1){
+            renderMessage("No Books Found", "please try another search")
+        } else {
+            bookMenu.innerText = ""
+            data.docs.forEach((book) => renderBook(book))
         }
     })
+}
+
+const renderMessage = (mainMessage, subMessage) => {
+    bookMenu.innerText = ''
+    bookMenu.innerHTML = `
+        <div class="book-listing">
+            <div class="book-info">
+                <h2>${mainMessage}</h2>
+                <p>${subMessage}</p>
+            </div>
+        </div>`
 }
 
 ///////////////////////////////////////////////////////

@@ -387,6 +387,13 @@ table {
   width: 100%;
 }
 
+.bookfinder-search {
+  display: flex;
+  gap: 10px;
+  padding-top: 7px;
+  padding-bottom: 10px;
+}
+
 .bookfinder-form {
   color: white;
   margin: 10px;

@@ -23,6 +23,16 @@ function getJSONById(dbKey, Id) {
       })
 }
 
+function getJSONbySearch(dbKey, searchKey, searchValue) {
+  return fetch(`http://localhost:3000/${dbKey}?${searchKey}=${searchValue}`)
+  .then(res => {
+      if (!res.ok) {
+        throw new Error(`HTTP error! Status: ${res.status}`);
+      }
+      return res.json();
+  })
+}
+
 function getEmbeddedJSON(baseKey, embeddedKey) {
 
     return fetch(`http://localhost:3000/${baseKey}?_embed=${embeddedKey}`)

@@ -56,64 +56,8 @@
       "author": "Author",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
       "description": "Author",
-      "notes": "no notes"
-    },
-    {
-      "id": "2",
-      "title": "Book",
-      "author": "Author",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
-      "description": "description",
-      "notes": "no notes"
-    },
-    {
-      "id": "3",
-      "title": "Book",
-      "author": "Author",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
-      "description": "Author",
-      "notes": "no notes"
-    },
-    {
-      "id": "4",
-      "title": "Book",
-      "author": "Author",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
-      "description": "Author",
-      "notes": "no notes"
-    },
-    {
-      "id": "5",
-      "title": "Book",
-      "author": "Author",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
-      "description": "Author",
-      "notes": "no notes"
-    },
-    {
-      "id": "6",
-      "title": "Book",
-      "author": "Author",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
-      "description": "Author",
-      "notes": "no notes"
-    },
-    {
-      "id": "7",
-      "title": "Book",
-      "author": "Author",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
-      "description": "Author",
-      "notes": "no notes"
-    },
-    {
-      "title": "Death on the Nile",
-      "author": "Agatha Christie",
-      "image": "https://archive.org/download/deathonnile0000agat_q7b1/page/cover_w500_h500.jpg",
-      "description": "Belgians",
-      "notes": "",
-      "apiId": "14066646",
-      "id": "vioKBAw"
+      "notes": "no notes",
+      "apiId": "1111"
     },
     {
       "title": "Harry Potter and the Half-Blood Prince",
@@ -123,6 +67,51 @@
       "notes": "",
       "apiId": "10716273",
       "id": "z5kj0_O"
+    },
+    {
+      "id": "7236",
+      "title": "Curtain",
+      "author": "Agatha Christie",
+      "image": "https://archive.org/download/curtainpoirotsla0000chri_b4y9/page/cover_w500_h500.jpg",
+      "description": "Fiction",
+      "notes": "",
+      "apiId": "12387503"
+    },
+    {
+      "id": "383c",
+      "title": "Death on the Nile",
+      "author": "Agatha Christie",
+      "image": "https://archive.org/download/deathonnile0000agat_q7b1/page/cover_w500_h500.jpg",
+      "description": "Belgians",
+      "notes": "",
+      "apiId": "14066646"
+    },
+    {
+      "id": "bccc",
+      "title": "Sleeping Murder",
+      "author": "Agatha Christie",
+      "image": "https://archive.org/download/sleepingmurder00chri/page/cover_w500_h500.jpg",
+      "description": "Fiction",
+      "notes": "",
+      "apiId": "10247294"
+    },
+    {
+      "id": "ebfc",
+      "title": "Murder in Mesopotamia",
+      "author": "Agatha Christie",
+      "image": "https://archive.org/download/murderinmesopota0000agat_x6k9/page/cover_w500_h500.jpg",
+      "description": "Fiction",
+      "notes": "",
+      "apiId": "12855104"
+    },
+    {
+      "id": "470d",
+      "title": "A Caribbean Mystery",
+      "author": "Agatha Christie",
+      "image": "https://archive.org/download/caribbeanmystery0000agat/page/cover_w500_h500.jpg",
+      "description": "Agatha Christie",
+      "notes": "",
+      "apiId": "14578132"
     }
   ],
   "students": [
