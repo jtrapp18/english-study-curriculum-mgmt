@@ -16,8 +16,8 @@ function renderCurriculumBook(book) {
 
     //set required data
     bookListing.classList.add("book-listing");
+    bookListing.dataset.id = book.id;
     bookInfo.classList.add("book-info");
-    bookInfo.dataset.id = book.id;
     bookTitle.textContent = book.title
     bookAuthor.textContent = book.author;
     bookImg.src = book.image;
@@ -51,7 +51,6 @@ function createAssignmentRow() {
     const assignmentDue = document.createElement("td");
     const assignmentMaxPoints = document.createElement("td");
     const assignmentEdit = document.createElement("td");
-    assignmentEdit.textContent = "edit";
 
     row.append(assignmentId, assignmentName, assignmentStart, assignmentDue, assignmentMaxPoints, assignmentEdit);
     table.append(row);
@@ -68,9 +67,8 @@ function populateAssignmentRow(row, assignment) {
     row.children[2].textContent = assignment.startDate;
     row.children[3].textContent = assignment.dueDate;
     row.children[4].textContent = assignment.maxPoints;
-    row.children[5].textContent = "edit";
+    row.children[5].textContent = "\u{1F589}";
     row.children[5].classList.add("edit-column")
-
 }
 
 function renderAssignmentRow(assignment, assignmentId=0) {
@@ -220,7 +218,7 @@ function bookSelectListener() {
 
     curriculumBooks.addEventListener("click", (e) => {
 
-        const clickedBook = e.target.closest(".book-info");
+        const clickedBook = e.target.closest(".book-listing");
 
         if (clickedBook) {
 
@@ -232,7 +230,7 @@ function bookSelectListener() {
                 selectedBook = document.querySelector("#selected-book");
 
                 selectedBook.classList.remove("hidden");
-                selectedBook.innerHTML = clickedBook.innerHTML;
+                selectedBook.outerHTML = clickedBook.outerHTML;
             
                 renderAssignmentTable(book);
             })

@@ -26,7 +26,7 @@ function changeActiveTab() {
 }
 
 window.onload = function () {
-    let images = ['classroom', 'library', 'books_stacked', 'desk'];
+    const images = ['classroom', 'library', 'books_stacked', 'desk'];
     let index = 0;
     
     function change() {
@@ -53,4 +53,3 @@ function addScrollEvents() {
 
 changeActiveTab();
 addScrollEvents();
-logoZoom();
