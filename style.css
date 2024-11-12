@@ -314,7 +314,7 @@ table, th, td {
   color: green;
 }
 
-#student-assignments, #edit-grading {
+#assignment-grades, #edit-grading {
   /* width: 100%; */
   padding: 15px;
   margin: 20px;
