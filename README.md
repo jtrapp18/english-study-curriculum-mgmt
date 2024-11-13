@@ -32,9 +32,9 @@ github: [klaftech](https://github.com/klaftech)
 
 ## Demo
   
-See this gif for an example of how to app works when live.
+See this gif for an example of how the app works.
   
-![demo](https://curriculum-content.s3.amazonaws.com/phase-1/phase-1-mock-cc-ramen-rater/demo-gif.gif)
+<!--![demo](https://curriculum-content.s3.amazonaws.com/phase-1/phase-1-mock-cc-ramen-rater/demo-gif.gif)-->
 
 
 ## Setup
