@@ -1,10 +1,10 @@
 {
   "grades": [
     {
-      "points": 0,
-      "comments": "",
+      "points": "8",
+      "comments": "Great work!",
       "studentId": "1",
-      "assignmentId": 1,
+      "assignmentId": "3",
       "id": 1
     },
     {
@@ -22,10 +22,10 @@
       "id": 3
     },
     {
-      "points": 0,
-      "comments": "",
+      "points": "9",
+      "comments": "Good job!",
       "studentId": "4",
-      "assignmentId": 1,
+      "assignmentId": "3",
       "id": 4
     },
     {
