@@ -52,7 +52,7 @@ See this gif for an example of how to app works when live.
 `https://openlibrary.org/search.json` GET  
 `https://covers.openlibrary.org` GET  
   
-###Local Database API:  
+### Local Database API:  
 Live server endpoint: `http://localhost:3000`  
 `/books` GET  
 `/assignments` GET  
