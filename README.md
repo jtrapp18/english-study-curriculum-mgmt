@@ -3,7 +3,7 @@
 
   
 ## About this project
-This project is a single-page application that allows teachers of English study curriculums to simply and easily manage their book curriculum as well create assignments and track student's progress and grades. This project uses data from the [OpenLibrary API](library.org/developers/api).
+This project is a single-page application that allows teachers of English study curriculums to simply and easily manage their book curriculum as well create assignments and track student's progress and grades. This project uses data from the [OpenLibrary API](https://openlibrary.org/developers/api).
   
 
 ## Contributors
