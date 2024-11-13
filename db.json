@@ -1173,13 +1173,22 @@
       "image": "https://archive.org/download/tokillmockingbir00leehrich/page/cover_w500_h500.jpg",
       "description": "fiction",
       "notes": "",
+      "apiId": "10590366"
+    },
+    {
+      "id": "1bd5",
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "image": "https://archive.org/download/tokillmockingbir00leehrich/page/cover_w500_h500.jpg",
+      "description": "fiction",
+      "notes": "",
       "apiId": "12606502"
     },
     {
       "id": "3309",
       "title": "Romeo and Juliet",
       "author": "William Shakespeare",
-      "image": "",
+      "image": "https://m.media-amazon.com/images/I/516E1EfYEfL._SL500_.jpg",
       "description": "Bibliography",
       "notes": "",
       "apiId": "8257991"
@@ -1192,15 +1201,6 @@
       "description": "contemporary fiction",
       "notes": "",
       "apiId": "14319003"
-    },
-    {
-      "id": "151f",
-      "title": "Macbeth",
-      "author": "William Shakespeare",
-      "image": "null",
-      "description": "Drama",
-      "notes": "",
-      "apiId": "872432"
     },
     {
       "id": "d963",
