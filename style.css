@@ -287,6 +287,7 @@ label, .label {
 
 input[type="text"],
 input[type="date"], 
+textarea,
 span {
   width: 100%; /* Makes input fields take up the remaining space */
   padding: 5px;
@@ -294,13 +295,17 @@ span {
 }
 
 input[type="text"],
-input[type="date"] {
+input[type="date"],
+textarea {
   border: 1px solid gray;
   border-radius: 4px;
+  font-family: 'Calibri';
+  font-size: 15px;
 }
 
 .edit-mode input[type="text"],
-.edit-mode input[type="date"] {
+.edit-mode input[type="date"],
+.edit-mode textarea {
   width: 100%; /* Makes input fields take up the remaining space */
   padding: 5px;
   border: 2px solid #007bff;

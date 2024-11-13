@@ -178,8 +178,10 @@ function submitNewAssignment() {
             
             newAssignment.id = assignment.id;
             renderAssignmentRow(newAssignment);
+            addDropdownOption(newAssignment);
 
             document.querySelector("#add-assignment").classList.add("hidden");
+            form.reset();
         })
         .catch(e => console.error(e));
     }
