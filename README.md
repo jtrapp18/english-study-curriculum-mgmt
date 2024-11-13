@@ -48,17 +48,17 @@ See this gif for an example of how to app works when live.
 
 ## Endpoints
 
-Public API:
-`https://openlibrary.org/search.json` GET
-`https://covers.openlibrary.org` GET
-
-Local Database API: 
-Live server endpoint: `http://localhost:3000` 
-`/books` GET
-`/assignments` GET
-`/grades` GET
-`/students` GET
-`/books/:id` GET, POST 
-`/assignments/:id` GET, POST, PATCH
-`/grades/:id` GET, POST, PATCH
-`/students/:id` GET, POST, PATCH
+### Public API:
+`https://openlibrary.org/search.json` GET  
+`https://covers.openlibrary.org` GET  
+  
+###Local Database API:  
+Live server endpoint: `http://localhost:3000`  
+`/books` GET  
+`/assignments` GET  
+`/grades` GET  
+`/students` GET  
+`/books/:id` GET, POST  
+`/assignments/:id` GET, POST, PATCH  
+`/grades/:id` GET, POST, PATCH  
+`/students/:id` GET, POST, PATCH  
