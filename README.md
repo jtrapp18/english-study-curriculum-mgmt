@@ -6,12 +6,10 @@
 This project is a single-page application that allows teachers of English study curriculums to simply and easily manage their book curriculum as well create assignments and track student's progress and grades. This project uses data from the [OpenLibrary API](library.org/developers/api).
 
 ## Contributors
-**Jacqueline Trapp**
-<br />
-github: [JTrapp18](https://github.com/jtrapp18)
-<br/ >
-**Elchonon Klafter**
-<br />
+**Jacqueline Trapp**  
+github: [JTrapp18](https://github.com/jtrapp18)  
+  
+**Elchonon Klafter**  
 github: [klaftech](https://github.com/klaftech)
 
 ## Features
