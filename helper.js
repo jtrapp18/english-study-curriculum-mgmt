@@ -118,6 +118,7 @@ function enableForm(form) {
 
     const inputs = form.querySelectorAll('input:not([type="submit"])')
     inputs.forEach(input => input.disabled = false);
+    form.querySelectorAll('textarea').disabled = false
 
     const submitBtn = form.querySelector('input[type="submit"]');
 
@@ -129,6 +130,7 @@ function disableForm(form) {
 
     const inputs = form.querySelectorAll('input:not([type="submit"])')
     inputs.forEach(input => input.disabled = true);
+    form.querySelectorAll('textarea').disabled = true
 
     const submitBtn = form.querySelector('input[type="submit"]');
     submitBtn.value = "EDIT FORM"

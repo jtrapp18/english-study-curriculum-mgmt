@@ -10,20 +10,33 @@ function renderStudentInfo(student) {
     studentName.textContent = student.fullName;
 }
 
+function addDropdownOption(assignment) {
+    const dropdown = document.querySelector(`#assignment-select`);
+    const assignmentName = document.createElement("option");
+
+    assignmentName.textContent = assignment.name;
+    assignmentName.dataset.id = assignment.id;
+    assignmentName.dataset.maxPoints = assignment.maxPoints;
+
+    dropdown.append(assignmentName);
+}
+
 function populateDropdown() {
 
     getEmbeddedJSON("assignments", "grades")
     .then(assignments => {
-        const dropdown = document.querySelector(`#assignment-select`);
+        assignments.forEach(addDropdownOption)
 
-        assignments.forEach(assignment => {
-            const assignmentName = document.createElement("option");
-            assignmentName.textContent = assignment.name;
-            assignmentName.dataset.id = assignment.id;
-            assignmentName.dataset.maxPoints = assignment.maxPoints;
+        // const dropdown = document.querySelector(`#assignment-select`);
+
+        // assignments.forEach(assignment => {
+        //     const assignmentName = document.createElement("option");
+        //     assignmentName.textContent = assignment.name;
+        //     assignmentName.dataset.id = assignment.id;
+        //     assignmentName.dataset.maxPoints = assignment.maxPoints;
     
-            dropdown.append(assignmentName);
-        })
+        //     dropdown.append(assignmentName);
+        // })
     })
     .catch(e => console.error(e));
 }
