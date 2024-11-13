@@ -8,14 +8,14 @@
       "id": 12
     },
     {
-      "points": "15",
+      "points": "14",
       "comments": "Your summary of the plot was clear, but I would have liked to see more analysis of the main character's motivations.",
       "studentId": "2",
-      "assignmentId": "Xtz5kDs",
+      "assignmentId": "7",
       "id": 13
     },
     {
-      "points": "16",
+      "points": "15",
       "comments": "The report was well-organized and covered all key points, but be sure to focus more on the author's writing style next time.",
       "studentId": "3",
       "assignmentId": "Xtz5kDs",
@@ -43,7 +43,7 @@
       "id": 17
     },
     {
-      "points": "17",
+      "points": "18",
       "comments": "Good job on summarizing the plot! Try to provide more of your personal opinion and reflection in future reports.",
       "studentId": "7",
       "assignmentId": "Xtz5kDs",
@@ -307,6 +307,153 @@
       "studentId": "11",
       "assignmentId": "htuk8JN",
       "id": 55
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "1",
+      "assignmentId": "-jDHMUa",
+      "id": 56
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "2",
+      "assignmentId": "-jDHMUa",
+      "id": 57
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "4",
+      "assignmentId": "-jDHMUa",
+      "id": 58
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "3",
+      "assignmentId": "-jDHMUa",
+      "id": 59
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "5",
+      "assignmentId": "-jDHMUa",
+      "id": 60
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "6",
+      "assignmentId": "-jDHMUa",
+      "id": 61
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "7",
+      "assignmentId": "-jDHMUa",
+      "id": 62
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "8",
+      "assignmentId": "-jDHMUa",
+      "id": 63
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "11",
+      "assignmentId": "-jDHMUa",
+      "id": 64
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "10",
+      "assignmentId": "-jDHMUa",
+      "id": 65
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "1",
+      "assignmentId": "YVHWeYA",
+      "id": 69
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "2",
+      "assignmentId": "YVHWeYA",
+      "id": 70
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "3",
+      "assignmentId": "YVHWeYA",
+      "id": 71
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "4",
+      "assignmentId": "YVHWeYA",
+      "id": 72
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "5",
+      "assignmentId": "YVHWeYA",
+      "id": 73
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "6",
+      "assignmentId": "YVHWeYA",
+      "id": 74
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "7",
+      "assignmentId": "YVHWeYA",
+      "id": 75
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "8",
+      "assignmentId": "YVHWeYA",
+      "id": 76
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "9",
+      "assignmentId": "YVHWeYA",
+      "id": 77
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "10",
+      "assignmentId": "YVHWeYA",
+      "id": 78
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "11",
+      "assignmentId": "YVHWeYA",
+      "id": 79
     }
   ],
   "assignments": [
@@ -323,7 +470,7 @@
       "name": "Character Analysis - To Kill a Mockingbird",
       "description": "In this assignment, you will select a character from the book we are reading and analyze their personality, motivations, development, and relationships with other characters. Your goal is to understand this character deeply and to express how they contribute to the story’s themes and conflict.",
       "startDate": "2025-01-06",
-      "dueDate": "2025-01-13",
+      "dueDate": "2025-01-14",
       "maxPoints": "10",
       "bookId": "1bd5",
       "id": "jTOxjZ1"
@@ -341,10 +488,28 @@
       "name": "Final Report - To Kill a Mockingbird",
       "description": "The purpose of this book report is to help you summarize the key elements of the story, understand the author’s message, and reflect on your personal response to the book. You’ll be describing the plot, main characters, setting, and themes in a way that shows you’ve read and thought about the story in detail.",
       "startDate": "2025-01-13",
-      "dueDate": "2025-01-23",
+      "dueDate": "2025-01-24",
       "maxPoints": "20",
       "bookId": "1bd5",
       "id": "htuk8JN"
+    },
+    {
+      "name": "The Descent into Savagery in Lord of the Flies",
+      "description": "In Lord of the Flies, William Golding explores the darker side of human nature through the boys' descent into savagery. In one paragraph, analyze how the loss of societal norms and the emergence of primal instincts affect the behavior of the boys, particularly focusing on the relationship between Ralph and Jack. Use examples from the text to support your points, and conclude by reflecting on what Golding seems to be saying about human nature and civilization.",
+      "startDate": "2025-03-31",
+      "dueDate": "2025-04-04",
+      "maxPoints": "10",
+      "bookId": "69de",
+      "id": "-jDHMUa"
+    },
+    {
+      "name": "The Ghost and Its Influence on Hamlet",
+      "description": "In Hamlet, the appearance of the ghost of King Hamlet sets the stage for the entire play, particularly regarding Hamlet’s quest for revenge. In one paragraph, analyze the significance of the ghost’s appearance and how it influences Hamlet’s actions throughout the play. Use specific examples from the text to support your points, and conclude by discussing the ghost’s role in the development of the themes of revenge and justice in the play.",
+      "startDate": "2025-05-05",
+      "dueDate": "2025-05-23",
+      "maxPoints": "25",
+      "bookId": "69de",
+      "id": "YVHWeYA"
     }
   ],
   "books": [
@@ -410,6 +575,15 @@
       "description": "performing arts",
       "notes": "",
       "apiId": "8281954"
+    },
+    {
+      "title": "Harry Potter and the Prisoner of Azkaban",
+      "author": "J. K. Rowling",
+      "image": "img/unavailable.jpg",
+      "description": "Fantasy fiction",
+      "notes": "",
+      "apiId": "10580435",
+      "id": "-8Au4Gq"
     }
   ],
   "students": [

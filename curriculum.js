@@ -66,7 +66,7 @@ function populateAssignmentRow(row, assignment) {
     row.children[2].textContent = assignment.dueDate;
     row.children[3].textContent = assignment.maxPoints;
     row.children[4].textContent = "\u{1F589}";
-    row.children[4].classList.add("edit-column")
+    row.children[4].classList.add("edit-column");
 }
 
 function renderAssignmentRow(assignment, assignmentId=0) {
@@ -79,8 +79,8 @@ function renderAssignmentRow(assignment, assignmentId=0) {
 
 function renderAssignmentTable(book) {
 
-    const table = document.querySelector("#selected-book-assignments table")
-    table.querySelectorAll("td").forEach(r => r.remove());
+    const table = document.querySelector("#selected-book-assignments table");
+    Array.from(table.querySelectorAll("tr")).slice(1).forEach(r => r.remove());
 
     book.assignments.forEach(assignment => renderAssignmentRow(assignment));
 

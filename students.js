@@ -101,7 +101,7 @@ function studentSelectListener() {
             document.querySelector("#student-assignments").classList.remove("hidden");
 
             const table = document.querySelector("#student-assignments table")
-            table.querySelectorAll("td").forEach(r => r.remove());
+            Array.from(table.querySelectorAll("tr")).slice(1).forEach(r => r.remove());
 
             student.grades.forEach(grade => renderStudentGradeRow(grade));
         })
