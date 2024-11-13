@@ -7,9 +7,11 @@ This project is a single-page application that allows teachers of English study 
 
 ## Contributors
 **Jacqueline Trapp**
+<br />
 github: [JTrapp18](https://github.com/jtrapp18)
-
+<br/ >
 **Elchonon Klafter**
+<br />
 github: [klaftech](https://github.com/klaftech)
 
 ## Features
