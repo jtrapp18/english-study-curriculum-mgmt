@@ -118,22 +118,22 @@ function enableForm(form) {
 
     const inputs = form.querySelectorAll('input:not([type="submit"])')
     inputs.forEach(input => input.disabled = false);
-    form.querySelectorAll('textarea').disabled = false
+    form.querySelector('textarea').disabled = false;
 
     const submitBtn = form.querySelector('input[type="submit"]');
 
-    submitBtn.value = "SUBMIT CHANGES"
-    form.classList.add("edit-mode")
+    submitBtn.value = "SUBMIT CHANGES";
+    form.classList.add("edit-mode");
 }
 
 function disableForm(form) {
 
     const inputs = form.querySelectorAll('input:not([type="submit"])')
     inputs.forEach(input => input.disabled = true);
-    form.querySelectorAll('textarea').disabled = true
+    form.querySelector('textarea').disabled = true;
 
     const submitBtn = form.querySelector('input[type="submit"]');
-    submitBtn.value = "EDIT FORM"
+    submitBtn.value = "EDIT DETAILS";
 
     form.classList.remove("edit-mode")
 }

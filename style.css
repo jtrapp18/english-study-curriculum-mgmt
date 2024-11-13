@@ -299,6 +299,8 @@ input[type="date"],
 textarea {
   border: 1px solid gray;
   border-radius: 4px;
+  font-family: 'Calibri';
+  font-size: 15px;
 }
 
 .edit-mode input[type="text"],

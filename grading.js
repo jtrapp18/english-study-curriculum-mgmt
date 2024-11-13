@@ -26,17 +26,6 @@ function populateDropdown() {
     getEmbeddedJSON("assignments", "grades")
     .then(assignments => {
         assignments.forEach(addDropdownOption)
-
-        // const dropdown = document.querySelector(`#assignment-select`);
-
-        // assignments.forEach(assignment => {
-        //     const assignmentName = document.createElement("option");
-        //     assignmentName.textContent = assignment.name;
-        //     assignmentName.dataset.id = assignment.id;
-        //     assignmentName.dataset.maxPoints = assignment.maxPoints;
-    
-        //     dropdown.append(assignmentName);
-        // })
     })
     .catch(e => console.error(e));
 }
@@ -201,7 +190,7 @@ function gradeSelectListener() {
             .then(assignment => {
                 document.querySelector("#edit-grading").classList.remove("hidden");
 
-                const grade = assignment.grades.find(grade => grade.id === gradeId);
+                const grade = assignment.grades.find(grade => grade.id == gradeId);
                 renderStudentGrade(grade);
 
                 getJSONById("students", studentId)
