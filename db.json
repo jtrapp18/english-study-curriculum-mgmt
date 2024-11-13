@@ -153,6 +153,83 @@
       "studentId": "10",
       "assignmentId": "jTOxjZ1",
       "id": 33
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "1",
+      "assignmentId": "tmkFOQ2",
+      "id": 34
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "2",
+      "assignmentId": "tmkFOQ2",
+      "id": 35
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "3",
+      "assignmentId": "tmkFOQ2",
+      "id": 36
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "4",
+      "assignmentId": "tmkFOQ2",
+      "id": 37
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "5",
+      "assignmentId": "tmkFOQ2",
+      "id": 38
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "6",
+      "assignmentId": "tmkFOQ2",
+      "id": 39
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "7",
+      "assignmentId": "tmkFOQ2",
+      "id": 40
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "8",
+      "assignmentId": "tmkFOQ2",
+      "id": 41
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "9",
+      "assignmentId": "tmkFOQ2",
+      "id": 42
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "10",
+      "assignmentId": "tmkFOQ2",
+      "id": 43
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "11",
+      "assignmentId": "tmkFOQ2",
+      "id": 44
     }
   ],
   "assignments": [
@@ -173,6 +250,15 @@
       "maxPoints": "10",
       "bookId": "1bd5",
       "id": "jTOxjZ1"
+    },
+    {
+      "name": "Theme Reflection - Of Mice and Men",
+      "description": "Choose one theme from Of Mice and Men—such as friendship, loneliness, the American Dream, or power—and analyze how it shapes the experiences of one or more characters, like George, Lennie, or Curley’s wife. In one paragraph, explain how this theme affects the character's actions, relationships, and outlook on life, using specific examples from the text to support your analysis. End with a reflection on what Steinbeck might be saying about this theme and its impact on people’s lives.",
+      "startDate": "2025-02-03",
+      "dueDate": "2025-02-07",
+      "maxPoints": "15",
+      "bookId": "0a1f",
+      "id": "tmkFOQ2"
     }
   ],
   "books": [

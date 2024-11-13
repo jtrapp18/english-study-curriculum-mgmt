@@ -34,7 +34,6 @@ function createStudentGradeRow() {
 
     // add rows for individual assignment
 
-    const assignmentId = document.createElement("td");
     const assignmentName = document.createElement("td");
     const assignmentStart = document.createElement("td");
     const assignmentDue = document.createElement("td");
@@ -45,7 +44,7 @@ function createStudentGradeRow() {
     const gradePoints = document.createElement("td");
     const percentage = document.createElement("td");
 
-    row.append(assignmentId, assignmentName, assignmentStart, assignmentDue, assignmentMaxPoints, gradePoints, percentage);
+    row.append(assignmentName, assignmentStart, assignmentDue, assignmentMaxPoints, gradePoints, percentage);
     table.append(row);
 
     return row;
@@ -61,16 +60,15 @@ function populateStudentGradeRow(row, grade) {
 
         // add details for individual assignment
 
-        row.children[0].textContent = grade.assignmentId;
-        row.children[1].textContent = assignment.name;
-        row.children[2].textContent = assignment.startDate;
-        row.children[3].textContent = assignment.dueDate;
-        row.children[4].textContent = assignment.maxPoints;
+        row.children[0].textContent = assignment.name;
+        row.children[1].textContent = assignment.startDate;
+        row.children[2].textContent = assignment.dueDate;
+        row.children[3].textContent = assignment.maxPoints;
 
         // add details for assignment grade
 
-        row.children[5].textContent = grade.points;
-        row.children[6].textContent = ((grade.points / assignment.maxPoints) * 100).toFixed(2) + '%';
+        row.children[4].textContent = grade.points;
+        row.children[5].textContent = ((grade.points / assignment.maxPoints) * 100).toFixed(2) + '%';
     })
     .catch(e => console.error(e));
 }

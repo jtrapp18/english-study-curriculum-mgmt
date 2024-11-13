@@ -45,14 +45,13 @@ function createAssignmentRow() {
     const table = document.querySelector("#selected-book-assignments table");
     const row = document.createElement("tr");
 
-    const assignmentId = document.createElement("td");
     const assignmentName = document.createElement("td");
     const assignmentStart = document.createElement("td");
     const assignmentDue = document.createElement("td");
     const assignmentMaxPoints = document.createElement("td");
     const assignmentEdit = document.createElement("td");
 
-    row.append(assignmentId, assignmentName, assignmentStart, assignmentDue, assignmentMaxPoints, assignmentEdit);
+    row.append(assignmentName, assignmentStart, assignmentDue, assignmentMaxPoints, assignmentEdit);
     table.append(row);
 
     return row;
@@ -62,13 +61,12 @@ function populateAssignmentRow(row, assignment) {
 
     row.dataset.id = assignment.id;
 
-    row.children[0].textContent = assignment.id;
-    row.children[1].textContent = assignment.name;
-    row.children[2].textContent = assignment.startDate;
-    row.children[3].textContent = assignment.dueDate;
-    row.children[4].textContent = assignment.maxPoints;
-    row.children[5].textContent = "\u{1F589}";
-    row.children[5].classList.add("edit-column")
+    row.children[0].textContent = assignment.name;
+    row.children[1].textContent = assignment.startDate;
+    row.children[2].textContent = assignment.dueDate;
+    row.children[3].textContent = assignment.maxPoints;
+    row.children[4].textContent = "\u{1F589}";
+    row.children[4].classList.add("edit-column")
 }
 
 function renderAssignmentRow(assignment, assignmentId=0) {
