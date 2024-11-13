@@ -7,6 +7,7 @@
         <script defer src="helper.js"></script>
         <script defer src="curriculum.js"></script>
         <script defer src="grading.js"></script>
+        <script defer src="students.js"></script>
         <script defer src="booklist.js"></script>
     </head>
     <body>
@@ -20,6 +21,7 @@
                 <h2 data-name="bookfinder">BOOKFINDER</h2>
                 <h2 data-name="curriculum">CURRICULUM</h2>
                 <h2 data-name="grading">GRADING</h2>
+                <h2 data-name="students">STUDENTS</h2>
             </div>
         </header>
         <div id="home" class="tab-content active-tab">
@@ -71,7 +73,6 @@
             <div id="add-assignment" class="hidden">
                 <h2>Add details for new assignment</h2>
                 <form class="edit-mode">
-
                     <div class="form-group">
                         <label for="new-assignment-name">Name:</label>
                         <input type="text" id="new-assignment-name" name="new-assignment-name">
@@ -124,18 +125,24 @@
         </div>
         <div id="grading" class="tab-content">
             <div>
-                <label for="assignment-select">Assignment:</label>
+                <span class="label">Assignment:</span>
                 <select id="assignment-select">
                     <option value="" disabled selected>Select Assignment</option>
                 </select>
             </div>
-            <div id="student">
-                <p id="student-id"></p>
-                <h2 id="student-name"></h2>
-            </div>
             <div id="assignment-grades" class="hidden">
-                <ul></ul>
-                <h2>Assignment Grades</h2>
+                <div id="assignment-detail">
+                    <h2>Assignment Details</h2>
+                    <p id="assignment-detail-descr"></p>
+                    <div id="assignment-detail-dates">
+                        <span class="label">Start Date:</span>
+                        <span id="assignment-detail-start"></span>
+                        <span>|</span>
+                        <span class="label">Due Date:</span>
+                        <span id="assignment-detail-due"></span>
+                    </div>
+                </div>
+                <hr>
                 <table>
                     <tr>
                         <th>ID</th>
@@ -148,16 +155,15 @@
                 </table>
             </div>
             <div id="edit-grading" class="hidden">
-                <div id="assignment-detail">
-                    <div class="form-group">
-                        <label for="assignment-detail-name">Assignment:</label>
-                        <span id="assignment-detail-name"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="assignment-detail-description">Description:</label>
-                        <span id="assignment-detail-description"></span>
-                    </div>
+                <h2>Student Grade Details</h2>
+                <div class="student-detail">
+                    <span class="label">Student ID:</span>
+                    <span id="student-detail-id"></span>
+                    <span>|</span>
+                    <span class="label">Student Name:</span>
+                    <span id="student-detail-name"></span>
                 </div>
+                <hr>
                 <form>
                     <div class="form-group">
                         <label for="edit-grade">Score:</label>
@@ -171,20 +177,23 @@
                 </form>
             </div>
         </div>
-        <div id="performance" class="tab-content">
+        <div id="students" class="tab-content">
             <div>
-                <label for="student-select">Student:</label>
+                <span class="label">Student:</span>
                 <select id="student-select">
                     <option value="" disabled selected>Select Student</option>
                 </select>
             </div>
-            <div id="student">
-                <p id="student-id"></p>
-                <h2 id="student-name"></h2>
-            </div>
             <div id="student-assignments" class="hidden">
-                <ul></ul>
                 <h2>Student Assignments</h2>
+                <div class="student-detail">
+                    <span class="label">Student ID:</span>
+                    <span id="student-id"></span>
+                    <span>|</span>
+                    <span class="label">Student Name:</span>
+                    <span id="student-name"></span>
+                </div>
+                <hr>
                 <table>
                     <tr>
                         <th>ID</th>
@@ -193,16 +202,10 @@
                         <th>Due Date</th>
                         <th>Max Points</th>
                         <th>Points</th>
-                        <th>Score</th>                          
-                        <th>Edit</th>
+                        <th>Score</th>
                       </tr>
                 </table>
             </div>
         </div>
-        <!-- <footer>
-            <a href="https://www.instagram.com/brooke.buster">
-                <div><img src="./img/logos/Instagram_Glyph_Black.jpg" alt="Instagram Logo"></div>
-            </a>
-        </footer> -->
     </body>
 </html>
