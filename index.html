@@ -14,7 +14,6 @@
         <header>
             <div class="minimized-content">       
                 <h1 class="minimized">Curriculum Management</h1>
-                <!-- <h3 class="minimized">Project management for English teachers</h3> -->
             </div>
             <div class="tab-names">
                 <h2 data-name="home" class="active-tab">HOME</h2>
@@ -28,9 +27,9 @@
             <img src="./img/home/classroom.jpg" alt="Books">
         </div>
         <div id="bookfinder" class="tab-content">
+            <p>Search for books to add to class curriculum</p>
             <div id="bookfindernav" class="bookfinder-nav">
                 <form id="search" class="bookfinder-form">
-                    <!--<label for="book-search-query">Type search query to find books</label>-->
                     <div class="bookfinder-search">
                         <input type="text" id="book-search-query" name="book-search-query" placeholder="Search Query">
                     </div>
@@ -52,10 +51,10 @@
             <p>Click book below to view / edit / add related assignments</p>
             <div id="curriculum-books">
             </div>
-            <div id="featured-book">
-                <div id="selected-book" class="hidden">
+            <div id="featured-book" class="hidden">
+                <div id="selected-book">
                 </div>
-                <div id="selected-book-assignments" class="hidden">
+                <div id="selected-book-assignments">
                     <h2>Assignments for Selected Books</h2>
                     <table>
                         <tr>
@@ -71,7 +70,7 @@
                 </div>
             </div>
             <div id="add-assignment" class="hidden">
-                <h2>Add details for new assignment</h2>
+                <h2>Details for New Assignment</h2>
                 <form class="edit-mode">
                     <div class="form-group">
                         <label for="new-assignment-name">Name:</label>
@@ -98,7 +97,7 @@
             </div>
             <div id="edit-assignment" class="hidden">
                 <form>
-                    <h2>Assignment Details</h2>
+                    <h2>Details for Selected Assignment</h2>
                     <div class="form-group">
                         <label for="edit-assignment-name">Name:</label>
                         <input type="text" id="edit-assignment-name" name="edit-ssignment-name">
@@ -124,6 +123,7 @@
             </div>
         </div>
         <div id="grading" class="tab-content">
+            <p>Select assignment to view / edit grades by student</p>
             <div>
                 <span class="label">Assignment:</span>
                 <select id="assignment-select">
@@ -132,7 +132,7 @@
             </div>
             <div id="assignment-grades" class="hidden">
                 <div id="assignment-detail">
-                    <h2>Assignment Details</h2>
+                    <h2>Details for Selected Assignment</h2>
                     <p id="assignment-detail-descr"></p>
                     <div id="assignment-detail-dates">
                         <span class="label">Start Date:</span>
@@ -155,7 +155,7 @@
                 </table>
             </div>
             <div id="edit-grading" class="hidden">
-                <h2>Student Grade Details</h2>
+                <h2>Details for Selected Student</h2>
                 <div class="student-detail">
                     <span class="label">Student ID:</span>
                     <span id="student-detail-id"></span>
@@ -178,6 +178,7 @@
             </div>
         </div>
         <div id="students" class="tab-content">
+            <p>Select student to view grades by assignment</p>
             <div>
                 <span class="label">Student:</span>
                 <select id="student-select">
@@ -185,7 +186,7 @@
                 </select>
             </div>
             <div id="student-assignments" class="hidden">
-                <h2>Student Assignments</h2>
+                <h2>Grades for Selected Student</h2>
                 <div class="student-detail">
                     <span class="label">Student ID:</span>
                     <span id="student-id"></span>

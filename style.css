@@ -329,6 +329,10 @@ input[type="submit"] {
   background-color: white;
 }
 
+#featured-book.hidden {
+  display: none;
+}
+
 table, th, td {
   border: .5px solid black;
   color: black;
