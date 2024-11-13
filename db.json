@@ -8,7 +8,7 @@
       "id": 12
     },
     {
-      "points": "14",
+      "points": "15",
       "comments": "Your summary of the plot was clear, but I would have liked to see more analysis of the main character's motivations.",
       "studentId": "2",
       "assignmentId": "Xtz5kDs",
@@ -230,6 +230,83 @@
       "studentId": "11",
       "assignmentId": "tmkFOQ2",
       "id": 44
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "1",
+      "assignmentId": "htuk8JN",
+      "id": 45
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "2",
+      "assignmentId": "htuk8JN",
+      "id": 46
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "3",
+      "assignmentId": "htuk8JN",
+      "id": 47
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "4",
+      "assignmentId": "htuk8JN",
+      "id": 48
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "5",
+      "assignmentId": "htuk8JN",
+      "id": 49
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "6",
+      "assignmentId": "htuk8JN",
+      "id": 50
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "7",
+      "assignmentId": "htuk8JN",
+      "id": 51
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "8",
+      "assignmentId": "htuk8JN",
+      "id": 52
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "9",
+      "assignmentId": "htuk8JN",
+      "id": 53
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "10",
+      "assignmentId": "htuk8JN",
+      "id": 54
+    },
+    {
+      "points": 0,
+      "comments": "",
+      "studentId": "11",
+      "assignmentId": "htuk8JN",
+      "id": 55
     }
   ],
   "assignments": [
@@ -237,7 +314,7 @@
       "name": "Final Report - The Great Gatsby",
       "description": "The purpose of this book report is to help you summarize the key elements of the story, understand the author’s message, and reflect on your personal response to the book. You’ll be describing the plot, main characters, setting, and themes in a way that shows you’ve read and thought about the story in detail.",
       "startDate": "2024-12-09",
-      "dueDate": "2024-12-20",
+      "dueDate": "2024-12-19",
       "maxPoints": "20",
       "bookId": "a133",
       "id": "Xtz5kDs"
@@ -246,7 +323,7 @@
       "name": "Character Analysis - To Kill a Mockingbird",
       "description": "In this assignment, you will select a character from the book we are reading and analyze their personality, motivations, development, and relationships with other characters. Your goal is to understand this character deeply and to express how they contribute to the story’s themes and conflict.",
       "startDate": "2025-01-06",
-      "dueDate": "2025-01-10",
+      "dueDate": "2025-01-13",
       "maxPoints": "10",
       "bookId": "1bd5",
       "id": "jTOxjZ1"
@@ -259,6 +336,15 @@
       "maxPoints": "15",
       "bookId": "0a1f",
       "id": "tmkFOQ2"
+    },
+    {
+      "name": "Final Report - To Kill a Mockingbird",
+      "description": "The purpose of this book report is to help you summarize the key elements of the story, understand the author’s message, and reflect on your personal response to the book. You’ll be describing the plot, main characters, setting, and themes in a way that shows you’ve read and thought about the story in detail.",
+      "startDate": "2025-01-13",
+      "dueDate": "2025-01-23",
+      "maxPoints": "20",
+      "bookId": "1bd5",
+      "id": "htuk8JN"
     }
   ],
   "books": [
