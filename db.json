@@ -51,86 +51,113 @@
   ],
   "books": [
     {
-      "id": "1",
-      "title": "Book",
-      "author": "Author",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
-      "description": "Author",
-      "notes": "no notes",
-      "apiId": "1111"
+      "id": "a133",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "image": "https://archive.org/download/greatgatsby0000fitz_u2h3/page/cover.jpg",
+      "description": "Married people, fiction",
+      "notes": "",
+      "apiId": "10590366"
     },
     {
-      "title": "Harry Potter and the Half-Blood Prince",
-      "author": "J. K. Rowling",
-      "image": "",
-      "description": "orphans",
+      "id": "1bd5",
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "image": "https://archive.org/download/tokillmockingbir00leehrich/page/cover_w500_h500.jpg",
+      "description": "fiction",
       "notes": "",
-      "apiId": "10716273",
-      "id": "z5kj0_O"
+      "apiId": "12606502"
     },
     {
-      "id": "7236",
-      "title": "Curtain",
-      "author": "Agatha Christie",
-      "image": "https://archive.org/download/curtainpoirotsla0000chri_b4y9/page/cover_w500_h500.jpg",
-      "description": "Fiction",
+      "id": "3309",
+      "title": "Romeo and Juliet",
+      "author": "William Shakespeare",
+      "image": "https://m.media-amazon.com/images/I/516E1EfYEfL._SL500_.jpg",
+      "description": "Bibliography",
       "notes": "",
-      "apiId": "12387503"
+      "apiId": "8257991"
     },
     {
-      "id": "383c",
-      "title": "Death on the Nile",
-      "author": "Agatha Christie",
-      "image": "https://archive.org/download/deathonnile0000agat_q7b1/page/cover_w500_h500.jpg",
-      "description": "Belgians",
+      "id": "0a1f",
+      "title": "Of Mice and Men",
+      "author": "John Steinbeck",
+      "image": "https://archive.org/download/ofmicemen0000john_s4l0/page/cover_w500_h500.jpg",
+      "description": "contemporary fiction",
       "notes": "",
-      "apiId": "14066646"
+      "apiId": "14319003"
     },
     {
-      "id": "bccc",
-      "title": "Sleeping Murder",
-      "author": "Agatha Christie",
-      "image": "https://archive.org/download/sleepingmurder00chri/page/cover_w500_h500.jpg",
-      "description": "Fiction",
+      "id": "d963",
+      "title": "Animal Farm",
+      "author": "George Orwell",
+      "image": "https://archive.org/download/animalfarm00orwe_0/page/cover_w500_h500.jpg",
+      "description": "British and irish fiction (fictional works by one author)",
       "notes": "",
-      "apiId": "10247294"
+      "apiId": "11261770"
     },
     {
-      "id": "ebfc",
-      "title": "Murder in Mesopotamia",
-      "author": "Agatha Christie",
-      "image": "https://archive.org/download/murderinmesopota0000agat_x6k9/page/cover_w500_h500.jpg",
-      "description": "Fiction",
+      "id": "69de",
+      "title": "Lord of Flies",
+      "author": "William Golding",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/41OtRk9o81L.jpg",
+      "description": "fiction",
       "notes": "",
-      "apiId": "12855104"
+      "apiId": "8684447"
     },
     {
-      "id": "470d",
-      "title": "A Caribbean Mystery",
-      "author": "Agatha Christie",
-      "image": "https://archive.org/download/caribbeanmystery0000agat/page/cover_w500_h500.jpg",
-      "description": "Agatha Christie",
+      "id": "7142",
+      "title": "Hamlet",
+      "author": "William Shakespeare",
+      "image": "https://archive.org/download/tragicallhistori00shak/page/cover_w500_h500.jpg",
+      "description": "performing arts",
       "notes": "",
-      "apiId": "14578132"
-    },
-    {
-      "id": "4028",
-      "title": "They Do It with Mirrors",
-      "author": "Agatha Christie",
-      "image": "https://archive.org/download/theydoitwithmirr00agat/page/cover_w500_h500.jpg",
-      "description": "Fiction",
-      "notes": "",
-      "apiId": "10249524"
+      "apiId": "8281954"
     }
   ],
   "students": [
     {
       "id": "1",
-      "fullName": "Person 1"
+      "fullName": "Liam Adams"
     },
     {
       "id": "2",
-      "fullName": "Person 2"
+      "fullName": "Noah Baker"
+    },
+    {
+      "id": "3",
+      "fullName": "Oliver Clark"
+    },
+    {
+      "id": "4",
+      "fullName": "James Davis"
+    },
+    {
+      "id": "5",
+      "fullName": "Elijah Evans"
+    },
+    {
+      "id": "6",
+      "fullName": "Mateo Frank"
+    },
+    {
+      "id": "7",
+      "fullName": "Theodore Ghosh"
+    },
+    {
+      "id": "8",
+      "fullName": "Lucas Hills"
+    },
+    {
+      "id": "9",
+      "fullName": "Henry Irwin"
+    },
+    {
+      "id": "10",
+      "fullName": "William Jones"
+    },
+    {
+      "id": "11",
+      "fullName": "Thomas Lopez"
     }
   ]
 }
