@@ -35,7 +35,16 @@ function getJSON(url){
             throw new Error("Request failed")
         }
     })
-    .catch((error) => console.log(error)) 
+    .catch((error) => {
+        if (error.name === 'TypeError' && error.message.includes('Failed to fetch')) {
+            // Handle the specific 'Failed to fetch' error
+            console.error('Fetch request failed:', error);
+            alert("External API Fetch Error, please wait to reload")
+        } else {
+            // Handle other errors
+            console.error('An unexpected error occurred:', error);
+        }
+    }) 
 }
 
 function validateAndSave(bookObj){
@@ -121,59 +130,63 @@ const renderBook = (book) => {
     //create book object
     const bookObj = new Book(book.title, Array.isArray(book.author_name) ? book.author_name[0] : book.author_name, "", Array.isArray(book.subject) ? book.subject[0] : book.subject, "", book.cover_i)
     
-    //create required elements
-    const bookListing = document.createElement("div")
-    bookListing.classList.add("book-listing")
-    bookListing.draggable = true 
-    bookListing.addEventListener("dragstart", dragstartHandler)
-    bookListing.addEventListener("dragend", dragendHandler)
-    
-    const bookInfo = document.createElement("div")
-    bookInfo.classList.add("book-info")
-    
-    const bookTitle = document.createElement("h2")
-    bookTitle.innerText = bookObj.title
-    
-    const bookAuthor = document.createElement("p")
-    bookAuthor.innerText = bookObj.author
-    
-    const bookImg = document.createElement("img")
+    //only create book div, if the api returned an author_name and apiId
+    if(bookObj.author && bookObj.apiId){
+        //create required elements
+        const bookListing = document.createElement("div")
+        bookListing.classList.add("book-listing")
+        bookListing.draggable = true 
+        bookListing.addEventListener("dragstart", dragstartHandler)
+        bookListing.addEventListener("dragend", dragendHandler)
+        
+        const bookInfo = document.createElement("div")
+        bookInfo.classList.add("book-info")
+        
+        const bookTitle = document.createElement("h2")
+        bookTitle.innerText = bookObj.title
+        
+        const bookAuthor = document.createElement("p")
+        bookAuthor.innerText = bookObj.author
+        
+        const bookImg = document.createElement("img")
 
-    const bookOverlay = document.createElement("div")
-    bookOverlay.classList.add("overlay")
-    
-    const bookSubject = document.createElement("p")
-    bookSubject.innerText = bookObj.description 
-    
-    const btnAddCurriculum = document.createElement("button")
-    btnAddCurriculum.innerText = "add book to curriculum"
-    btnAddCurriculum.addEventListener('click', handleBtnAddCurriculum)
-    
-    //add dataset to book div
-    bookListing.dataset.title = bookObj.title
-    bookListing.dataset.author = bookObj.author
-    bookListing.dataset.subject = bookObj.description
-    bookListing.dataset.apiId = bookObj.apiId
-    
-    //initialize book cover image
-    bookImg.alt = `${bookObj.title} cover image`
-    bookImg.id = bookObj.apiId
-    bookImg.style.height = "150px" //TODO: move to CSS
-    bookImg.style.width = "120px" //TODO: move to CSS
+        const bookOverlay = document.createElement("div")
+        bookOverlay.classList.add("overlay")
+        
+        const bookSubject = document.createElement("p")
+        bookSubject.innerText = bookObj.description 
+        
+        const btnAddCurriculum = document.createElement("button")
+        btnAddCurriculum.innerText = "add book to curriculum"
+        btnAddCurriculum.addEventListener('click', handleBtnAddCurriculum)
+        
+        //add dataset to book div
+        bookListing.dataset.title = bookObj.title
+        bookListing.dataset.author = bookObj.author
+        bookListing.dataset.subject = bookObj.description
+        bookListing.dataset.apiId = bookObj.apiId
+        
+        //initialize book cover image
+        bookImg.alt = `${bookObj.title} cover image`
+        bookImg.id = bookObj.apiId
+        bookImg.style.height = "150px" //TODO: move to CSS
+        bookImg.style.width = "120px" //TODO: move to CSS
+        bookImg.src = "img/placeholder.gif" //default placeholder
 
-    getJSON(`${coverImgUrl}/b/id/${bookObj.apiId}.json`)
-    .then((data) => {
-        const updatedUrl = data.source_url
-        bookImg.src = updatedUrl //update image url
-        bookObj.image = updatedUrl //update bookObject
-        bookListing.dataset.image = updatedUrl //update book div dataset
-    })
-    
-    //append elements
-    bookMenu.append(bookListing)
-    bookListing.append(bookInfo, btnAddCurriculum)
-    bookInfo.append(bookTitle, bookAuthor, bookImg, bookOverlay)
-    bookOverlay.append(bookSubject)    
+        getJSON(`${coverImgUrl}/b/id/${bookObj.apiId}.json`)
+        .then((data) => {
+            const updatedUrl = data.source_url ? data.source_url : "img/unavailable.jpg"
+            bookImg.src = updatedUrl //update image url
+            bookObj.image = updatedUrl //update bookObject
+            bookListing.dataset.image = updatedUrl //update book div dataset
+        })
+        
+        //append elements
+        bookMenu.append(bookListing)
+        bookListing.append(bookInfo, btnAddCurriculum)
+        bookInfo.append(bookTitle, bookAuthor, bookImg, bookOverlay)
+        bookOverlay.append(bookSubject)
+    }
 }
 
 const renderBookList = (searchString) => {
@@ -196,12 +209,17 @@ const renderBookList = (searchString) => {
 }
 
 const renderMessage = (mainMessage, subMessage) => {
+    let addLoader = ""
+    if(subMessage == "please wait..."){
+        addLoader = `<img src="img/placeholder.gif" alt="loading placeholder" />`
+    }
     bookMenu.innerText = ''
     bookMenu.innerHTML = `
         <div class="book-listing">
             <div class="book-info">
                 <h2>${mainMessage}</h2>
                 <p>${subMessage}</p>
+                ${addLoader}
             </div>
         </div>`
 }
