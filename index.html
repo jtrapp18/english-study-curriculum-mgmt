@@ -7,28 +7,29 @@
         <script defer src="helper.js"></script>
         <script defer src="curriculum.js"></script>
         <script defer src="grading.js"></script>
+        <script defer src="students.js"></script>
         <script defer src="booklist.js"></script>
     </head>
     <body>
         <header>
             <div class="minimized-content">       
                 <h1 class="minimized">Curriculum Management</h1>
-                <!-- <h3 class="minimized">Project management for English teachers</h3> -->
             </div>
             <div class="tab-names">
                 <h2 data-name="home" class="active-tab">HOME</h2>
                 <h2 data-name="bookfinder">BOOKFINDER</h2>
                 <h2 data-name="curriculum">CURRICULUM</h2>
                 <h2 data-name="grading">GRADING</h2>
+                <h2 data-name="students">STUDENTS</h2>
             </div>
         </header>
         <div id="home" class="tab-content active-tab">
             <img src="./img/home/classroom.jpg" alt="Books">
         </div>
         <div id="bookfinder" class="tab-content">
+            <p>Search for books to add to class curriculum</p>
             <div id="bookfindernav" class="bookfinder-nav">
                 <form id="search" class="bookfinder-form">
-                    <!--<label for="book-search-query">Type search query to find books</label>-->
                     <div class="bookfinder-search">
                         <input type="text" id="book-search-query" name="book-search-query" placeholder="Search Query">
                     </div>
@@ -50,10 +51,10 @@
             <p>Click book below to view / edit / add related assignments</p>
             <div id="curriculum-books">
             </div>
-            <div id="featured-book">
-                <div id="selected-book" class="hidden">
+            <div id="featured-book" class="hidden">
+                <div id="selected-book">
                 </div>
-                <div id="selected-book-assignments" class="hidden">
+                <div id="selected-book-assignments">
                     <h2>Assignments for Selected Books</h2>
                     <table>
                         <tr>
@@ -69,9 +70,8 @@
                 </div>
             </div>
             <div id="add-assignment" class="hidden">
-                <h2>Add details for new assignment</h2>
+                <h2>Details for New Assignment</h2>
                 <form class="edit-mode">
-
                     <div class="form-group">
                         <label for="new-assignment-name">Name:</label>
                         <input type="text" id="new-assignment-name" name="new-assignment-name">
@@ -97,7 +97,7 @@
             </div>
             <div id="edit-assignment" class="hidden">
                 <form>
-                    <h2>Assignment Details</h2>
+                    <h2>Details for Selected Assignment</h2>
                     <div class="form-group">
                         <label for="edit-assignment-name">Name:</label>
                         <input type="text" id="edit-assignment-name" name="edit-ssignment-name">
@@ -123,19 +123,26 @@
             </div>
         </div>
         <div id="grading" class="tab-content">
+            <p>Select assignment to view / edit grades by student</p>
             <div>
-                <label for="assignment-select">Assignment:</label>
+                <span class="label">Assignment:</span>
                 <select id="assignment-select">
                     <option value="" disabled selected>Select Assignment</option>
                 </select>
             </div>
-            <div id="student">
-                <p id="student-id"></p>
-                <h2 id="student-name"></h2>
-            </div>
             <div id="assignment-grades" class="hidden">
-                <ul></ul>
-                <h2>Assignment Grades</h2>
+                <div id="assignment-detail">
+                    <h2>Details for Selected Assignment</h2>
+                    <p id="assignment-detail-descr"></p>
+                    <div id="assignment-detail-dates">
+                        <span class="label">Start Date:</span>
+                        <span id="assignment-detail-start"></span>
+                        <span>|</span>
+                        <span class="label">Due Date:</span>
+                        <span id="assignment-detail-due"></span>
+                    </div>
+                </div>
+                <hr>
                 <table>
                     <tr>
                         <th>ID</th>
@@ -148,16 +155,15 @@
                 </table>
             </div>
             <div id="edit-grading" class="hidden">
-                <div id="assignment-detail">
-                    <div class="form-group">
-                        <label for="assignment-detail-name">Assignment:</label>
-                        <span id="assignment-detail-name"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="assignment-detail-description">Description:</label>
-                        <span id="assignment-detail-description"></span>
-                    </div>
+                <h2>Details for Selected Student</h2>
+                <div class="student-detail">
+                    <span class="label">Student ID:</span>
+                    <span id="student-detail-id"></span>
+                    <span>|</span>
+                    <span class="label">Student Name:</span>
+                    <span id="student-detail-name"></span>
                 </div>
+                <hr>
                 <form>
                     <div class="form-group">
                         <label for="edit-grade">Score:</label>
@@ -171,20 +177,24 @@
                 </form>
             </div>
         </div>
-        <div id="performance" class="tab-content">
+        <div id="students" class="tab-content">
+            <p>Select student to view grades by assignment</p>
             <div>
-                <label for="student-select">Student:</label>
+                <span class="label">Student:</span>
                 <select id="student-select">
                     <option value="" disabled selected>Select Student</option>
                 </select>
             </div>
-            <div id="student">
-                <p id="student-id"></p>
-                <h2 id="student-name"></h2>
-            </div>
             <div id="student-assignments" class="hidden">
-                <ul></ul>
-                <h2>Student Assignments</h2>
+                <h2>Grades for Selected Student</h2>
+                <div class="student-detail">
+                    <span class="label">Student ID:</span>
+                    <span id="student-id"></span>
+                    <span>|</span>
+                    <span class="label">Student Name:</span>
+                    <span id="student-name"></span>
+                </div>
+                <hr>
                 <table>
                     <tr>
                         <th>ID</th>
@@ -193,16 +203,10 @@
                         <th>Due Date</th>
                         <th>Max Points</th>
                         <th>Points</th>
-                        <th>Score</th>                          
-                        <th>Edit</th>
+                        <th>Score</th>
                       </tr>
                 </table>
             </div>
         </div>
-        <!-- <footer>
-            <a href="https://www.instagram.com/brooke.buster">
-                <div><img src="./img/logos/Instagram_Glyph_Black.jpg" alt="Instagram Logo"></div>
-            </a>
-        </footer> -->
     </body>
 </html>

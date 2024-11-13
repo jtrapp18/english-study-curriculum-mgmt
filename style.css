@@ -80,6 +80,12 @@ span {
   text-align: left;
 }
 
+hr {
+  width:  90%;
+  border: none;
+  border-top: 3px double black;
+}
+
 button {
   cursor: pointer;
   position: relative;
@@ -108,7 +114,6 @@ form {
 }
 
 #home{
-  /* display: flex; */
   left: 0px;
   padding: 0;
   margin: 0;
@@ -122,7 +127,6 @@ form {
 #home img {
   padding: 0;
   margin: 0;
-  /* height: calc(100vh - 350px); */
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -136,12 +140,11 @@ header.minimized .tab-names {
   display: flex;
   justify-content: center;
   background-color: rgba(61, 155, 183, .8);
-  /* opacity: 70%; */
 }
 
 .tab-names h2 {
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 4%;
+  padding-right: 4%;
   padding-bottom: 0px;
   margin-bottom: 0px;
   cursor: pointer;
@@ -233,25 +236,16 @@ header.minimized .tab-names {
   font-size: 18px;
 }
 
-footer {
-  display: flex;
-  left: 0;
-  position: fixed;
-  background-color: white;
-  width: 100%;
-  bottom: 0;
-  height: 60px;
-  padding-bottom: 15px;
-  box-sizing: border-box;
-  border-top: 4px solid black;
+select {
+  padding: 5px;
+  margin: 20px;
+  width: 40%;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
 }
 
-footer div {
-  float: left;
-  margin: 10px;
-}
-footer img {
-  width: 30px;
+select:hover {
+  background-color: rgb(252, 220, 173);
 }
 
 #add-assignment, #edit-assignment {
@@ -284,7 +278,7 @@ footer img {
   overflow-x: auto; /* Adds a horizontal scrollbar when needed */
 }
 
-label {
+label, .label {
   width: 120px; /* Set a fixed width for the label */
   margin-right: 10px; /* Space between label and input */
   font-weight: bold;
@@ -335,6 +329,10 @@ input[type="submit"] {
   background-color: white;
 }
 
+#featured-book.hidden {
+  display: none;
+}
+
 table, th, td {
   border: .5px solid black;
   color: black;
@@ -359,15 +357,29 @@ table {
   width: 100%;
 }
 
-#featured-book, #edit-assignment, #add-assignment, #curriculum-books, #all-books, #assignment-grades, #edit-grading {
+#featured-book, #edit-assignment, #add-assignment, #curriculum-books, 
+#all-books, #assignment-grades, #edit-grading, #student-assignments{
   padding: 15px;
-  /* border: 2px solid black; */
   margin: 10px;
   border-radius: 10px;
 }
 
 #featured-book .book-listing {
   margin-left: 50px;
+}
+
+#assignment-detail {
+  width: 100%;
+  max-width: 600px;
+}
+
+#assignment-detail-dates, .student-detail {
+  color: rgb(144, 27, 27);
+  display: block;
+}
+
+#assignment-detail-descr {
+  font-style: italic;
 }
 
 .edit-column {
@@ -378,13 +390,14 @@ table {
   color: red;
 }
 
-#assignment-grades, #edit-grading {
+#assignment-grades, #student-assignments, #edit-grading {
   justify-content: center;
   justify-items: center;
 }
 
 .bookfinder-nav {
   width: 100%;
+  display: flex;
 }
 
 .bookfinder-search {
@@ -398,6 +411,7 @@ table {
   color: white;
   margin: 10px;
   display: inline-grid;
+  width: 70%
 }
 
 .bookfinder-form label {
@@ -411,12 +425,7 @@ table {
   margin: 10px;
   padding: 10px;
   display: inline-grid;
-}
-
-#assignment-detail {
-  display: grid;
-  width: 60%;
-  /* border: none; */
+  width: 30%;
 }
 
 .active-row td{
@@ -428,25 +437,18 @@ table {
   background-color: rgb(173, 37, 37);
 }
 
-#featured-book, #assignment-grades {
+#featured-book, #assignment-grades, #student-assignments {
   background-color: rgb(122, 190, 202);
-}
-
-#grading select {
-  padding: 5px;
-  margin: 20px;
-  width: 40%;
-  border-radius: 5px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
-}
-
-#grading select:hover {
-  background-color: rgb(252, 220, 173);
 }
 
 #grading table {
   width: 100%;
   max-width: 600px;
+}
+
+#students table {
+  width: 100%;
+  max-width: 1000px;
 }
 
 #selected-book-assignments table {

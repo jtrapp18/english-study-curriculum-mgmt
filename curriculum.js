@@ -81,8 +81,6 @@ function renderAssignmentRow(assignment, assignmentId=0) {
 
 function renderAssignmentTable(book) {
 
-    document.querySelector("#selected-book-assignments").classList.remove("hidden");
-
     const table = document.querySelector("#selected-book-assignments table")
     table.querySelectorAll("td").forEach(r => r.remove());
 
@@ -227,10 +225,8 @@ function bookSelectListener() {
 
             getEmbeddedJSONById("books", bookId, "assignments")
             .then(book => {
-                selectedBook = document.querySelector("#selected-book");
-
-                selectedBook.classList.remove("hidden");
-                selectedBook.innerHTML = clickedBook.outerHTML;
+                document.querySelector("#featured-book").classList.remove("hidden");
+                document.querySelector("#selected-book").innerHTML = clickedBook.outerHTML;
             
                 renderAssignmentTable(book);
             })

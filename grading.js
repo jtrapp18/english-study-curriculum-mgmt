@@ -1,13 +1,13 @@
 //****************************************************************************************************
 // RENDER information on DOM
 
-function renderStudent(assignment) {
+function renderStudentInfo(student) {
 
-    const assignmentId = document.querySelector("#student-id");
-    assignmentId.textContent = assignment.id;
+    const studentId = document.querySelector("#student-detail-id");
+    studentId.textContent = student.id;
 
-    const assignmentName = document.querySelector("#student-name");
-    assignmentName.textContent = assignment.name;
+    const studentName = document.querySelector("#student-detail-name");
+    studentName.textContent = student.fullName;
 }
 
 function populateDropdown() {
@@ -91,11 +91,14 @@ function renderAssignmentInfo(assignment) {
 
     document.querySelector("#assignment-detail").dataset.id = assignment.id;
 
-    const assignmentName = document.querySelector("#assignment-detail-name");
-    assignmentName.textContent = assignment.name;
-
-    const assignmentDescr = document.querySelector("#assignment-detail-description");
+    const assignmentDescr = document.querySelector("#assignment-detail-descr");
     assignmentDescr.textContent = assignment.description;
+
+    const assignmentStart = document.querySelector("#assignment-detail-start");
+    assignmentStart.textContent = assignment.startDate;
+
+    const assignmentDue = document.querySelector("#assignment-detail-due");
+    assignmentDue.textContent = assignment.dueDate;
 }
 
 function renderStudentGrade(grade) {
@@ -147,7 +150,7 @@ function studentSelectListener() {
 
         getEmbeddedJSONById("assignments", assignmentId, "grades")
         .then(assignment => {
-            renderStudent(assignment);
+            renderAssignmentInfo(assignment);
 
             document.querySelector("#assignment-grades").classList.remove("hidden");
 
@@ -190,7 +193,7 @@ function gradeSelectListener() {
 
                 getJSONById("students", studentId)
                 .then(student => {
-                    renderAssignmentInfo(student);
+                    renderStudentInfo(student);
                 })
                 .catch(e => console.error(e));
             })
