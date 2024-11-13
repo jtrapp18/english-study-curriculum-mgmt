@@ -19,7 +19,7 @@ class Book {
 const bookMenu = document.querySelector("div#all-books")
 const searchForm = document.querySelector("form#search")
 const addDropZone = document.querySelector("p#add-dropzone")
-const baseUrl = "https://openlibrary.org" //search.json?q=javascript&fields=*,availability&limit=1
+const baseUrl = "https://openlibrary.org/search.json" //search.json?q=javascript&fields=*,availability&limit=1
 const coverImgUrl = "https://covers.openlibrary.org"
 
 ///////////////////////////////////////////////////////
@@ -197,7 +197,7 @@ const renderBookList = (searchString) => {
     if(searchString){
         query = encodeURI(searchString)
     }
-    getJSON(`${baseUrl}/search.json?${query}&limit=20`)
+    getJSON(`${baseUrl}?${query}&limit=20`)
     .then((data) => {
         if(data.numFound < 1){
             renderMessage("No Books Found", "please try another search")
