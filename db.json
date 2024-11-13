@@ -1,1052 +1,161 @@
 {
   "grades": [
     {
-      "points": "8",
-      "comments": "Great work!",
+      "points": "19",
+      "comments": "You did a great job analyzing the themes in the book. Your insights into the character development were very thoughtful.",
       "studentId": "1",
-      "assignmentId": "3",
-      "id": 1
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "2",
-      "assignmentId": 1,
-      "id": 2
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "3",
-      "assignmentId": 1,
-      "id": 3
-    },
-    {
-      "points": "9",
-      "comments": "Good job!",
-      "studentId": "4",
-      "assignmentId": "3",
-      "id": 4
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "5",
-      "assignmentId": 1,
-      "id": 5
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "6",
-      "assignmentId": 1,
-      "id": 6
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "7",
-      "assignmentId": 1,
-      "id": 7
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "8",
-      "assignmentId": 1,
-      "id": 8
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "11",
-      "assignmentId": 1,
-      "id": 9
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "9",
-      "assignmentId": 1,
-      "id": 10
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "10",
-      "assignmentId": 1,
-      "id": 11
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "1",
-      "assignmentId": 2,
+      "assignmentId": "Xtz5kDs",
       "id": 12
     },
     {
-      "points": 0,
-      "comments": "",
+      "points": "14",
+      "comments": "Your summary of the plot was clear, but I would have liked to see more analysis of the main character's motivations.",
       "studentId": "2",
-      "assignmentId": 2,
+      "assignmentId": "Xtz5kDs",
       "id": 13
     },
     {
-      "points": 0,
-      "comments": "",
+      "points": "16",
+      "comments": "The report was well-organized and covered all key points, but be sure to focus more on the author's writing style next time.",
       "studentId": "3",
-      "assignmentId": 2,
+      "assignmentId": "Xtz5kDs",
       "id": 14
     },
     {
-      "points": 0,
-      "comments": "",
+      "points": "18",
+      "comments": "I appreciate how you connected the book’s themes to real-world issues. It showed deep understanding.",
       "studentId": "4",
-      "assignmentId": 2,
+      "assignmentId": "Xtz5kDs",
       "id": 15
     },
     {
-      "points": 0,
-      "comments": "",
+      "points": "15",
+      "comments": "Your conclusion was strong, but the body of your report could benefit from more detailed examples from the text.",
       "studentId": "5",
-      "assignmentId": 2,
+      "assignmentId": "Xtz5kDs",
       "id": 16
     },
     {
-      "points": 0,
-      "comments": "",
+      "points": "16",
+      "comments": "You did well with your character analysis, but your report would be stronger with more specific quotes from the book.",
       "studentId": "6",
-      "assignmentId": 2,
+      "assignmentId": "Xtz5kDs",
       "id": 17
     },
     {
-      "points": 0,
-      "comments": "",
+      "points": "17",
+      "comments": "Good job on summarizing the plot! Try to provide more of your personal opinion and reflection in future reports.",
       "studentId": "7",
-      "assignmentId": 2,
+      "assignmentId": "Xtz5kDs",
       "id": 18
     },
     {
-      "points": 0,
-      "comments": "",
+      "points": "17",
+      "comments": "The report was concise and informative. It would have been even better with a bit more depth in your critique of the author’s choices.",
       "studentId": "8",
-      "assignmentId": 2,
+      "assignmentId": "Xtz5kDs",
       "id": 19
     },
     {
-      "points": 0,
-      "comments": "",
+      "points": "14",
+      "comments": "You provided a clear overview of the book, but I would have liked to see more connection between the story and the themes you discussed.",
       "studentId": "9",
-      "assignmentId": 2,
+      "assignmentId": "Xtz5kDs",
       "id": 20
     },
     {
-      "points": 0,
-      "comments": "",
+      "points": "16",
+      "comments": "Your writing was clear and easy to follow. In future reports, try to dive deeper into the symbolic meanings in the story.",
       "studentId": "10",
-      "assignmentId": 2,
+      "assignmentId": "Xtz5kDs",
       "id": 21
     },
     {
-      "points": 0,
-      "comments": "",
+      "points": "12",
+      "comments": "Your report is very brief and lacks detail. Please provide more examples from the book to support your ideas next time.",
       "studentId": "11",
-      "assignmentId": 2,
+      "assignmentId": "Xtz5kDs",
       "id": 22
     },
     {
       "points": 0,
       "comments": "",
       "studentId": "1",
-      "assignmentId": 3,
+      "assignmentId": "jTOxjZ1",
       "id": 23
     },
     {
       "points": 0,
       "comments": "",
       "studentId": "2",
-      "assignmentId": 3,
+      "assignmentId": "jTOxjZ1",
       "id": 24
     },
     {
       "points": 0,
       "comments": "",
       "studentId": "3",
-      "assignmentId": 3,
+      "assignmentId": "jTOxjZ1",
       "id": 25
     },
     {
       "points": 0,
       "comments": "",
       "studentId": "4",
-      "assignmentId": 3,
+      "assignmentId": "jTOxjZ1",
       "id": 26
     },
     {
       "points": 0,
       "comments": "",
       "studentId": "5",
-      "assignmentId": 3,
+      "assignmentId": "jTOxjZ1",
       "id": 27
     },
     {
       "points": 0,
       "comments": "",
       "studentId": "6",
-      "assignmentId": 3,
+      "assignmentId": "jTOxjZ1",
       "id": 28
     },
     {
       "points": 0,
       "comments": "",
-      "studentId": "7",
-      "assignmentId": 3,
+      "studentId": "8",
+      "assignmentId": "jTOxjZ1",
       "id": 29
     },
     {
       "points": 0,
       "comments": "",
-      "studentId": "8",
-      "assignmentId": 3,
+      "studentId": "7",
+      "assignmentId": "jTOxjZ1",
       "id": 30
     },
     {
       "points": 0,
       "comments": "",
       "studentId": "9",
-      "assignmentId": 3,
+      "assignmentId": "jTOxjZ1",
       "id": 31
     },
     {
       "points": 0,
       "comments": "",
-      "studentId": "10",
-      "assignmentId": 3,
+      "studentId": "11",
+      "assignmentId": "jTOxjZ1",
       "id": 32
     },
     {
       "points": 0,
       "comments": "",
-      "studentId": "11",
-      "assignmentId": 3,
+      "studentId": "10",
+      "assignmentId": "jTOxjZ1",
       "id": 33
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "1",
-      "assignmentId": 4,
-      "id": 34
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "2",
-      "assignmentId": 4,
-      "id": 35
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "3",
-      "assignmentId": 4,
-      "id": 36
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "4",
-      "assignmentId": 4,
-      "id": 37
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "5",
-      "assignmentId": 4,
-      "id": 38
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "6",
-      "assignmentId": 4,
-      "id": 39
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "7",
-      "assignmentId": 4,
-      "id": 40
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "8",
-      "assignmentId": 4,
-      "id": 41
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "9",
-      "assignmentId": 4,
-      "id": 42
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "1",
-      "assignmentId": 5,
-      "id": 43
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "2",
-      "assignmentId": 5,
-      "id": 44
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "3",
-      "assignmentId": 5,
-      "id": 45
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "4",
-      "assignmentId": 5,
-      "id": 46
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "5",
-      "assignmentId": 5,
-      "id": 47
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "6",
-      "assignmentId": 5,
-      "id": 48
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "7",
-      "assignmentId": 5,
-      "id": 49
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "8",
-      "assignmentId": 5,
-      "id": 50
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "1",
-      "assignmentId": 6,
-      "id": 51
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "2",
-      "assignmentId": 6,
-      "id": 52
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "3",
-      "assignmentId": 6,
-      "id": 53
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "4",
-      "assignmentId": 6,
-      "id": 54
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "5",
-      "assignmentId": 6,
-      "id": 55
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "6",
-      "assignmentId": 6,
-      "id": 56
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "7",
-      "assignmentId": 6,
-      "id": 57
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "9",
-      "assignmentId": 6,
-      "id": 58
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "8",
-      "assignmentId": 6,
-      "id": 59
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "1",
-      "assignmentId": 7,
-      "id": 60
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "2",
-      "assignmentId": 7,
-      "id": 61
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "4",
-      "assignmentId": 7,
-      "id": 62
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "5",
-      "assignmentId": 7,
-      "id": 63
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "6",
-      "assignmentId": 7,
-      "id": 64
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "7",
-      "assignmentId": 7,
-      "id": 65
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "8",
-      "assignmentId": 7,
-      "id": 66
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "9",
-      "assignmentId": 7,
-      "id": 67
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "10",
-      "assignmentId": 7,
-      "id": 68
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "11",
-      "assignmentId": 7,
-      "id": 69
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "3",
-      "assignmentId": 7,
-      "id": 70
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "1",
-      "assignmentId": 8,
-      "id": 71
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "2",
-      "assignmentId": 8,
-      "id": 72
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "3",
-      "assignmentId": 8,
-      "id": 73
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "4",
-      "assignmentId": 8,
-      "id": 74
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "5",
-      "assignmentId": 8,
-      "id": 75
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "6",
-      "assignmentId": 8,
-      "id": 76
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "7",
-      "assignmentId": 8,
-      "id": 77
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "8",
-      "assignmentId": 8,
-      "id": 78
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "11",
-      "assignmentId": 8,
-      "id": 79
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "10",
-      "assignmentId": 8,
-      "id": 80
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "9",
-      "assignmentId": 8,
-      "id": 81
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "6",
-      "assignmentId": 8,
-      "id": 82
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "8",
-      "assignmentId": 8,
-      "id": 83
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "7",
-      "assignmentId": 8,
-      "id": 84
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "1",
-      "assignmentId": 9,
-      "id": 85
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "2",
-      "assignmentId": 9,
-      "id": 86
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "3",
-      "assignmentId": 9,
-      "id": 87
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "4",
-      "assignmentId": 9,
-      "id": 88
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "5",
-      "assignmentId": 9,
-      "id": 89
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "6",
-      "assignmentId": 9,
-      "id": 90
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "7",
-      "assignmentId": 9,
-      "id": 91
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "8",
-      "assignmentId": 9,
-      "id": 92
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "9",
-      "assignmentId": 9,
-      "id": 93
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "10",
-      "assignmentId": 9,
-      "id": 94
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "11",
-      "assignmentId": 9,
-      "id": 95
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "1",
-      "assignmentId": 10,
-      "id": 96
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "2",
-      "assignmentId": 10,
-      "id": 97
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "3",
-      "assignmentId": 10,
-      "id": 98
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "4",
-      "assignmentId": 10,
-      "id": 99
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "5",
-      "assignmentId": 10,
-      "id": 100
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "6",
-      "assignmentId": 10,
-      "id": 101
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "7",
-      "assignmentId": 10,
-      "id": 102
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "8",
-      "assignmentId": 10,
-      "id": 103
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "9",
-      "assignmentId": 10,
-      "id": 104
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "10",
-      "assignmentId": 10,
-      "id": 105
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "11",
-      "assignmentId": 10,
-      "id": 106
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "10",
-      "assignmentId": 10,
-      "id": 107
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "9",
-      "assignmentId": 10,
-      "id": 108
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "11",
-      "assignmentId": 10,
-      "id": 109
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "1",
-      "assignmentId": 11,
-      "id": 110
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "2",
-      "assignmentId": 11,
-      "id": 111
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "3",
-      "assignmentId": 11,
-      "id": 112
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "4",
-      "assignmentId": 11,
-      "id": 113
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "5",
-      "assignmentId": 11,
-      "id": 114
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "6",
-      "assignmentId": 11,
-      "id": 115
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "9",
-      "assignmentId": 11,
-      "id": 116
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "8",
-      "assignmentId": 11,
-      "id": 117
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "10",
-      "assignmentId": 11,
-      "id": 118
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "11",
-      "assignmentId": 11,
-      "id": 119
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "7",
-      "assignmentId": 11,
-      "id": 120
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "6",
-      "assignmentId": 11,
-      "id": 121
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "6",
-      "assignmentId": 11,
-      "id": 122
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "7",
-      "assignmentId": 11,
-      "id": 123
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "1",
-      "assignmentId": 12,
-      "id": 124
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "2",
-      "assignmentId": 12,
-      "id": 125
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "3",
-      "assignmentId": 12,
-      "id": 126
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "4",
-      "assignmentId": 12,
-      "id": 127
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "5",
-      "assignmentId": 12,
-      "id": 128
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "6",
-      "assignmentId": 12,
-      "id": 129
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "7",
-      "assignmentId": 12,
-      "id": 130
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "8",
-      "assignmentId": 12,
-      "id": 131
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "9",
-      "assignmentId": 12,
-      "id": 132
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "10",
-      "assignmentId": 12,
-      "id": 133
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "11",
-      "assignmentId": 12,
-      "id": 134
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "1",
-      "assignmentId": 13,
-      "id": 135
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "2",
-      "assignmentId": 13,
-      "id": 136
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "3",
-      "assignmentId": 13,
-      "id": 137
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "4",
-      "assignmentId": 13,
-      "id": 138
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "5",
-      "assignmentId": 13,
-      "id": 139
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "7",
-      "assignmentId": 13,
-      "id": 140
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "6",
-      "assignmentId": 13,
-      "id": 141
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "8",
-      "assignmentId": 13,
-      "id": 142
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "9",
-      "assignmentId": 13,
-      "id": 143
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "10",
-      "assignmentId": 13,
-      "id": 144
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "11",
-      "assignmentId": 13,
-      "id": 145
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "11",
-      "assignmentId": 13,
-      "id": 146
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "10",
-      "assignmentId": 13,
-      "id": 147
-    },
-    {
-      "points": 0,
-      "comments": "",
-      "studentId": "9",
-      "assignmentId": 13,
-      "id": 148
     }
   ],
   "assignments": [
-    {
-      "name": "Character Analysis - The Great Gatsby",
-      "description": "In this assignment, you will select a character from the book we are reading and analyze their personality, motivations, development, and relationships with other characters. Your goal is to understand this character deeply and to express how they contribute to the story’s themes and conflict.",
-      "startDate": "2024-12-02",
-      "dueDate": "2024-12-06",
-      "maxPoints": "10",
-      "bookId": "a133",
-      "id": 1
-    },
     {
       "name": "Final Report - The Great Gatsby",
       "description": "The purpose of this book report is to help you summarize the key elements of the story, understand the author’s message, and reflect on your personal response to the book. You’ll be describing the plot, main characters, setting, and themes in a way that shows you’ve read and thought about the story in detail.",
@@ -1054,106 +163,16 @@
       "dueDate": "2024-12-20",
       "maxPoints": "20",
       "bookId": "a133",
-      "id": 2
+      "id": "Xtz5kDs"
     },
     {
       "name": "Character Analysis - To Kill a Mockingbird",
-      "description": "analysis",
+      "description": "In this assignment, you will select a character from the book we are reading and analyze their personality, motivations, development, and relationships with other characters. Your goal is to understand this character deeply and to express how they contribute to the story’s themes and conflict.",
       "startDate": "2025-01-06",
       "dueDate": "2025-01-10",
       "maxPoints": "10",
       "bookId": "1bd5",
-      "id": 3
-    },
-    {
-      "name": "Final Report - To Kill a Mockingbird",
-      "description": "The purpose of this book report is to help you summarize the key elements of the story, understand the author’s message, and reflect on your personal response to the book. You’ll be describing the plot, main characters, setting, and themes in a way that shows you’ve read and thought about the story in detail.",
-      "startDate": "2025-01-13",
-      "dueDate": "2025-01-24",
-      "maxPoints": "20",
-      "bookId": "1bd5",
-      "id": 4
-    },
-    {
-      "name": "Character Analysis - Romeo and Juliet",
-      "description": "In this assignment, you will select a character from the book we are reading and analyze their personality, motivations, development, and relationships with other characters. Your goal is to understand this character deeply and to express how they contribute to the story’s themes and conflict.",
-      "startDate": "2025-01-27",
-      "dueDate": "2025-01-31",
-      "maxPoints": "10",
-      "bookId": "3309",
-      "id": 5
-    },
-    {
-      "name": "Theme Reflection - Of Mice and Men",
-      "description": "Choose one theme from Of Mice and Men—such as friendship, loneliness, the American Dream, or power—and analyze how it shapes the experiences of one or more characters, like George, Lennie, or Curley’s wife. In one paragraph, explain how this theme affects the character's actions, relationships, and outlook on life, using specific examples from the text to support your analysis. End with a reflection on what Steinbeck might be saying about this theme and its impact on people’s lives.",
-      "startDate": "2025-02-03",
-      "dueDate": "2025-02-07",
-      "maxPoints": "15",
-      "bookId": "0a1f",
-      "id": 6
-    },
-    {
-      "name": "Character and Theme Analysis - Macbeth",
-      "description": "Choose one character from Macbeth—such as Macbeth, Lady Macbeth, Banquo, or the Witches—and analyze how their actions and choices reflect one of the play’s central themes: ambition, fate, guilt, or the supernatural. In one paragraph, describe how this theme drives your character’s decisions and development, using specific examples from the text to support your points. Conclude by reflecting on what Shakespeare might be suggesting about the theme through this character's journey.",
-      "startDate": "2025-02-24",
-      "dueDate": "2025-03-07",
-      "maxPoints": "25",
-      "bookId": "151f",
-      "id": 7
-    },
-    {
-      "name": "The Influence of the Supernatural in Macbeth",
-      "description": "In Macbeth, the supernatural plays a significant role in shaping the actions of the characters, especially Macbeth and Lady Macbeth. In one paragraph, analyze how the witches’ prophecies, visions, or any supernatural elements influence Macbeth’s decisions and contribute to his downfall. Use specific examples from the text to support your points, and conclude by reflecting on how Shakespeare uses the supernatural to explore themes of fate, free will, and ambition.",
-      "startDate": "2025-03-03",
-      "dueDate": "2025-03-07",
-      "maxPoints": "10",
-      "bookId": "151f",
-      "id": 8
-    },
-    {
-      "name": "The Role of Power in Animal Farm",
-      "description": "In Animal Farm, power and its corrupting influence are central themes. Choose one character—such as Napoleon, Snowball, or Boxer—and analyze how their relationship with power shapes their actions and decisions throughout the story. In one paragraph, explain how this character either gains or loses power, and how this affects their role in the community. Use specific examples from the text to support your analysis, and conclude by reflecting on how Orwell uses this character to comment on the dangers of unchecked power.",
-      "startDate": "2025-03-10",
-      "dueDate": "2025-03-14",
-      "maxPoints": "10",
-      "bookId": "d963",
-      "id": 9
-    },
-    {
-      "name": "The Descent into Savagery in Lord of the Flies",
-      "description": "In Lord of the Flies, William Golding explores the darker side of human nature through the boys' descent into savagery. In one paragraph, analyze how the loss of societal norms and the emergence of primal instincts affect the behavior of the boys, particularly focusing on the relationship between Ralph and Jack. Use examples from the text to support your points, and conclude by reflecting on what Golding seems to be saying about human nature and civilization.",
-      "startDate": "2025-03-24",
-      "dueDate": "2025-03-28",
-      "maxPoints": "15",
-      "bookId": "69de",
-      "id": 10
-    },
-    {
-      "name": "Hamlet’s Internal Struggle",
-      "description": "In Hamlet, the title character is faced with a deep internal struggle regarding revenge and morality. In one paragraph, analyze how Hamlet’s conflicting thoughts and emotions impact his decisions and relationships with other characters. Use specific examples from the text to demonstrate how Hamlet’s internal conflict drives the plot and shapes the outcome of the play. Conclude by reflecting on what Shakespeare might be suggesting about the complexities of human action and indecision.",
-      "startDate": "2025-03-31",
-      "dueDate": "2025-04-11",
-      "maxPoints": "20",
-      "bookId": "7142",
-      "id": 11
-    },
-    {
-      "name": "The Role of Madness in Hamlet",
-      "description": "Madness—whether feigned or real—plays a significant role in Hamlet. In one paragraph, analyze the theme of madness in the play, focusing on how Hamlet's behavior and his interactions with other characters create a sense of ambiguity around his sanity. Use specific examples from the text to support your analysis and explore whether Hamlet’s madness is truly genuine or a calculated strategy. Conclude by reflecting on what the play suggests about the fine line between sanity and madness.",
-      "startDate": "2025-03-31",
-      "dueDate": "2025-04-04",
-      "maxPoints": "10",
-      "bookId": "7142",
-      "id": 12
-    },
-    {
-      "name": "The Ghost and Its Influence on Hamlet",
-      "description": "In Hamlet, the appearance of the ghost of King Hamlet sets the stage for the entire play, particularly regarding Hamlet’s quest for revenge. In one paragraph, analyze the significance of the ghost’s appearance and how it influences Hamlet’s actions throughout the play. Use specific examples from the text to support your points, and conclude by discussing the ghost’s role in the development of the themes of revenge and justice in the play.",
-      "startDate": "2025-05-05",
-      "dueDate": "2025-05-23",
-      "maxPoints": "30",
-      "bookId": "7142",
-      "id": 13
+      "id": "jTOxjZ1"
     }
   ],
   "books": [
@@ -1174,15 +193,6 @@
       "description": "fiction",
       "notes": "",
       "apiId": "10590366"
-    },
-    {
-      "id": "1bd5",
-      "title": "To Kill a Mockingbird",
-      "author": "Harper Lee",
-      "image": "https://archive.org/download/tokillmockingbir00leehrich/page/cover_w500_h500.jpg",
-      "description": "fiction",
-      "notes": "",
-      "apiId": "12606502"
     },
     {
       "id": "3309",
@@ -1241,11 +251,11 @@
     },
     {
       "id": "3",
-      "fullName": "Oliver Clark"
+      "fullName": "Olivia Clark"
     },
     {
       "id": "4",
-      "fullName": "James Davis"
+      "fullName": "Catherine Davis"
     },
     {
       "id": "5",
@@ -1253,7 +263,7 @@
     },
     {
       "id": "6",
-      "fullName": "Mateo Frank"
+      "fullName": "Rebecca Frank"
     },
     {
       "id": "7",
@@ -1265,7 +275,7 @@
     },
     {
       "id": "9",
-      "fullName": "Henry Irwin"
+      "fullName": "Mary Irwin"
     },
     {
       "id": "10",
