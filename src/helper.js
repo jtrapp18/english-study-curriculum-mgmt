@@ -70,8 +70,6 @@ function postJSONToDb(dbKey, jsonObj) {
             }
             return res.json();
         })
-        // .then(data => console.log("ADDED", data))
-        // .catch(e => console.error(e));
 }
 
 function patchJSONToDb(dbKey, Id, jsonObj) {

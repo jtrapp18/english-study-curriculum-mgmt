@@ -54,8 +54,12 @@ function validateAndSave(bookObj){
             //console.log("insert")
             alert(`${bookObj.title} saved to curriculum`)
             postJSONToDb("books", bookObj)
-            renderCurriculumBook(bookObj)
-            switchToTab("curriculum")
+            .then(book => {
+                renderCurriculumBook(book)
+                switchToTab("curriculum")
+
+                changeBook(book.id)
+            })
         } else {
             //console.log("book already in cur")
             alert(`${bookObj.title} already in the curriculum`)
@@ -91,8 +95,6 @@ const handleBookSearch = (e) => {
 const handleBtnAddCurriculum = (e) => {
     const bookDiv = e.currentTarget.parentNode
     const bookObj = new Book(bookDiv.getAttribute("data-title"), bookDiv.getAttribute("data-author"), bookDiv.getAttribute("data-image"), bookDiv.getAttribute("data-subject"), "", bookDiv.getAttribute("data-api-id"))
-    //console.log(bookObj)
-    //console.log(`${bookObj.title} saved to curriculum`)
     validateAndSave(bookObj)
 }
 
@@ -169,8 +171,6 @@ const renderBook = (book) => {
         //initialize book cover image
         bookImg.alt = `${bookObj.title} cover image`
         bookImg.id = bookObj.apiId
-        bookImg.style.height = "150px" //TODO: move to CSS
-        bookImg.style.width = "120px" //TODO: move to CSS
         bookImg.src = "img/placeholder.gif" //default placeholder
 
         getJSON(`${coverImgUrl}/b/id/${bookObj.apiId}.json`)

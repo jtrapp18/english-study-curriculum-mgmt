@@ -1,9 +1,9 @@
+const curriculumBooks = document.querySelector("#curriculum-books");
+
 //****************************************************************************************************
 // RENDER information on DOM
 
 function renderCurriculumBook(book) {
-
-    const curriculumBooks = document.querySelector("#curriculum-books");
 
     //create required elements
     const bookListing = document.createElement("div")
@@ -212,27 +212,37 @@ function createGradeObjects(assignmentId) {
 
 function bookSelectListener() {
 
-    const curriculumBooks = document.querySelector("#curriculum-books");
-
-    curriculumBooks.addEventListener("click", (e) => {
-
+    curriculumBooks.addEventListener("click", e => {
         const clickedBook = e.target.closest(".book-listing");
-
-        if (clickedBook) {
-
-            const bookId = clickedBook.dataset.id;
-            curriculumBooks.dataset.id = bookId;
-
-            getEmbeddedJSONById("books", bookId, "assignments")
-            .then(book => {
-                document.querySelector("#featured-book").classList.remove("hidden");
-                document.querySelector("#selected-book").innerHTML = clickedBook.outerHTML;
-            
-                renderAssignmentTable(book);
-            })
-            .catch(e => console.error(e));
-        }
+        changeBook(clickedBook.dataset.id);
     })
+}
+
+function changeBook(bookId) {
+
+     const clickedBook = document.querySelector(`.book-listing[data-id="${bookId}"]`);
+
+    if (clickedBook) {
+
+        const bookId = clickedBook.dataset.id;
+        curriculumBooks.dataset.id = bookId;
+
+        getEmbeddedJSONById("books", bookId, "assignments")
+        .then(book => {
+            document.querySelector("#featured-book").classList.remove("hidden");
+            document.querySelector("#selected-book").innerHTML = clickedBook.outerHTML;
+
+            // reset and hide forms
+            document.querySelector("#edit-assignment form").reset();
+            document.querySelector("#add-assignment form").reset();
+            document.querySelector("#edit-assignment").classList.add("hidden");
+            document.querySelector("#add-assignment").classList.add("hidden");
+
+        
+            renderAssignmentTable(book);
+        })
+        .catch(e => console.error(e));
+    }
 }
 
 function assignmentSelectListener() {
