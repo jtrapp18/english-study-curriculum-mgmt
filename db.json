@@ -575,42 +575,6 @@
       "description": "performing arts",
       "notes": "",
       "apiId": "8281954"
-    },
-    {
-      "title": "Harry Potter and the Prisoner of Azkaban",
-      "author": "J. K. Rowling",
-      "image": "img/unavailable.jpg",
-      "description": "Fantasy fiction",
-      "notes": "",
-      "apiId": "10580435",
-      "id": "-8Au4Gq"
-    },
-    {
-      "title": "The Mystery of the Blue Train",
-      "author": "Agatha Christie",
-      "image": "https://archive.org/download/bwb_KR-538-919/page/cover_w500_h500.jpg",
-      "description": "Crimes against",
-      "notes": "",
-      "apiId": "14575533",
-      "id": "PYrGHyR"
-    },
-    {
-      "title": "The Mysterious Affair at Styles",
-      "author": "Agatha Christie",
-      "image": "https://archive.org/download/mysteriousaffair00chri/page/cover_w500_h500.jpg",
-      "description": "Fiction",
-      "notes": "",
-      "apiId": "13699667",
-      "id": "NurJwTF"
-    },
-    {
-      "title": "Death in the Clouds",
-      "author": "Agatha Christie",
-      "image": "https://archive.org/download/deathinclouds0000unse/page/cover_w500_h500.jpg",
-      "description": "Detective and mystery stories",
-      "notes": "",
-      "apiId": "11433305",
-      "id": "fcHwtoz"
     }
   ],
   "students": [
