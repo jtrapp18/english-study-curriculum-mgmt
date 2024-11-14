@@ -36,7 +36,7 @@ github: [klaftech](https://github.com/klaftech)
   
 See this gif for an example of how the app works.
   
-![demo](src/demo-gif.gif)
+![demo](img/demo-gif.gif)
 
 
 ## Setup
