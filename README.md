@@ -3,7 +3,7 @@
 
   
 ## About this project
-This project is a single-page application that allows teachers of English study curriculums to simply and easily manage their book curriculum as well create assignments and track student's progress and grades. This project uses data from the [OpenLibrary API](library.org/developers/api).
+This project is a single-page application that allows teachers of English study curriculums to simply and easily manage their book curriculum as well create assignments and track student's progress and grades. This project uses data from the [OpenLibrary API](https://openlibrary.org/developers/api).
   
 
 ## Contributors
@@ -32,9 +32,9 @@ github: [klaftech](https://github.com/klaftech)
 
 ## Demo
   
-See this gif for an example of how to app works when live.
+See this gif for an example of how the app works.
   
-![demo](https://curriculum-content.s3.amazonaws.com/phase-1/phase-1-mock-cc-ramen-rater/demo-gif.gif)
+<!--![demo](https://curriculum-content.s3.amazonaws.com/phase-1/phase-1-mock-cc-ramen-rater/demo-gif.gif)-->
 
 
 ## Setup
