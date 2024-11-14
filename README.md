@@ -1,6 +1,5 @@
 
 # English Study Curriculum Management Dashboard
-<video src="./img/demo.mp4" autoplay loop muted width="600"></video>
   
 ## About this project
 
@@ -37,7 +36,7 @@ github: [klaftech](https://github.com/klaftech)
   
 See this gif for an example of how the app works.
   
-<!--![demo](https://curriculum-content.s3.amazonaws.com/phase-1/phase-1-mock-cc-ramen-rater/demo-gif.gif)-->
+![demo](img/demo-gif.gif)
 
 
 ## Setup

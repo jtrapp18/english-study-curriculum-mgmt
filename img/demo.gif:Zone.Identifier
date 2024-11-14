@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://cloudconvert.com/mp4-to-gif
+HostUrl=https://us-east.storage.cloudconvert.com/tasks/59d15c21-f4c9-4015-b378-8cf996924824/demo.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cloudconvert-production%2F20241114%2Fva%2Fs3%2Faws4_request&X-Amz-Date=20241114T223642Z&X-Amz-Expires=86400&X-Amz-Signature=96f201e1337da7e53501fec1347e6afe0361cbac5eac31feeda864087e14f713&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3D%22demo.gif%22&response-content-type=image%2Fgif&x-id=GetObject
