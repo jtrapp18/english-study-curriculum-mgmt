@@ -1,6 +1,6 @@
 
 # English Study Curriculum Management Dashboard
-<video src=".img/demo.mp4" autoplay loop muted width="600"></video>
+<video src="./img/demo.mp4" autoplay loop muted width="600"></video>
   
 ## About this project
 
