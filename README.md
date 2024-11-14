@@ -1,12 +1,14 @@
 
 # English Study Curriculum Management Dashboard
-
+<video src=".img/demo.mp4" autoplay loop muted width="600"></video>
   
 ## About this project
+
 This project is a single-page application that allows teachers of English study curriculums to simply and easily manage their book curriculum as well create assignments and track student's progress and grades. This project uses data from the [OpenLibrary API](https://openlibrary.org/developers/api).
   
 
 ## Contributors
+
 **Jacqueline Trapp**  
 github: [JTrapp18](https://github.com/jtrapp18)  
   
@@ -23,6 +25,7 @@ github: [klaftech](https://github.com/klaftech)
   
 
 ## Technical   
+
 - Integrated with OpenLibrary API to load, search and filter published books and retreive cover images. 
 - Connects to local database to store and retrieve curriculum, assignments, students and grades. 
 - Listens for user events and updates the DOM in response. 
@@ -66,3 +69,25 @@ Live server endpoint: `http://localhost:3000`
 `/assignments/:id` GET, POST, PATCH  
 `/grades/:id` GET, POST, PATCH  
 `/students/:id` GET, POST, PATCH  
+
+## Files
+
+### JavaScript:
+- `./src/booklist.js`: controls for interaction within the "BOOKLIST" tab
+- `./src/curriculum.js`: controls for interaction within the "CURRICULUM" tab
+- `./src/grading.js`: controls for interaction within the "GRADING" tab
+- `./src/helper.js`: json-server functions and re-usable form functionality
+- `./src/script.js`: miscellaneous controls
+- `./src/students.js`: controls for interaction within the "STUDENTS" tab
+
+### JSON:
+- `db.json`: stores endpoints used for the local database API
+
+### HTML:
+- `index.html`: initial 
+
+### CSS:
+- `style.css`: controls the styles and layout of the application
+
+### Other:
+- `./img`: folder storing images used throughout the application
