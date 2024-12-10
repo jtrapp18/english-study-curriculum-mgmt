@@ -1,9 +1,10 @@
 //****************************************************************************************************
 // JSON-server CRUD functionality
+const baseURL = 'https://english-study-curriculum-mgmt-be-production.up.railway.app';
 
 function getJSONByKey(dbKey) {
 
-    return fetch(`http://localhost:3000/${dbKey}`)
+    return fetch(`${baseURL}/${dbKey}`)
     .then(res => {
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);
@@ -14,7 +15,7 @@ function getJSONByKey(dbKey) {
 
 function getJSONById(dbKey, Id) {
 
-    return fetch(`http://localhost:3000/${dbKey}/${Id}`)
+    return fetch(`${baseURL}/${dbKey}/${Id}`)
     .then(res => {
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);
@@ -24,7 +25,7 @@ function getJSONById(dbKey, Id) {
 }
 
 function getJSONbySearch(dbKey, searchKey, searchValue) {
-  return fetch(`http://localhost:3000/${dbKey}?${searchKey}=${searchValue}`)
+  return fetch(`${baseURL}/${dbKey}?${searchKey}=${searchValue}`)
   .then(res => {
       if (!res.ok) {
         throw new Error(`HTTP error! Status: ${res.status}`);
@@ -35,7 +36,7 @@ function getJSONbySearch(dbKey, searchKey, searchValue) {
 
 function getEmbeddedJSON(baseKey, embeddedKey) {
 
-    return fetch(`http://localhost:3000/${baseKey}?_embed=${embeddedKey}`)
+    return fetch(`${baseURL}/${baseKey}?_embed=${embeddedKey}`)
     .then(res => {
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);
@@ -46,7 +47,7 @@ function getEmbeddedJSON(baseKey, embeddedKey) {
 
 function getEmbeddedJSONById(baseKey, baseId, embeddedKey) {
 
-    return fetch(`http://localhost:3000/${baseKey}/${baseId}?_embed=${embeddedKey}`)
+    return fetch(`${baseURL}/${baseKey}/${baseId}?_embed=${embeddedKey}`)
     .then(res => {
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);
@@ -57,7 +58,7 @@ function getEmbeddedJSONById(baseKey, baseId, embeddedKey) {
 
 function postJSONToDb(dbKey, jsonObj) {
 
-    return fetch(`http://localhost:3000/${dbKey}`, {
+    return fetch(`${baseURL}/${dbKey}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -74,7 +75,7 @@ function postJSONToDb(dbKey, jsonObj) {
 
 function patchJSONToDb(dbKey, Id, jsonObj) {
 
-    fetch(`http://localhost:3000/${dbKey}/${Id}`, {
+    fetch(`${baseURL}/${dbKey}/${Id}`, {
     method: 'PATCH',
     headers: {
         'Content-Type': 'application/json'
@@ -93,7 +94,7 @@ function patchJSONToDb(dbKey, Id, jsonObj) {
 
 function deleteJSONFromDb(dbKey, Id) {
 
-  fetch(`http://localhost:3000/${dbKey}/${Id}`, {
+  fetch(`${baseURL}/${dbKey}/${Id}`, {
   method: 'DELETE',
   headers: {
       'Content-Type': 'application/json'
