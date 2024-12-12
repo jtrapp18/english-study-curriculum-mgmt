@@ -125,11 +125,11 @@ function submitGradeEdits(gradeId, studentId, assignmentId) {
     const gradingForm = document.querySelector("#edit-grading form")
     
     const updatedGrade = {
-        id: gradeId,
-        points: gradingForm["edit-grade"].value,
+        id: parseInt(gradeId),
+        points: parseInt(gradingForm["edit-grade"].value),
         comments: gradingForm["edit-comments"].value,
-        studentId: studentId,
-        assignmentId: assignmentId
+        studentId: parseInt(studentId),
+        assignmentId: parseInt(assignmentId)
         }
 
     patchJSONToDb("grades", gradeId, updatedGrade);

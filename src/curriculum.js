@@ -127,13 +127,13 @@ function submitAssignmentEdits(assignmentId, bookId) {
     const form = document.querySelector("#edit-assignment form");
     
     const updatedAssignment = {
-        id: assignmentId,
+        id: parseInt(assignmentId),
         name: form["edit-assignment-name"].value,
         description: form["edit-assignment-descr"].value,
         startDate: form["edit-assignment-start"].value,
         dueDate: form["edit-assignment-due"].value,
-        maxPoints: form["edit-assignment-max-points"].value,
-        bookId: bookId
+        maxPoints: parseInt(form["edit-assignment-max-points"].value),
+        bookId: parseInt(bookId)
         }
 
     patchJSONToDb("assignments", assignmentId, updatedAssignment);
@@ -162,8 +162,8 @@ function submitNewAssignment() {
         description: form["new-assignment-descr"].value,
         startDate: form["new-assignment-start"].value,
         dueDate: form["new-assignment-due"].value,
-        maxPoints: form["new-assignment-max-points"].value,
-        bookId: bookId
+        maxPoints: parseInt(form["new-assignment-max-points"].value),
+        bookId: parseInt(bookId)
         }
     
     if (validateForm(newAssignment)) {
@@ -195,8 +195,8 @@ function createGradeObjects(assignmentId) {
         const newGrade = {
             "points": 0,
             "comments": "",
-            "studentId": student.id,
-            "assignmentId": assignmentId
+            "studentId": parseInt(student.id),
+            "assignmentId": parseInt(assignmentId)
           }
 
         postJSONToDb("grades", newGrade)
