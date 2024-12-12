@@ -1,6 +1,6 @@
 
 # English Study Curriculum Management Dashboard
-[See Deployed Project](https://jtrapp18.github.io/english-study-curriculum-mgmt/)
+[Click to Navigate to Deployed Project](https://jtrapp18.github.io/english-study-curriculum-mgmt/)
   
 ## About this project
 
@@ -44,10 +44,6 @@ See this gif for an example of how the app works.
 
 - Fork and clone this repo to your local machine.
 
-- Run `json-server --watch db.json` to get the backend started.
-
-- Run `npm install -g live-server` to install live-server globally
-
 - Run `live-server` to start the frontend in browser
 
 - Launch the app in your brower at the local address indicated by `live-server`.  
@@ -59,8 +55,8 @@ See this gif for an example of how the app works.
 `https://openlibrary.org/search.json` GET  
 `https://covers.openlibrary.org` GET  
   
-### Local Database API:  
-Live server endpoint: `http://localhost:3000`  
+### Database API:  
+Live server endpoint: `https://english-study-curriculum-mgmt-be-production.up.railway.app`  
 `/books` GET  
 `/assignments` GET  
 `/grades` GET  
@@ -68,7 +64,9 @@ Live server endpoint: `http://localhost:3000`
 `/books/:id` GET, POST  
 `/assignments/:id` GET, POST, PATCH  
 `/grades/:id` GET, POST, PATCH  
-`/students/:id` GET, POST, PATCH  
+`/students/:id` GET, POST, PATCH
+
+The live server is managed by the following back-end repository: [english-study-curriculum-mgmt-be](https://github.com/jtrapp18/english-study-curriculum-mgmt-be)
 
 ## Files
 
@@ -79,9 +77,6 @@ Live server endpoint: `http://localhost:3000`
 - `./src/helper.js`: json-server functions and re-usable form functionality
 - `./src/script.js`: miscellaneous controls
 - `./src/students.js`: controls for interaction within the "STUDENTS" tab
-
-### JSON:
-- `db.json`: stores endpoints used for the local database API
 
 ### HTML:
 - `index.html`: initial 
