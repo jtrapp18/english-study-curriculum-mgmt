@@ -129,6 +129,7 @@ function renderStudentGrade(grade) {
 // SUBMIT information from forms to db.json
 
 function submitGradeEdits(gradeId, studentId, assignmentId) {
+    console.log("checking assignment ID", assignmentId)
 
     const gradingForm = document.querySelector("#edit-grading form")
     
@@ -221,7 +222,7 @@ function editGradeListener() {
         e.preventDefault();
         
         const submitBtn = document.querySelector("#submit-grade");
-        const assignmentId = document.querySelector("#student-select").dataset.id;
+        const assignmentId = document.querySelector("#assignment-select").dataset.id;
         const gradeId = document.querySelector("#assignment-grades table").dataset.id;
         const studentId = document.querySelector("#assignment-grades table").dataset.studentId;
 
