@@ -21,6 +21,14 @@ function addDropdownOption(assignment) {
     dropdown.append(assignmentName);
 }
 
+function appendDropdownOption(updatedAssignment, assignmentId) {
+    const dropdown = document.querySelector(`#assignment-select`);
+    const assignmentName = dropdown.querySelector(`option[data-id="${assignmentId}"]`);
+
+    assignmentName.textContent = updatedAssignment.name;
+    assignmentName.dataset.maxPoints = updatedAssignment.maxPoints;
+}
+
 function populateDropdown() {
 
     getEmbeddedJSON("assignments", "grades")
@@ -139,7 +147,7 @@ function submitGradeEdits(gradeId, studentId, assignmentId) {
 //****************************************************************************************************
 // ADD event handlers
 
-function studentSelectListener() {
+function assignmentGradeSelectListener() {
 
     const dropdown = document.querySelector(`#assignment-select`);
 
@@ -237,7 +245,7 @@ function main() {
     populateDropdown();
 
     // add event handlers
-    studentSelectListener();
+    assignmentGradeSelectListener();
     gradeSelectListener();
     editGradeListener();
 }

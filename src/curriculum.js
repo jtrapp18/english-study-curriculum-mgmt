@@ -138,6 +138,7 @@ function submitAssignmentEdits(assignmentId, bookId) {
 
     patchJSONToDb("assignments", assignmentId, updatedAssignment);
     renderAssignmentRow(updatedAssignment, assignmentId);
+    appendDropdownOption(updatedAssignment, assignmentId);
 }
 
 function validateForm(newAssignment) {
