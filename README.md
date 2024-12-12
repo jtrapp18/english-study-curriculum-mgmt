@@ -1,5 +1,6 @@
 
 # English Study Curriculum Management Dashboard
+[See Deployed Project](https://jtrapp18.github.io/english-study-curriculum-mgmt/)
   
 ## About this project
 
