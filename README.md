@@ -37,7 +37,7 @@ github: [klaftech](https://github.com/klaftech)
   
 See this gif for an example of how the app works.
   
-![demo](img/demo-gif.gif)
+![demo](https://github.com/jtrapp18/english-study-curriculum-mgmt/blob/main/img/demo-gif.gif?raw=true)
 
 
 ## Setup
